@@ -23,7 +23,7 @@ const buildJson = (dir, baseUrl) => {
 
       results[fileKey] = {
         path: filePath.replace(/\\/g, '/'), 
-        url: fileUrl.replace(/\\/g, '/'),
+        url: fileUrl.replace(/\\/g, '/').slice(0, -3),
       }
     }
   })

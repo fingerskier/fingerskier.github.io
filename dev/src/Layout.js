@@ -20,7 +20,7 @@ export default function Layout({children}) {
     </main>
     
     <footer style={{ backgroundImage: `url(${footerImage})` }}>
-      &copy;2023
+      <span> &copy;2023 </span>
     </footer>
   </>
 }

@@ -31,6 +31,8 @@ body {
 main {
   flex-grow: 1;
   width: 90%;
+  overflow-y: auto;
+  padding: 0 2rem;
 }
 
 main a {

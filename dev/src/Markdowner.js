@@ -7,7 +7,9 @@ export default function MarkdownRenderer({ markdownFile }) {
   
   
   useEffect(() => {
-    fetch(markdownFile)
+    const url = markdownFile + '.md'
+    
+    fetch(url)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

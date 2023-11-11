@@ -2,55 +2,55 @@
   "artificial_intellect": {
     "policy": {
       "path": "public/content/artificial_intellect/policy.md",
-      "url": "/content/artificial_intellect/policy.md"
+      "url": "/content/artificial_intellect/policy"
     },
     "policy_gradient": {
       "path": "public/content/artificial_intellect/policy_gradient.md",
-      "url": "/content/artificial_intellect/policy_gradient.md"
+      "url": "/content/artificial_intellect/policy_gradient"
     },
     "Q-Learning": {
       "path": "public/content/artificial_intellect/Q-Learning.md",
-      "url": "/content/artificial_intellect/Q-Learning.md"
+      "url": "/content/artificial_intellect/Q-Learning"
     },
     "Reinforcement Learning": {
       "path": "public/content/artificial_intellect/Reinforcement Learning.md",
-      "url": "/content/artificial_intellect/Reinforcement Learning.md"
+      "url": "/content/artificial_intellect/Reinforcement Learning"
     }
   },
   "databasing": {
     "using-mysql-bit-fields": {
       "path": "public/content/databasing/using-mysql-bit-fields.md",
-      "url": "/content/databasing/using-mysql-bit-fields.md"
+      "url": "/content/databasing/using-mysql-bit-fields"
     }
   },
   "fingerskier": {
     "path": "public/content/fingerskier.md",
-    "url": "/content/fingerskier.md"
+    "url": "/content/fingerskier"
   },
   "flarn": {
     "path": "public/content/flarn.md",
-    "url": "/content/flarn.md"
+    "url": "/content/flarn"
   },
   "networking": {
     "VLAN": {
       "path": "public/content/networking/VLAN.md",
-      "url": "/content/networking/VLAN.md"
+      "url": "/content/networking/VLAN"
     }
   },
   "schlum": {
     "blingda": {
       "path": "public/content/schlum/blingda.md",
-      "url": "/content/schlum/blingda.md"
+      "url": "/content/schlum/blingda"
     },
     "test": {
       "path": "public/content/schlum/test.md",
-      "url": "/content/schlum/test.md"
+      "url": "/content/schlum/test"
     }
   },
   "web_dev": {
     "browser_import_bug": {
       "path": "public/content/web_dev/browser_import_bug.md",
-      "url": "/content/web_dev/browser_import_bug.md"
+      "url": "/content/web_dev/browser_import_bug"
     }
   }
 }
