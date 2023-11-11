@@ -3,6 +3,8 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
+
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -19,7 +21,7 @@ body {
   width: 100%;
   background-color: #08112C;
   color: aliceblue;
-
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -29,4 +31,8 @@ body {
 main {
   flex-grow: 1;
   width: 90%;
+}
+
+main a {
+  color: #700;
 }

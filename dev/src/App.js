@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Layout from './Layout'
 import MarkdownRenderer from './Markdowner' 
-import ContentList from './ContentList'
+import ContentList from './Content/ContentList'
 
 import './style/App.css'
 
@@ -14,19 +14,18 @@ function App() {
   useEffect(() => {
     window.addEventListener('hashchange', event=>{
       setThingy(window.location.hash.substring(2))
+      console.log(window.location.hash.substring(2))
     })
   }, [])
   
 
   return <Layout>
     
-    {thingy? <>
-      {thingy}
-    </>
+    {thingy? 
+      <></>
     :
-    <>
-      <h1>Welcome!</h1>
-    </>}
+      <h1>Select a Topic Below</h1>
+    }
 
     <ContentList />
 
