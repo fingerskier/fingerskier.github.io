@@ -8,8 +8,16 @@ import headerImage from './img/header.png'
 
 
 export default function Layout({children}) {
+  const footerStyle = { 
+    backgroundImage: `url(${footerImage})`,
+  }
+
+  const headerStyle = { 
+    backgroundImage: `url(${headerImage})`,
+  }
+
   return <>
-    <header style={{ backgroundImage: `url(${headerImage})` }}>
+    <header style={headerStyle}>
       <a href="https://fingerskier.github.io">
         <h1>fingerskier</h1>
       </a>
@@ -19,7 +27,7 @@ export default function Layout({children}) {
       {children}
     </main>
     
-    <footer style={{ backgroundImage: `url(${footerImage})` }}>
+    <footer style={footerStyle}>
       <span> &copy;2023 </span>
     </footer>
   </>

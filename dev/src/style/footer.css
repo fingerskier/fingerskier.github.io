@@ -9,4 +9,15 @@ footer {
   
   text-align: center;
   vertical-align: middle;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer span {
+  background-color: #0009;
+  padding: 0.5rem 1.0rem;
+  border-radius: 2rem;
 }
