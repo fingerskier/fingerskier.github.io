@@ -11,15 +11,16 @@ export default function Layout({children}) {
   const footerStyle = { 
     backgroundImage: `url(${footerImage})`,
   }
-
+  
   const headerStyle = { 
     backgroundImage: `url(${headerImage})`,
   }
 
+
   return <>
     <header style={headerStyle}>
       <a href="https://fingerskier.github.io">
-        <h1>fingerskier</h1>
+        <h1>fingerskier&trade;</h1>
       </a>
     </header>
     
