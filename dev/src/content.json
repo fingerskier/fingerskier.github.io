@@ -1,0 +1,20 @@
+{
+  "flarn": {
+    "path": "public/content/flarn.md",
+    "url": "/content/flarn.md"
+  },
+  "index": {
+    "path": "public/content/index.md",
+    "url": "/content/index.md"
+  },
+  "schlum": {
+    "blingda": {
+      "path": "public/content/schlum/blingda.md",
+      "url": "/content/schlum/blingda.md"
+    },
+    "test": {
+      "path": "public/content/schlum/test.md",
+      "url": "/content/schlum/test.md"
+    }
+  }
+}
