@@ -6,10 +6,10 @@ import contentStructure from '../content.json'
 
 export default function ContentList() {
   return (
-    <div>
+    <nav>
       <ul>
         <Element content={contentStructure} />
       </ul>
-    </div>
+    </nav>
   )
 }

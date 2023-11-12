@@ -1,4 +1,5 @@
 import React from 'react'
+import ContentList from './Content/ContentList'
 
 import './style/footer.css'
 import './style/header.css'
@@ -24,6 +25,8 @@ export default function Layout({children}) {
       </a>
     </header>
     
+    <ContentList />
+
     <main>
       {children}
     </main>

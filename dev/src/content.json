@@ -42,5 +42,10 @@
       }
     }
   },
-  "theology": {}
+  "theology": {
+    "orthopraxy": {
+      "path": "public/content/theology/orthopraxy.md",
+      "url": "/content/theology/orthopraxy"
+    }
+  }
 }

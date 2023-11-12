@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import Layout from './Layout'
 import MarkdownRenderer from './Markdowner' 
-import ContentList from './Content/ContentList'
 
 import './style/App.css'
 
@@ -20,15 +19,6 @@ function App() {
   
 
   return <Layout>
-    
-    {thingy? 
-      <></>
-    :
-      <h1>Select a Topic Below</h1>
-    }
-
-    <ContentList />
-
     <div>
       <MarkdownRenderer markdownFile={thingy} />
     </div>
