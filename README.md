@@ -1,2 +1,4 @@
 # fingerskier.github.io
-fingerskier blog
+
+[fingerskier blog](fingerskier.github.io)
+
