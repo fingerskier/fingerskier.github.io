@@ -1,12 +1,7 @@
 header {
   width: 100%;
-  
-  background-size: cover; /* Cover the entire header area */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat;
-  
-  padding: 2rem;
-  height: 5rem;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -16,7 +11,10 @@ header a {
 }
 
 header h1 {
+  margin: 0;
+  padding: 0;
   text-shadow: 4px 4px 3px rgba(0, 0, 0, 1),
     4px 4px 3px rgba(0, 0, 0, 0.67);
   font-size: 3rem;
+  text-align: right;
 }

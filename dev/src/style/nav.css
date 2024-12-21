@@ -1,0 +1,25 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+  padding: 10px;
+  z-index: 1000; /* Ensures it stays on top */
+  border: thick outset #000;
+  border-radius: 0 0 1rem 0;
+}
+
+nav ul {
+  list-style-position: inside; /* Moves dots to the right-side */
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Align text to the right */
+}
+
+nav ul ul {
+  padding-left: 20px; /* Indents nested lists */
+}
+
+nav ul li {
+  list-style-type: none;
+}

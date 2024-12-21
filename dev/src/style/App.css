@@ -22,6 +22,7 @@ body {
   background-origin: border-box;
   background-attachment: fixed;
   backdrop-filter: blur(5px) brightness(20%);
+  overflow: hidden;
 }
 
 #root {

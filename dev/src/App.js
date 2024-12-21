@@ -4,12 +4,15 @@ import MarkdownRenderer from './Markdowner'
 
 import backgroundImage from './img/background.webp'
 import './style/App.css'
+import './style/nav.css'
 
 
 function App() {
   const [thingy, setThingy] = useState()
+  
   // Assuming your Markdown file is at 'public/content.md'
-  const markdownFileUrl = process.env.PUBLIC_URL + '/content/index.md'
+  // const markdownFileUrl = process.env.PUBLIC_URL + '/content/index.md'
+  
   
   useEffect(() => {
     window.addEventListener('hashchange', event=>{
@@ -21,12 +24,11 @@ function App() {
     
   }, [])
   
-
+  
   return <Layout>
     <div>
       <MarkdownRenderer markdownFile={thingy} />
     </div>
-    <img src={backgroundImage} alt="background" style={{display: 'none'}} />
   </Layout>
 }
 
