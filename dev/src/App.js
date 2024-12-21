@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Layout from './Layout'
 import MarkdownRenderer from './Markdowner' 
 
+import backgroundImage from './img/background.webp'
 import './style/App.css'
 
 
@@ -15,6 +16,9 @@ function App() {
       setThingy(window.location.hash.substring(2))
       console.log(window.location.hash.substring(2))
     })
+    
+    document.body.style.backgroundImage = `url(${backgroundImage})`
+    
   }, [])
   
 
@@ -22,6 +26,7 @@ function App() {
     <div>
       <MarkdownRenderer markdownFile={thingy} />
     </div>
+    <img src={backgroundImage} alt="background" style={{display: 'none'}} />
   </Layout>
 }
 

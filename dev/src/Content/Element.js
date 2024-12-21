@@ -14,7 +14,7 @@ export default function Element({content}) {
   
   function DirectoryElement({id, key, value}) {
     const [visible, setVisible] = useState(false)
-  
+    
     const handleClick = event=>{
       setVisible(!visible)
     }
@@ -35,8 +35,8 @@ export default function Element({content}) {
       </li>
     )
   }
-
-
+  
+  
   return Object.entries(content).map(([key, value]) => {
     if (value.path && value.url) {
       // It's a file

@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-
+  font-size: 24px;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -11,6 +11,17 @@ body {
   display: block;
   /* Additional styling to ensure full screen coverage */
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px) brightness(20%);
 }
 
 #root {
@@ -19,7 +30,6 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: #08112C;
   color: aliceblue;
   
   display: flex;

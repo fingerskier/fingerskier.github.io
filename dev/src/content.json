@@ -46,6 +46,10 @@
     "orthopraxy": {
       "path": "public/content/theology/orthopraxy.md",
       "url": "/content/theology/orthopraxy"
+    },
+    "proof_texting": {
+      "path": "public/content/theology/proof_texting.md",
+      "url": "/content/theology/proof_texting"
     }
   }
 }
