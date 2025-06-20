@@ -1,0 +1,29 @@
+.resume-game {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.sections-container {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+}
+
+.section {
+  flex: 0 0 100vw;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.controls {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
