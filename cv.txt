@@ -1,0 +1,9 @@
+Name: Sample Candidate
+Title: Software Developer
+
+Experience:
+- Example Corp, Developer (2020-2022)
+- Another Inc, Engineer (2018-2020)
+
+Education:
+- B.Sc. Computer Science, Example University (2014-2018)

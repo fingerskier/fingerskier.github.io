@@ -1,0 +1,14 @@
+body {
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+#score {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.step {
+  font-size: 2em;
+  text-align: center;
+}
