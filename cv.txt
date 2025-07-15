@@ -1,0 +1,101 @@
+Matthew Currier
+https://github.com/fingerskier
+
+SKILLS SUMMARY
+  I've been using computers since I first watched my dad solder together a Zenith H89 CP/M machine when I was 4 years old.
+  Wumpus was the catch of the day when we first powered it up.
+  My first programming experience was a multi-plan spreadsheet.
+  After that I graduated to BASIC, then C and Pascal and onward...
+
+  Since I've worked on personal, commercial, and industrial systems from electronics, firmware, software, databased, and cloud services.
+  I was on oilfield directional drilling service hand off & on for 10 years.
+  I write (and read) music, books and code.
+  Father of 5- husband of 1.
+  My true passion is to create and help others do what they were made to do.
+
+QUALIFICATIONS
+  Linux Windows Engineering	
+  HTML CSS JS TS Coldfusion	Pascal C Java
+  Infrastructure Linguistics Data-Wrangling 
+  Webdev MySQL Postgres SQL-Server
+  Directional-Drilling MWD/LWD API/DNV	
+  MS-Office VBA.NET	
+  PLC/HMI	Industrial Automation GD&T IEC-61131-3	
+
+ 
+PROFESSIONAL EXPERIENCE
+Engineering  2017+ Houston, TX
+•	Responsible for developing hardware and software for automating OsteoStrong skeletal therapy machines.
+o	Created the database schema and systems for world-wide, distributed controls of OsteoStrong systems.
+o	6 patent applications for technology, 2 issued / 4 pending.
+o	Developed a self-service kiosk, full-stack of hardware and software, for OsteoStrong member performance assessments.
+•	Responsible for implementing manufacturing processes and procedures to produce aforementioned products.
+o	Responsible for logistics processes and procedures in delivering products to customers. 
+o	Responsible for QAC testing and validation of products.
+o	Instrumental in developing customer support system pertaining to this hardware and software
+o Responsible for training support technicians.
+o Handled day-to-day IT operations and cloud infrastructure.
+
+Controls/Software Engineer	2014+	Houston, TX
+Aker Solutions (became MHWirth (sold to MPO (sold to AFGlobal))); then Premier Coil Solutions
+•	Responsible for developing advanced PLC automated control systems and standards.
+o	Created automation controller function libraries for command-request processing, task queuing, sequencing, limit and tolerance evaluation and deviation, I/O processing, and myriad low-level functionality.
+o	Created Hardware-in-Loop machine simulators for testing automation controller logic in a test setting.  This included Siemens, Wago, and PC libraries and interactive simulations.
+o	Assisted in creating PLC-based mux system for subsea distributed control systems.  This includes functionality for direct-hydraulic, remote hydraulic, and mechanical systems.
+•	Responsible for developing and implementing software design specifications.
+o	Worked closely with different engineering disciplines to determine functional design specifications and create definition documentation.
+o	Implemented controller logic, networking topology and scheme, and HMI framework.
+o	Worked on a control system for robotic drilling rig machinery for MHWirth and automated drilling safety manifold system for Managed Pressure Operations.
+o	Designed SCADA software for controlling and logging operational systems on land and off-shore drilling rigs;  including specifying instruments, historical trending, and minimalist controls.
+
+Web Developer	2009+ 6yrs.	Paragon Web Solutions
+•	Generally responsible for designing and implementing database schemas, domain-specific data formats and transfer specs, user-interface templating, and feedback logging and modeling.  This included working with clients to codify requirements and report on satisfaction of the same.
+•	Implemented a charter school web application for tracking learning plans, family information, public website, hourly logging, calendar, expense tracking, grading, and transcripts.
+o	This involved daily interaction with multiple subject matter experts to guarantee regulatory compliance, complete evaluations, and proper reporting.
+o	Their system also generated multiple reports for administrators, families, and facilitators.
+o	A document management system was integral to the system for verification of most records – to include scanned documents and electronic signing.
+•	Assisted in architecting a document control system for a network of hospitals (Sisters of Charity of Leavenworth).
+o	Helped to develop the database schema and file-system to facilitate change tracking and document storage.
+o	Helped to define and implement the user interface to upload, download, and facilitate revisions of documents.
+
+
+Directional Drilling	2005+ 8yrs.	Scientific Drilling
+•	MWD electronics assembly and configuration.  This included survey measurement and logging tools with drilling fluid and EM media transmission.
+•	Drilling and directional drilling utility software for reporting, well position, anti-collision, drilling fluid, and logging data.
+•	Responsible for planning and on-site, hands-on supervision of Shell ERDD HLT project.
+o	The second project involved drilling a 60 degree slant-well and three close pass-by horizontal wells to test oil-shale recovery methods.  The drilling targets were achieved despite several setbacks in drilling fluid composition, rheological considerations, and prototype drilling techniques.
+o	The first project involved drilling 22 wells from a rectangular surface pattern to a sub-surface ring to test synthetic kerogen geomorphology.
+•	Responsible for Anadarko gas-well surface program in Uintah Basin
+o	This project involved drilling surface holes for gas wells on Anadarko tribal leases preceding production drilling rigs.
+o	Surface wells ranged from <1 to >40 degree inclinations with high anti-collision risks and complex well paths.
+o	We met a tight drilling schedule while adhering to performance and safety metrics.
+•	Member of the Barrick Exploration mine-shaft freeze wall project; Elko, NV
+o	This project involved two drilling rigs in close proximity making 36 wells in a ring which would be frozen and cemented to create a natural barrier wall in which a mine-shaft would be excavated.
+o	This rheology was extremely challenging and was exacerbated by the tight tolerances (2’ spacing between wells); we also overcame many technological and client relational issues.
+•	Led and organized teams and drilling packages
+o	Teams were 2-4 persons with variant schedules and capabilities.  It was necessary to integrate skillsets appropriately and manage manpower as well as logistics.
+o	Had to select and manage custom tools designed for each job: MWD/LWD survey and logging tools, rotary steerable systems, bent motors, drilling bits, and non-magnetic drill collar arrangement.
+o	Consulted regularly on best practices for drilling parameters and drilling fluids.
+o	Often required to build custom, no-notice reports for well engineers and on-site managers to aide in their reporting and understanding of the operations.
+
+
+Nabors Drilling	2004+ 1yrs.	Rocky Mountains, USA
+•	I worked as a rig-hand for NDUSA on rig #909 drilling natural gas directional wells in the Piceance Basin throughout western Colorado.
+o	Performed manual labor to include rig floor equipment such as pipe-tongs and slips.
+o	Partially responsible for maintaining drilling fluid properties by periodically adding chemicals deemed necessary by a supervisor.
+o	Responsible for general maintenance and operation of the rig’s mechanical, hydraulic, and pneumatic systems.
+
+ACS Online	1998+ 3yrs.	Grand Junction, CO
+•	Responsible for creating necessary Medical Manager scripts for clients.
+o	To include determining requirements for the software.
+o	Also, working with other staff to acquire and install hardware and software solutions cohesively.
+•	Responsible for refactoring several state reporting templates for pediatrics clinics.
+•	Assisted in architecting and building medical office computer record systems.  This included specifying PC and server systems and networking gear.
+•	Provided technical support for customers’ hardware and software: both over-the-phone and on-site.
+
+EDUCATION
+University of Phoenix
+	Master of Science: Information Systems, 2003 - 2005
+
+Mesa State College
+	Bachelor of Science: Computer Science, 1995 – 2003
