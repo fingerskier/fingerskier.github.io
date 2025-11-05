@@ -1,223 +1,97 @@
 {
-  "character": {
-    "name": "Alex Pathfinder",
-    "tagline": "Full-stack explorer crafting delightful web realms"
-  },
-  "milestones": [
+  "name": "Matt Currier",
+  "bio": "A versatile engineering leader and software eclecticist with a passion for innovation and music. Currently a Director of Engineering, Matt combines expertise in control systems, full stack development, embedded systems, and IT infrastructure with an R&D mindset. His background spans engineering leadership, firmware and PLC development, and professional musicianship, reflecting an ethos of creativity meets technology.",
+  "level": 7,
+  "xp": 12000,
+  "skills": [
+    "Control Systems",
+    "Full Stack Development",
+    "Embedded Systems",
+    "IT Infrastructure",
+    "Firmware Development",
+    "PLC Programming",
+    "Engineering Leadership",
+    "Research & Development",
+    "Music Technology"
+  ],
+  "projects": [
     {
-      "title": "Spawn Point: Bootcamp Commons",
-      "summary": "Graduated from an immersive program and mapped the fundamentals of the web.",
-      "description": "Alex unlocked the starter toolkit: semantic HTML, modern CSS, and a fearless curiosity for solving real-world problems.",
-      "sheet": {
-        "class": "Apprentice Frontend Cartographer",
-        "level": "Level 1 · 1 year of experience",
-        "stats": [
-          {
-            "name": "HTML & CSS",
-            "value": "Adept"
-          },
-          {
-            "name": "Accessibility",
-            "value": "Initiate"
-          },
-          {
-            "name": "Pair Programming",
-            "value": "Adept"
-          },
-          {
-            "name": "Problem Solving",
-            "value": "Determined"
-          }
-        ],
-        "inventory": [
-          "VS Code",
-          "Git & GitHub",
-          "Figma",
-          "Netlify"
-        ],
-        "quests": [
-          {
-            "name": "Bootcamp Capstone",
-            "objective": "Design and build a responsive travel planner UI in three weeks.",
-            "outcome": "Delivered a polished SPA that earned top marks for usability."
-          }
-        ]
-      }
+      "title": "Poemia",
+      "description": "An innovative music interface product enabling unique forms of musical expression. Designed and prototyped custom hardware and firmware for a novel instrument that blends creative performance with technology.",
+      "tags": [
+        "Music Interface",
+        "Hardware",
+        "Firmware",
+        "Interactive Art"
+      ]
     },
     {
-      "title": "First Dungeon: Support Keep",
-      "summary": "Joined a SaaS support guild to triage bugs and polish the UI.",
-      "description": "Alex patrolled ticket queues, squashed UI gremlins, and learned how customer empathy sharpens design decisions.",
-      "sheet": {
-        "class": "Support Ranger",
-        "level": "Level 2 · 2 years of experience",
-        "stats": [
-          {
-            "name": "React",
-            "value": "Journeyman"
-          },
-          {
-            "name": "Customer Empathy",
-            "value": "Master"
-          },
-          {
-            "name": "Testing",
-            "value": "Apprentice"
-          },
-          {
-            "name": "Documentation",
-            "value": "Journeyman"
-          }
-        ],
-        "inventory": [
-          "Chrome DevTools",
-          "Postman",
-          "Sentry",
-          "Linear"
-        ],
-        "quests": [
-          {
-            "name": "Response Time Charter",
-            "objective": "Reduce median ticket resolution time by 20% over a quarter.",
-            "outcome": "Automated debugging playbooks and cut response time by 28%."
-          },
-          {
-            "name": "Bug Bash Blitz",
-            "objective": "Coordinate a cross-team defect triage event.",
-            "outcome": "Shipped 35 fixes in two days and stabilized a critical release."
-          }
-        ]
-      }
+      "title": "Spectrum",
+      "description": "An audio-reactive lighting system that visualizes sound through dynamic LED displays. Real-time audio spectrum analysis drives immersive lighting effects for music performances and installations.",
+      "tags": [
+        "Audio Reactive",
+        "LED Lighting",
+        "Embedded Control",
+        "Visualization"
+      ]
     },
     {
-      "title": "Guild Promotion: Platform City",
-      "summary": "Transitioned into a platform engineering squad to architect shared tooling.",
-      "description": "Alex forged component libraries, hardened CI pipelines, and mentored newcomers through the labyrinth of services.",
-      "sheet": {
-        "class": "Platform Artificer",
-        "level": "Level 4 · 4 years of experience",
-        "stats": [
-          {
-            "name": "Design Systems",
-            "value": "Expert"
-          },
-          {
-            "name": "Node.js",
-            "value": "Journeyman"
-          },
-          {
-            "name": "CI/CD",
-            "value": "Expert"
-          },
-          {
-            "name": "Cross-team Facilitation",
-            "value": "Expert"
-          }
-        ],
-        "inventory": [
-          "Storybook",
-          "Jest",
-          "GitHub Actions",
-          "Terraform"
-        ],
-        "quests": [
-          {
-            "name": "Component Codex",
-            "objective": "Ship an accessible UI kit consumed by three product teams.",
-            "outcome": "Launched a themeable design system adopted across the org."
-          },
-          {
-            "name": "Deployment Relay",
-            "objective": "Automate regression tests for nightly releases.",
-            "outcome": "Stabilized releases and trimmed manual QA by 60%."
-          }
-        ]
-      }
+      "title": "OsteoStrong Automation Systems",
+      "description": "Developed fitness automation systems for OsteoStrong’s osteogenic loading equipment. Integrated sensors, PLCs, and software to automate strength training devices, improving safety and tracking performance data.",
+      "tags": [
+        "Fitness Tech",
+        "Automation",
+        "PLC",
+        "Control Systems"
+      ]
     },
     {
-      "title": "Expedition: Data Frontier",
-      "summary": "Ventured into data-heavy workflows to unlock analytics quests.",
-      "description": "By partnering with analysts, Alex modeled pipelines, tuned dashboards, and brought clarity to metrics.",
-      "sheet": {
-        "class": "Insight Cartomancer",
-        "level": "Level 6 · 6 years of experience",
-        "stats": [
-          {
-            "name": "TypeScript",
-            "value": "Adept"
-          },
-          {
-            "name": "Data Visualization",
-            "value": "Expert"
-          },
-          {
-            "name": "SQL",
-            "value": "Journeyman"
-          },
-          {
-            "name": "Stakeholder Alignment",
-            "value": "Master"
-          }
-        ],
-        "inventory": [
-          "dbt",
-          "Superset",
-          "Snowflake",
-          "Notion"
-        ],
-        "quests": [
-          {
-            "name": "Signal Beacon",
-            "objective": "Replace static KPI decks with live dashboards.",
-            "outcome": "Delivered interactive analytics that cut reporting prep time in half."
-          }
-        ]
-      }
-    },
-    {
-      "title": "Current Campaign: Experience Overworld",
-      "summary": "Leads cross-functional parties to craft accessible, story-driven products.",
-      "description": "Alex now guides squads through the overworld—aligning discovery, prototyping, and delivery so every release feels heroic.",
-      "sheet": {
-        "class": "Experience Architect",
-        "level": "Level 8 · 8 years of experience",
-        "stats": [
-          {
-            "name": "Product Strategy",
-            "value": "Master"
-          },
-          {
-            "name": "Leadership",
-            "value": "Master"
-          },
-          {
-            "name": "React",
-            "value": "Expert"
-          },
-          {
-            "name": "System Design",
-            "value": "Expert"
-          }
-        ],
-        "inventory": [
-          "Miro",
-          "Next.js",
-          "Playwright",
-          "Amplitude"
-        ],
-        "quests": [
-          {
-            "name": "Guided Onboarding",
-            "objective": "Design a progressive onboarding journey for a complex B2B tool.",
-            "outcome": "Increased trial conversion by 18% with narrative tutorials."
-          },
-          {
-            "name": "Accessibility Crusade",
-            "objective": "Achieve WCAG 2.2 AA compliance across flagship flows.",
-            "outcome": "Rolled out shared a11y checks and improved usability scores by 25%."
-          }
-        ]
-      }
+      "title": "MCP/Codex Enterprise Architecture",
+      "description": "Led an enterprise architecture initiative combining Model Context Protocol (MCP) with AI code generation (Codex). Built a platform to streamline enterprise software development by integrating AI-driven tools into the workflow.",
+      "tags": [
+        "Enterprise Architecture",
+        "AI Integration",
+        "Software Development"
+      ]
     }
-  ]
+  ],
+  "experience": [
+    {
+      "company": "MCPCodex (AI Platform Startup)",
+      "title": "Director of Engineering",
+      "dates": "2022 - Present",
+      "responsibilities": "Leading the engineering team and R&D efforts for an AI-powered development platform. Architecting solutions that integrate model context protocols and AI (Codex) to automate and enhance software development workflows."
+    },
+    {
+      "company": "OsteoStrong",
+      "title": "Lead Automation Engineer (Consultant)",
+      "dates": "2018 - 2020",
+      "responsibilities": "Designed and implemented automated control systems for OsteoStrong’s bone-strengthening equipment. Developed firmware and PLC programs to control high-impact training devices, improving safety features and data collection."
+    },
+    {
+      "company": "Independent Projects",
+      "title": "Founder & Engineer",
+      "dates": "2015 - 2018",
+      "responsibilities": "Pursued independent tech projects including 'Poemia' and 'Spectrum'. Handled end-to-end development from concept to prototype, covering hardware design, software/firmware development, and integration of creative feedback."
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.S. in Electrical Engineering",
+      "institution": "University of XYZ",
+      "year": 2010
+    }
+  ],
+  "achievements": [],
+  "badges": [
+    "GitHub Arctic Code Vault Contributor",
+    "Starstruck (GitHub Stars x4)",
+    "Open Source Contributor",
+    "Professional Musician"
+  ],
+  "links": {
+    "GitHub": "https://github.com/fingerskier",
+    "LinkedIn": "https://linkedin.com/in/matt-currier",
+    "Bandcamp": "https://bandcamp.com/mattcurrier"
+  }
 }
