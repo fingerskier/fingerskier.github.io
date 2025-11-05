@@ -2,7 +2,6 @@ fetch('../cv.json')
   .then(r => r.json())
   .then(data => {
     const impressEl = document.getElementById('impress');
-    let index = 0;
 
     const addStep = (content, x, y) => {
       const div = document.createElement('div');
@@ -13,18 +12,58 @@ fetch('../cv.json')
       impressEl.appendChild(div);
     };
 
-    addStep(`<h1>${data.name}</h1><p>${data.title}</p>`, 0, 0);
+    const character = data.character || {};
+    addStep(
+      `
+        <h1>${character.name || 'Adventurer'}</h1>
+        ${character.tagline ? `<p>${character.tagline}</p>` : ''}
+      `,
+      0,
+      0
+    );
 
-    if (Array.isArray(data.experience)) {
-      data.experience.forEach((exp, i) => {
-        addStep(`<h2>Experience</h2><p>${exp}</p>`, (i+1)*1000, 0);
-      });
-      index += data.experience.length;
-    }
+    if (Array.isArray(data.milestones)) {
+      data.milestones.forEach((milestone, index) => {
+        const baseX = (index + 1) * 1200;
+        const sheet = milestone.sheet || {};
 
-    if (Array.isArray(data.education)) {
-      data.education.forEach((edu, i) => {
-        addStep(`<h2>Education</h2><p>${edu}</p>`, (i+1)*1000, 1000);
+        const statsList = Array.isArray(sheet.stats)
+          ? `<ul class="sheet-list">${sheet.stats
+              .map(stat => `<li><strong>${stat.name}</strong>: ${stat.value}</li>`)
+              .join('')}</ul>`
+          : '';
+
+        const inventoryList = Array.isArray(sheet.inventory)
+          ? `<ul class="sheet-list">${sheet.inventory
+              .map(item => `<li>${item}</li>`)
+              .join('')}</ul>`
+          : '';
+
+        const questsList = Array.isArray(sheet.quests)
+          ? `<ul class="sheet-list quests">${sheet.quests
+              .map(quest => `
+                <li>
+                  <strong>${quest.name}</strong>
+                  ${quest.objective ? `<div>Objective: ${quest.objective}</div>` : ''}
+                  ${quest.outcome ? `<div>Outcome: ${quest.outcome}</div>` : ''}
+                </li>
+              `)
+              .join('')}</ul>`
+          : '';
+
+        addStep(
+          `
+            <h2>${milestone.title || `Stage ${index + 1}`}</h2>
+            ${milestone.summary ? `<p class="summary">${milestone.summary}</p>` : ''}
+            ${milestone.description ? `<p>${milestone.description}</p>` : ''}
+            ${sheet.class || sheet.level ? `<p class="sheet-meta">${[sheet.class, sheet.level].filter(Boolean).join(' · ')}</p>` : ''}
+            ${statsList ? `<h3>Stats</h3>${statsList}` : ''}
+            ${inventoryList ? `<h3>Inventory</h3>${inventoryList}` : ''}
+            ${questsList ? `<h3>Quests</h3>${questsList}` : ''}
+          `,
+          baseX,
+          0
+        );
       });
     }
 

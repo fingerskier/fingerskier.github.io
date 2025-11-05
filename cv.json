@@ -12,10 +12,22 @@
         "class": "Apprentice Frontend Cartographer",
         "level": "Level 1 · 1 year of experience",
         "stats": [
-          { "name": "HTML & CSS", "value": "Adept" },
-          { "name": "Accessibility", "value": "Initiate" },
-          { "name": "Pair Programming", "value": "Adept" },
-          { "name": "Problem Solving", "value": "Determined" }
+          {
+            "name": "HTML & CSS",
+            "value": "Adept"
+          },
+          {
+            "name": "Accessibility",
+            "value": "Initiate"
+          },
+          {
+            "name": "Pair Programming",
+            "value": "Adept"
+          },
+          {
+            "name": "Problem Solving",
+            "value": "Determined"
+          }
         ],
         "inventory": [
           "VS Code",
@@ -40,10 +52,22 @@
         "class": "Support Ranger",
         "level": "Level 2 · 2 years of experience",
         "stats": [
-          { "name": "React", "value": "Journeyman" },
-          { "name": "Customer Empathy", "value": "Master" },
-          { "name": "Testing", "value": "Apprentice" },
-          { "name": "Documentation", "value": "Journeyman" }
+          {
+            "name": "React",
+            "value": "Journeyman"
+          },
+          {
+            "name": "Customer Empathy",
+            "value": "Master"
+          },
+          {
+            "name": "Testing",
+            "value": "Apprentice"
+          },
+          {
+            "name": "Documentation",
+            "value": "Journeyman"
+          }
         ],
         "inventory": [
           "Chrome DevTools",
@@ -73,10 +97,22 @@
         "class": "Platform Artificer",
         "level": "Level 4 · 4 years of experience",
         "stats": [
-          { "name": "Design Systems", "value": "Expert" },
-          { "name": "Node.js", "value": "Journeyman" },
-          { "name": "CI/CD", "value": "Expert" },
-          { "name": "Cross-team Facilitation", "value": "Expert" }
+          {
+            "name": "Design Systems",
+            "value": "Expert"
+          },
+          {
+            "name": "Node.js",
+            "value": "Journeyman"
+          },
+          {
+            "name": "CI/CD",
+            "value": "Expert"
+          },
+          {
+            "name": "Cross-team Facilitation",
+            "value": "Expert"
+          }
         ],
         "inventory": [
           "Storybook",
@@ -106,10 +142,22 @@
         "class": "Insight Cartomancer",
         "level": "Level 6 · 6 years of experience",
         "stats": [
-          { "name": "TypeScript", "value": "Adept" },
-          { "name": "Data Visualization", "value": "Expert" },
-          { "name": "SQL", "value": "Journeyman" },
-          { "name": "Stakeholder Alignment", "value": "Master" }
+          {
+            "name": "TypeScript",
+            "value": "Adept"
+          },
+          {
+            "name": "Data Visualization",
+            "value": "Expert"
+          },
+          {
+            "name": "SQL",
+            "value": "Journeyman"
+          },
+          {
+            "name": "Stakeholder Alignment",
+            "value": "Master"
+          }
         ],
         "inventory": [
           "dbt",
@@ -134,10 +182,22 @@
         "class": "Experience Architect",
         "level": "Level 8 · 8 years of experience",
         "stats": [
-          { "name": "Product Strategy", "value": "Master" },
-          { "name": "Leadership", "value": "Master" },
-          { "name": "React", "value": "Expert" },
-          { "name": "System Design", "value": "Expert" }
+          {
+            "name": "Product Strategy",
+            "value": "Master"
+          },
+          {
+            "name": "Leadership",
+            "value": "Master"
+          },
+          {
+            "name": "React",
+            "value": "Expert"
+          },
+          {
+            "name": "System Design",
+            "value": "Expert"
+          }
         ],
         "inventory": [
           "Miro",
