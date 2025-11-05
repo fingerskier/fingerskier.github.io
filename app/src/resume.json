@@ -1,1 +1,163 @@
-{"sections": [{"title": "About", "content": "Your details here"}]}
+{
+  "character": {
+    "name": "Alex Pathfinder",
+    "tagline": "Full-stack explorer crafting delightful web realms"
+  },
+  "milestones": [
+    {
+      "title": "Spawn Point: Bootcamp Commons",
+      "summary": "Graduated from an immersive program and mapped the fundamentals of the web.",
+      "description": "Alex unlocked the starter toolkit: semantic HTML, modern CSS, and a fearless curiosity for solving real-world problems.",
+      "sheet": {
+        "class": "Apprentice Frontend Cartographer",
+        "level": "Level 1 · 1 year of experience",
+        "stats": [
+          { "name": "HTML & CSS", "value": "Adept" },
+          { "name": "Accessibility", "value": "Initiate" },
+          { "name": "Pair Programming", "value": "Adept" },
+          { "name": "Problem Solving", "value": "Determined" }
+        ],
+        "inventory": [
+          "VS Code",
+          "Git & GitHub",
+          "Figma",
+          "Netlify"
+        ],
+        "quests": [
+          {
+            "name": "Bootcamp Capstone",
+            "objective": "Design and build a responsive travel planner UI in three weeks.",
+            "outcome": "Delivered a polished SPA that earned top marks for usability."
+          }
+        ]
+      }
+    },
+    {
+      "title": "First Dungeon: Support Keep",
+      "summary": "Joined a SaaS support guild to triage bugs and polish the UI.",
+      "description": "Alex patrolled ticket queues, squashed UI gremlins, and learned how customer empathy sharpens design decisions.",
+      "sheet": {
+        "class": "Support Ranger",
+        "level": "Level 2 · 2 years of experience",
+        "stats": [
+          { "name": "React", "value": "Journeyman" },
+          { "name": "Customer Empathy", "value": "Master" },
+          { "name": "Testing", "value": "Apprentice" },
+          { "name": "Documentation", "value": "Journeyman" }
+        ],
+        "inventory": [
+          "Chrome DevTools",
+          "Postman",
+          "Sentry",
+          "Linear"
+        ],
+        "quests": [
+          {
+            "name": "Response Time Charter",
+            "objective": "Reduce median ticket resolution time by 20% over a quarter.",
+            "outcome": "Automated debugging playbooks and cut response time by 28%."
+          },
+          {
+            "name": "Bug Bash Blitz",
+            "objective": "Coordinate a cross-team defect triage event.",
+            "outcome": "Shipped 35 fixes in two days and stabilized a critical release."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Guild Promotion: Platform City",
+      "summary": "Transitioned into a platform engineering squad to architect shared tooling.",
+      "description": "Alex forged component libraries, hardened CI pipelines, and mentored newcomers through the labyrinth of services.",
+      "sheet": {
+        "class": "Platform Artificer",
+        "level": "Level 4 · 4 years of experience",
+        "stats": [
+          { "name": "Design Systems", "value": "Expert" },
+          { "name": "Node.js", "value": "Journeyman" },
+          { "name": "CI/CD", "value": "Expert" },
+          { "name": "Cross-team Facilitation", "value": "Expert" }
+        ],
+        "inventory": [
+          "Storybook",
+          "Jest",
+          "GitHub Actions",
+          "Terraform"
+        ],
+        "quests": [
+          {
+            "name": "Component Codex",
+            "objective": "Ship an accessible UI kit consumed by three product teams.",
+            "outcome": "Launched a themeable design system adopted across the org."
+          },
+          {
+            "name": "Deployment Relay",
+            "objective": "Automate regression tests for nightly releases.",
+            "outcome": "Stabilized releases and trimmed manual QA by 60%."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Expedition: Data Frontier",
+      "summary": "Ventured into data-heavy workflows to unlock analytics quests.",
+      "description": "By partnering with analysts, Alex modeled pipelines, tuned dashboards, and brought clarity to metrics.",
+      "sheet": {
+        "class": "Insight Cartomancer",
+        "level": "Level 6 · 6 years of experience",
+        "stats": [
+          { "name": "TypeScript", "value": "Adept" },
+          { "name": "Data Visualization", "value": "Expert" },
+          { "name": "SQL", "value": "Journeyman" },
+          { "name": "Stakeholder Alignment", "value": "Master" }
+        ],
+        "inventory": [
+          "dbt",
+          "Superset",
+          "Snowflake",
+          "Notion"
+        ],
+        "quests": [
+          {
+            "name": "Signal Beacon",
+            "objective": "Replace static KPI decks with live dashboards.",
+            "outcome": "Delivered interactive analytics that cut reporting prep time in half."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Current Campaign: Experience Overworld",
+      "summary": "Leads cross-functional parties to craft accessible, story-driven products.",
+      "description": "Alex now guides squads through the overworld—aligning discovery, prototyping, and delivery so every release feels heroic.",
+      "sheet": {
+        "class": "Experience Architect",
+        "level": "Level 8 · 8 years of experience",
+        "stats": [
+          { "name": "Product Strategy", "value": "Master" },
+          { "name": "Leadership", "value": "Master" },
+          { "name": "React", "value": "Expert" },
+          { "name": "System Design", "value": "Expert" }
+        ],
+        "inventory": [
+          "Miro",
+          "Next.js",
+          "Playwright",
+          "Amplitude"
+        ],
+        "quests": [
+          {
+            "name": "Guided Onboarding",
+            "objective": "Design a progressive onboarding journey for a complex B2B tool.",
+            "outcome": "Increased trial conversion by 18% with narrative tutorials."
+          },
+          {
+            "name": "Accessibility Crusade",
+            "objective": "Achieve WCAG 2.2 AA compliance across flagship flows.",
+            "outcome": "Rolled out shared a11y checks and improved usability scores by 25%."
+          }
+        ]
+      }
+    }
+  ]
+}

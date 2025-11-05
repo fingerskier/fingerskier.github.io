@@ -1,8 +1,6 @@
 import ResumeGame from './ResumeGame'
 import './App.css'
 
-function App() {
+export default function App() {
   return <ResumeGame />
 }
-
-export default App
