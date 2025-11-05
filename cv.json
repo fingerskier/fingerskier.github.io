@@ -1,6 +1,6 @@
 {
   "name": "Matt Currier",
-  "bio": "A versatile engineering leader and software eclecticist with a passion for innovation and music. Currently a Director of Engineering, Matt combines expertise in control systems, full stack development, embedded systems, and IT infrastructure with an R&D mindset. His background spans engineering leadership, firmware and PLC development, and professional musicianship, reflecting an ethos of creativity meets technology.",
+  "bio": "A versatile engineering leader and eclecticist with a passion for innovation.  Currently a Director of Engineering, Matt combines expertise in control systems, full stack development, embedded systems, and IT infrastructure with an R&D mindset.  His background spans engineering leadership, hardware, firmware and software development, and professional musicianship, reflecting an ethos of creativity meets technology.",
   "level": 7,
   "xp": 12000,
   "skills": [
@@ -17,17 +17,16 @@
   "projects": [
     {
       "title": "Poemia",
-      "description": "An innovative music interface product enabling unique forms of musical expression. Designed and prototyped custom hardware and firmware for a novel instrument that blends creative performance with technology.",
+      "description": "An innovative AI ghostwriting product enabling unique forms of story-telling.",
       "tags": [
-        "Music Interface",
-        "Hardware",
-        "Firmware",
+        "Writing Interface",
+        "Software",
         "Interactive Art"
       ]
     },
     {
       "title": "Spectrum",
-      "description": "An audio-reactive lighting system that visualizes sound through dynamic LED displays. Real-time audio spectrum analysis drives immersive lighting effects for music performances and installations.",
+      "description": "An interactiv, reactive osteogenic system that visualizes force production.",
       "tags": [
         "Audio Reactive",
         "LED Lighting",
@@ -37,7 +36,7 @@
     },
     {
       "title": "OsteoStrong Automation Systems",
-      "description": "Developed fitness automation systems for OsteoStrong’s osteogenic loading equipment. Integrated sensors, PLCs, and software to automate strength training devices, improving safety and tracking performance data.",
+      "description": "Developed health automation systems for OsteoStrong’s osteogenic loading equipment. Integrated sensors, PLCs, and software to automate strength training devices, improving safety and tracking performance data.",
       "tags": [
         "Fitness Tech",
         "Automation",
@@ -65,7 +64,7 @@
     {
       "company": "OsteoStrong",
       "title": "Lead Automation Engineer (Consultant)",
-      "dates": "2018 - 2020",
+      "dates": "2017 - 2020",
       "responsibilities": "Designed and implemented automated control systems for OsteoStrong’s bone-strengthening equipment. Developed firmware and PLC programs to control high-impact training devices, improving safety features and data collection."
     },
     {
@@ -77,20 +76,25 @@
   ],
   "education": [
     {
-      "degree": "B.S. in Electrical Engineering",
-      "institution": "University of XYZ",
-      "year": 2010
-    }
+      "degree": "B.S. in Computer Science",
+      "institution": "Mesa State College",
+      "year": 2003
+    },
+    {
+      "degree": "M.S. Computer Information Systems",
+      "institution": "University of Phoenix",
+      "year": 2005
   ],
   "achievements": [],
   "badges": [
     "GitHub Arctic Code Vault Contributor",
     "Starstruck (GitHub Stars x4)",
     "Open Source Contributor",
-    "Professional Musician"
+    "Professional Musician",
+    "Siemens PLC Programming"
   ],
   "links": {
-    "GitHub": "https://github.com/fingerskier",
+    "Gpresenttps://github.com/fingerskier",
     "LinkedIn": "https://linkedin.com/in/matt-currier",
     "Bandcamp": "https://bandcamp.com/mattcurrier"
   }
