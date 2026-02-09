@@ -7,37 +7,45 @@ SKILLS SUMMARY
   My first programming experience was a multi-plan spreadsheet.
   After that I graduated to BASIC, then C and Pascal and onward...
 
-  Since I've worked on personal, commercial, and industrial systems from electronics, firmware, software, databased, and cloud services.
-  I was on oilfield directional drilling service hand off & on for 10 years.
+  Since then I've worked on personal, commercial, and industrial systems from electronics, firmware, software, databases, and cloud services.
+  I was an oilfield directional drilling service hand for nearly 10 years.
   I write (and read) music, books and code.
-  Father of 5- husband of 1.
+  Father of 5 — husband of 1.
   My true passion is to create and help others do what they were made to do.
 
 QUALIFICATIONS
   Linux Windows Engineering	
   HTML CSS JS TS Coldfusion	Pascal C Java
-  Infrastructure Linguistics Data-Wrangling 
+  Cloud Infrastructure Management
   Webdev MySQL Postgres SQL-Server
   Directional-Drilling MWD/LWD API/DNV	
   MS-Office VBA.NET	
-  PLC/HMI	Industrial Automation GD&T IEC-61131-3	
+  PLC/HMI	Industrial Automation GD&T IEC-61131-3
+  Data-Wrangling ETL Data-Analysis
+  AI/ML Integration  LLM-Powered Applications  AI-Augmented Development
 
  
 PROFESSIONAL EXPERIENCE
-Engineering  2017+ Houston, TX
+CTO / Founder	Turing Automations	2017 – Present	Houston, TX
+•	Responsible for programming, hardware/electronics design, and prototyping.
+•	Responsible for procurement and logistics.
+•	Responsible for training and technical support.
+
+Engineering	OsteoStrong	2017 – Present	Houston, TX
 •	Responsible for developing hardware and software for automating OsteoStrong skeletal therapy machines.
 o	Created the database schema and systems for world-wide, distributed controls of OsteoStrong systems.
-o	6 patent applications for technology, 2 issued / 4 pending.
+o	6 patent applications for osteogenic automation technology, 2 issued / 4 pending.
 o	Developed a self-service kiosk, full-stack of hardware and software, for OsteoStrong member performance assessments.
 •	Responsible for implementing manufacturing processes and procedures to produce aforementioned products.
 o	Responsible for logistics processes and procedures in delivering products to customers. 
-o	Responsible for QAC testing and validation of products.
+o	Responsible for QA/QC testing and validation of products.
 o	Instrumental in developing customer support system pertaining to this hardware and software
-o Responsible for training support technicians.
-o Handled day-to-day IT operations and cloud infrastructure.
+o	Responsible for training support technicians.
+o	Handled day-to-day IT operations and cloud infrastructure.
+•	Leveraged AI/ML for data analysis, product features, and development workflow acceleration since 2023.
 
-Controls/Software Engineer	2014+	Houston, TX
-Aker Solutions (became MHWirth (sold to MPO (sold to AFGlobal))); then Premier Coil Solutions
+Controls/Software Engineer	2014 – 2017	Houston, TX
+Aker Solutions → MHWirth → AFGlobal; then Premier Coil Solutions
 •	Responsible for developing advanced PLC automated control systems and standards.
 o	Created automation controller function libraries for command-request processing, task queuing, sequencing, limit and tolerance evaluation and deviation, I/O processing, and myriad low-level functionality.
 o	Created Hardware-in-Loop machine simulators for testing automation controller logic in a test setting.  This included Siemens, Wago, and PC libraries and interactive simulations.
@@ -48,7 +56,7 @@ o	Implemented controller logic, networking topology and scheme, and HMI framewor
 o	Worked on a control system for robotic drilling rig machinery for MHWirth and automated drilling safety manifold system for Managed Pressure Operations.
 o	Designed SCADA software for controlling and logging operational systems on land and off-shore drilling rigs;  including specifying instruments, historical trending, and minimalist controls.
 
-Web Developer	2009+ 6yrs.	Paragon Web Solutions
+Web Developer	2009 – 2015	Paragon Web Solutions
 •	Generally responsible for designing and implementing database schemas, domain-specific data formats and transfer specs, user-interface templating, and feedback logging and modeling.  This included working with clients to codify requirements and report on satisfaction of the same.
 •	Implemented a charter school web application for tracking learning plans, family information, public website, hourly logging, calendar, expense tracking, grading, and transcripts.
 o	This involved daily interaction with multiple subject matter experts to guarantee regulatory compliance, complete evaluations, and proper reporting.
@@ -59,7 +67,7 @@ o	Helped to develop the database schema and file-system to facilitate change tra
 o	Helped to define and implement the user interface to upload, download, and facilitate revisions of documents.
 
 
-Directional Drilling	2005+ 8yrs.	Scientific Drilling
+Directional Drilling	2005 – 2013	Scientific Drilling
 •	MWD electronics assembly and configuration.  This included survey measurement and logging tools with drilling fluid and EM media transmission.
 •	Drilling and directional drilling utility software for reporting, well position, anti-collision, drilling fluid, and logging data.
 •	Responsible for planning and on-site, hands-on supervision of Shell ERDD HLT project.
@@ -79,17 +87,17 @@ o	Consulted regularly on best practices for drilling parameters and drilling flu
 o	Often required to build custom, no-notice reports for well engineers and on-site managers to aide in their reporting and understanding of the operations.
 
 
-Nabors Drilling	2004+ 1yrs.	Rocky Mountains, USA
+Nabors Drilling	2004 – 2005	Rocky Mountains, USA
 •	I worked as a rig-hand for NDUSA on rig #909 drilling natural gas directional wells in the Piceance Basin throughout western Colorado.
 o	Performed manual labor to include rig floor equipment such as pipe-tongs and slips.
 o	Partially responsible for maintaining drilling fluid properties by periodically adding chemicals deemed necessary by a supervisor.
 o	Responsible for general maintenance and operation of the rig’s mechanical, hydraulic, and pneumatic systems.
 
-ACS Online	1998+ 3yrs.	Grand Junction, CO
+ACS Online	1998 – 2001	Grand Junction, CO
 •	Responsible for creating necessary Medical Manager scripts for clients.
 o	To include determining requirements for the software.
-o	Also, working with other staff to acquire and install hardware and software solutions cohesively.
-•	Responsible for refactoring several state reporting templates for pediatrics clinics.
+o	Also, working with other staff to acquire and install hardware and software solutions for office work and networking.
+•	Responsible for refactoring several government reporting templates for pediatrics clinics.
 •	Assisted in architecting and building medical office computer record systems.  This included specifying PC and server systems and networking gear.
 •	Provided technical support for customers’ hardware and software: both over-the-phone and on-site.
 
@@ -97,5 +105,5 @@ EDUCATION
 University of Phoenix
 	Master of Science: Information Systems, 2003 - 2005
 
-Mesa State College
+Colorado Mesa University (fka Mesa State College)
 	Bachelor of Science: Computer Science, 1995 – 2003
