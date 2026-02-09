@@ -84,6 +84,7 @@
       "degree": "M.S. Computer Information Systems",
       "institution": "University of Phoenix",
       "year": 2005
+    }
   ],
   "achievements": [],
   "badges": [
@@ -94,7 +95,7 @@
     "Siemens PLC Programming"
   ],
   "links": {
-    "Gpresenttps://github.com/fingerskier",
+    "GitHub": "https://github.com/fingerskier",
     "LinkedIn": "https://linkedin.com/in/matt-currier",
     "Bandcamp": "https://bandcamp.com/mattcurrier"
   }

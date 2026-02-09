@@ -1,0 +1,103 @@
+/* Blog and CV markdown content styles */
+
+.blog-index h1,
+.cv-page h1 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.blog-category {
+  margin-bottom: 1.5rem;
+}
+
+.blog-category h3 {
+  font-size: 1.1rem;
+  color: rgba(148, 163, 184, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  padding-bottom: 0.35rem;
+}
+
+.blog-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blog-category li {
+  margin-bottom: 0.35rem;
+}
+
+.blog-category a {
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+.blog-back {
+  margin-bottom: 1.5rem;
+}
+
+.blog-back a {
+  color: rgba(148, 163, 184, 0.9);
+  font-size: 0.95rem;
+}
+
+.blog-post,
+.cv-page {
+  line-height: 1.7;
+  color: rgba(203, 213, 225, 0.95);
+}
+
+.blog-post h1, .cv-page h1,
+.blog-post h2, .cv-page h2,
+.blog-post h3, .cv-page h3 {
+  color: #e2e8f0;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.blog-post h1, .cv-page h1 { font-size: 1.8rem; }
+.blog-post h2, .cv-page h2 { font-size: 1.4rem; }
+.blog-post h3, .cv-page h3 { font-size: 1.15rem; }
+
+.blog-post code, .cv-page code {
+  background: rgba(30, 41, 59, 0.8);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+.blog-post pre, .cv-page pre {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.blog-post pre code, .cv-page pre code {
+  background: none;
+  padding: 0;
+}
+
+.blog-post ul, .cv-page ul,
+.blog-post ol, .cv-page ol {
+  padding-left: 1.5rem;
+}
+
+.blog-post li, .cv-page li {
+  margin-bottom: 0.35rem;
+}
+
+.blog-post blockquote, .cv-page blockquote {
+  border-left: 3px solid rgba(249, 115, 22, 0.6);
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  color: rgba(203, 213, 225, 0.8);
+}
+
+.blog-post strong, .cv-page strong {
+  color: #e2e8f0;
+}

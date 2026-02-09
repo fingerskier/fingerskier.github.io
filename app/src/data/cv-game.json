@@ -1,0 +1,196 @@
+{
+  "character": {
+    "name": "Matt Currier",
+    "tagline": "Engineering leader & eclecticist — hardware, firmware, software, and everything in between"
+  },
+  "milestones": [
+    {
+      "title": "Origin: The First Computer",
+      "summary": "Watched dad solder a Zenith H89 CP/M machine at age 4. Wumpus was the first game.",
+      "description": "From a multi-plan spreadsheet to BASIC, then C and Pascal — the journey into computing began with curiosity and a soldering iron.",
+      "sheet": {
+        "class": "Apprentice Coder",
+        "level": "Level 1 · Early computing",
+        "stats": [
+          { "name": "BASIC", "value": "Initiate" },
+          { "name": "Curiosity", "value": "Boundless" },
+          { "name": "Pascal", "value": "Initiate" },
+          { "name": "C", "value": "Initiate" }
+        ],
+        "inventory": [
+          "Zenith H89",
+          "CP/M OS",
+          "Wumpus",
+          "Multi-plan spreadsheet"
+        ],
+        "quests": [
+          {
+            "name": "First Program",
+            "objective": "Write something — anything — that runs.",
+            "outcome": "Discovered the magic of making machines do what you tell them."
+          }
+        ]
+      }
+    },
+    {
+      "title": "IT & Medical Software",
+      "summary": "Built medical office systems, scripts, and networks at ACS Online.",
+      "description": "Created Medical Manager scripts, refactored government reporting templates for pediatrics clinics, and architected medical office computer record systems.",
+      "sheet": {
+        "class": "IT Technician",
+        "level": "Level 2 · 1998–2001",
+        "stats": [
+          { "name": "Networking", "value": "Journeyman" },
+          { "name": "Scripting", "value": "Adept" },
+          { "name": "Tech Support", "value": "Journeyman" },
+          { "name": "Problem Solving", "value": "Adept" }
+        ],
+        "inventory": [
+          "Medical Manager",
+          "PC hardware",
+          "Networking gear",
+          "Phone & on-site support"
+        ],
+        "quests": [
+          {
+            "name": "Medical Office Systems",
+            "objective": "Architect and build record systems for medical offices.",
+            "outcome": "Delivered working systems with PC/server specs and networking."
+          }
+        ]
+      }
+    },
+    {
+      "title": "The Oilfield: Directional Drilling",
+      "summary": "Nearly a decade of directional drilling, from rig hand to leading teams.",
+      "description": "Started as a rig hand on Nabors #909 in the Piceance Basin, then joined Scientific Drilling for directional work — Shell ERDD, Anadarko gas wells, Barrick mine-shaft freeze walls. Led teams, selected tools, and built custom reports.",
+      "sheet": {
+        "class": "Directional Driller",
+        "level": "Level 4 · 2004–2013",
+        "stats": [
+          { "name": "MWD/LWD", "value": "Expert" },
+          { "name": "Well Planning", "value": "Expert" },
+          { "name": "Team Leadership", "value": "Adept" },
+          { "name": "Anti-Collision", "value": "Expert" }
+        ],
+        "inventory": [
+          "MWD survey tools",
+          "Rotary steerable systems",
+          "Bent motors",
+          "Non-magnetic drill collars"
+        ],
+        "quests": [
+          {
+            "name": "Shell ERDD HLT",
+            "objective": "Drill 60-degree slant well and horizontal wells for oil-shale recovery testing.",
+            "outcome": "Achieved drilling targets despite fluid composition and prototype technique setbacks."
+          },
+          {
+            "name": "Barrick Freeze Wall",
+            "objective": "Drill 36 wells in a ring with 2-foot spacing tolerances.",
+            "outcome": "Overcame extreme rheology challenges and tight tolerances to complete the freeze wall."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Web Developer: Paragon Era",
+      "summary": "Designed databases, built full-stack web apps, and worked with hospitals and schools.",
+      "description": "Built a charter school web application covering learning plans, grading, transcripts, and document management with electronic signing. Helped architect a document control system for a hospital network.",
+      "sheet": {
+        "class": "Full Stack Web Developer",
+        "level": "Level 5 · 2009–2015",
+        "stats": [
+          { "name": "HTML/CSS/JS", "value": "Expert" },
+          { "name": "MySQL/Postgres", "value": "Expert" },
+          { "name": "ColdFusion", "value": "Journeyman" },
+          { "name": "Database Design", "value": "Expert" }
+        ],
+        "inventory": [
+          "MySQL",
+          "PostgreSQL",
+          "ColdFusion",
+          "Document management systems"
+        ],
+        "quests": [
+          {
+            "name": "Charter School App",
+            "objective": "Build a web app for learning plans, grading, transcripts, and compliance.",
+            "outcome": "Delivered a comprehensive system with document management and electronic signing."
+          },
+          {
+            "name": "Hospital Doc Control",
+            "objective": "Architect document control for Sisters of Charity hospital network.",
+            "outcome": "Built change tracking, storage, and revision workflows."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Controls Engineer",
+      "summary": "PLC automation, robotic drilling rigs, and SCADA systems for offshore operations.",
+      "description": "Developed advanced PLC control systems at Aker Solutions/MHWirth/AFGlobal. Built Hardware-in-Loop simulators, subsea mux systems, and SCADA software for land and offshore drilling rigs.",
+      "sheet": {
+        "class": "Controls/Software Engineer",
+        "level": "Level 6 · 2014–2017",
+        "stats": [
+          { "name": "PLC Programming", "value": "Expert" },
+          { "name": "SCADA", "value": "Expert" },
+          { "name": "Siemens/Wago", "value": "Expert" },
+          { "name": "IEC-61131-3", "value": "Master" }
+        ],
+        "inventory": [
+          "Siemens PLCs",
+          "TIA Portal",
+          "HMI frameworks",
+          "Hardware-in-Loop simulators"
+        ],
+        "quests": [
+          {
+            "name": "Robotic Drilling Rig",
+            "objective": "Design control system for robotic drilling machinery.",
+            "outcome": "Delivered automation controller libraries for command processing, sequencing, and I/O."
+          },
+          {
+            "name": "Subsea Mux System",
+            "objective": "Create PLC-based multiplexer for subsea distributed control.",
+            "outcome": "Built system supporting direct-hydraulic, remote hydraulic, and mechanical modes."
+          }
+        ]
+      }
+    },
+    {
+      "title": "OsteoStrong & Turing Automations",
+      "summary": "Founded Turing Automations. Engineered osteogenic automation systems with 6 patents.",
+      "description": "Developed hardware and software for automating OsteoStrong skeletal therapy machines. Created distributed database systems, self-service kiosks, and manufacturing processes. 6 patent applications (2 issued, 4 pending).",
+      "sheet": {
+        "class": "CTO / Founder",
+        "level": "Level 7 · 2017–Present",
+        "stats": [
+          { "name": "Engineering Leadership", "value": "Master" },
+          { "name": "Embedded Systems", "value": "Expert" },
+          { "name": "Full Stack Dev", "value": "Expert" },
+          { "name": "R&D", "value": "Master" }
+        ],
+        "inventory": [
+          "6 patent applications",
+          "Self-service kiosks",
+          "Cloud infrastructure",
+          "AI/ML integration"
+        ],
+        "quests": [
+          {
+            "name": "Osteogenic Automation",
+            "objective": "Automate OsteoStrong skeletal therapy machines with sensors, PLCs, and software.",
+            "outcome": "6 patent applications filed, 2 issued. Deployed world-wide distributed control systems."
+          },
+          {
+            "name": "Spectrum",
+            "objective": "Build an interactive, reactive osteogenic system that visualizes force production.",
+            "outcome": "Created an audio-reactive LED lighting and embedded control visualization system."
+          }
+        ]
+      }
+    }
+  ]
+}
