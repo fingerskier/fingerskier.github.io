@@ -7,6 +7,7 @@ import { renderGame } from './pages/game.js'
 import './styles/index.css'
 import './styles/game.css'
 import './styles/content.css'
+import './styles/cv.css'
 
 route('/', renderHome)
 route('/blog', renderBlogIndex)
