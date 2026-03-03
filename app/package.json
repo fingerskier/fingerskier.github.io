@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prebuild": "node scripts/gen-blog-manifest.js && cp -r ../content public/content && cp ../CV.md public/CV.md && cp ../cv.json public/cv.json",
+    "prebuild": "node scripts/gen-blog-manifest.js && cp -r ../content public/content && cp ../CV.md public/CV.md && cp ../cv.json public/cv.json && cp ../asset/avatar.jpg public/avatar.jpg",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint \"src/**/*.js\"",

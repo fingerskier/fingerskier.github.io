@@ -1,5 +1,5 @@
 # Matthew Currier
-[(https://github.com/fingerskier)](https://github.com/fingerskier)
+[GitHub](https://github.com/fingerskier) | [Email](mailto:fingerskier@gmail.com) | [X](https://x.com/fingerskier) | [YouTube](https://youtube.com/@fingerskier)
 
 ## SKILLS SUMMARY
   I've been using computers since I first watched my dad solder together a Zenith H89 CP/M machine when I was 4 years old.

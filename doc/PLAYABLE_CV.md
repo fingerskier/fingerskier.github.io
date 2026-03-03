@@ -396,16 +396,3 @@ All CV content lives in `CV.md` and is rendered into the HTML.  When updating th
 3. Dark mode variant
 4. Mobile vertical-scroll adaptation
 5. Particle effects (sparks near machines, musical notes on stage)
-
----
-
-## Open Questions for Matt
-
-These should be resolved before or during Phase 1:
-
-1. **Contact info:** What email / socials do you want listed?
-3. **Photo / avatar:** Real photo, illustrated portrait, or pixel avatar?
-4. **Domain:** Hosting on `fingerskier.github.io` or a custom domain?
-5. **The "game" level:** How far into gamification? The spec above is mid-level. Could go further (actual collectibles, scoring, achievements) or dial it back (just parallax scroll with character, no true game mechanics).
-6. **Music integration:** Would you want an actual audio clip of your music playable on the Stage zone?
-7. **Shrewdy / R&D projects:** How much do you want to reveal about in-progress work?

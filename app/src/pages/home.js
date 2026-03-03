@@ -4,6 +4,7 @@ import { layout } from '../layout.js'
 export function renderHome() {
   const content = `
     <section class="home">
+      <img src="/avatar.jpg" alt="Matt Currier" class="home-avatar" />
       <h1>Matt Currier</h1>
       <p class="tagline">Engineering leader &amp; eclecticist</p>
 
@@ -17,6 +18,9 @@ export function renderHome() {
         <a href="https://github.com/fingerskier" target="_blank" rel="noopener">GitHub</a>
         <a href="https://linkedin.com/in/matt-currier" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://bandcamp.com/mattcurrier" target="_blank" rel="noopener">Bandcamp</a>
+        <a href="mailto:fingerskier@gmail.com">Email</a>
+        <a href="https://x.com/fingerskier" target="_blank" rel="noopener">X</a>
+        <a href="https://youtube.com/@fingerskier" target="_blank" rel="noopener">YouTube</a>
       </div>
 
       <nav class="home-nav">
