@@ -4,16 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prebuild": "node scripts/gen-blog-manifest.js && cp -r ../content public/content && cp ../CV.md public/CV.md && cp ../cv.json public/cv.json && cp ../asset/avatar.jpg public/avatar.jpg",
+    "prebuild": "cp ../cv.json public/cv.json && cp ../asset/avatar.jpg public/avatar.jpg",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint \"src/**/*.js\"",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist"
   },
-  "dependencies": {
-    "marked": "^15.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@eslint/js": "^9.25.0",
     "eslint": "^9.25.0",

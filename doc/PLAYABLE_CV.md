@@ -367,32 +367,32 @@ All CV content lives in `CV.md` and is rendered into the HTML.  When updating th
 
 ## Implementation Priority
 
-### Phase 0 - Remove old content
-1. Identify and remove the older, irrelevant app from the repo.
+### Phase 0 - Remove old content ✅
+1. ~~Identify and remove the older, irrelevant app from the repo.~~
 
-### Phase 1 — Skeleton (get it live)
-1. Semantic HTML with all content in zones
-2. Plain mode working and print-ready
-3. Basic horizontal scroll layout (CSS scroll-snap)
-4. Mode toggle
-5. Deploy to GitHub Pages
+### Phase 1 — Skeleton (get it live) ✅
+1. ~~Semantic HTML with all content in zones~~
+2. ~~Plain mode working and print-ready~~
+3. ~~Basic horizontal scroll layout (CSS scroll-snap)~~
+4. ~~Mode toggle~~
+5. ~~Deploy to GitHub Pages~~
 
-### Phase 2 — Character & Movement
-1. SVG character with idle/walk/point states
-2. Scroll-driven movement with GSAP ScrollTrigger
-3. Camera following
-4. Zone transition animations
+### Phase 2 — Character & Movement ✅
+1. ~~SVG character with idle/walk/point states~~
+2. ~~Scroll-driven movement~~ (vanilla JS — GSAP not needed)
+3. ~~Camera following~~
+4. ~~Zone transition animations~~
 
-### Phase 3 — Scenery & Polish
-1. Parallax background layers
+### Phase 3 — Scenery & Polish *(in progress)*
+1. ~~Parallax background layers~~
 2. Zone-specific scenery (machines, instruments, bookshelves)
-3. Skill meters/gauges animation
+3. ~~Skill meters/gauges animation~~
 4. Interactive elements (clickable machines, spec plates)
-5. HUD with progress bar and navigation
+5. ~~HUD with progress bar and navigation~~
 
 ### Phase 4 — Delight
 1. Sound design (optional, off by default)
 2. Easter eggs (Konami code? Hidden project details?)
 3. Dark mode variant
-4. Mobile vertical-scroll adaptation
+4. ~~Mobile vertical-scroll adaptation~~
 5. Particle effects (sparks near machines, musical notes on stage)

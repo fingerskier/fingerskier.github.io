@@ -248,38 +248,36 @@
   text-decoration: none;
 }
 
-/* Scenery: door */
-.scenery-door {
+/* Scenery: Entryway — door & neon sign */
+.scenery-door-svg {
   position: absolute;
-  right: 5%;
-  bottom: 10%;
-  width: 120px;
-  height: 200px;
-  background: var(--belt);
-  border-radius: 8px 8px 0 0;
-  border: 4px solid #5C3A1E;
+  right: 6%;
+  bottom: 8%;
+  width: 100px;
   opacity: 0.3;
 }
-.scenery-door::after {
-  content: '';
+.scenery-neon-sign {
   position: absolute;
-  right: 12px;
-  top: 50%;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #c49a6c;
+  right: 3%;
+  top: 18%;
+  width: 180px;
 }
-.scenery-sign {
-  position: absolute;
-  right: 2%;
-  top: 20%;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 1.5rem;
-  letter-spacing: 0.3em;
-  color: var(--accent);
-  opacity: 0.25;
-  text-shadow: 0 0 20px rgba(232,116,42,0.3);
+.neon-text {
+  fill: var(--accent);
+  filter: drop-shadow(0 0 6px rgba(232,116,42,0.6)) drop-shadow(0 0 20px rgba(232,116,42,0.3));
+  animation: neon-flicker 3s ease-in-out infinite;
+}
+@keyframes neon-flicker {
+  0%, 100% { opacity: 1; }
+  5% { opacity: 0.4; }
+  6% { opacity: 1; }
+  50% { opacity: 1; }
+  52% { opacity: 0.6; }
+  53% { opacity: 1; }
+  80% { opacity: 1; }
+  82% { opacity: 0.3; }
+  83% { opacity: 0.8; }
+  84% { opacity: 1; }
 }
 
 /* ── Workbench zone ── */
@@ -362,35 +360,29 @@
   color: rgba(45,45,45,0.6);
 }
 
-/* Scenery: oscilloscope */
-.scenery-oscilloscope {
+/* Scenery: Workbench — oscilloscope & pegboard */
+.scenery-scope-svg {
   position: absolute;
-  right: 8%;
-  top: 20%;
-  width: 100px;
-  height: 80px;
-  background: #333;
-  border-radius: 8px;
-  border: 3px solid #555;
-  opacity: 0.2;
+  right: 6%;
+  top: 18%;
+  width: 130px;
+  opacity: 0.35;
 }
-.scenery-oscilloscope::after {
-  content: '';
-  position: absolute;
-  inset: 8px;
-  border-radius: 4px;
-  background: #0a2a0a;
-  box-shadow: inset 0 0 10px rgba(0,255,0,0.2);
+.scope-wave {
+  animation: scope-sweep 2s linear infinite;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
 }
-.scenery-pegboard {
+@keyframes scope-sweep {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -200; }
+}
+.scenery-pegboard-svg {
   position: absolute;
-  right: 3%;
-  bottom: 15%;
-  width: 80px;
-  height: 120px;
-  background:
-    radial-gradient(circle 3px, rgba(0,0,0,0.15) 100%, transparent 100%) 0 0 / 20px 20px;
-  opacity: 0.2;
+  right: 2%;
+  bottom: 12%;
+  width: 90px;
+  opacity: 0.3;
 }
 
 /* ── Experience / Floor zone ── */
@@ -460,6 +452,8 @@
   color: rgba(45,45,45,0.65);
 }
 
+.station[role="button"] { cursor: pointer; }
+
 .status-led {
   display: inline-block;
   width: 8px;
@@ -472,25 +466,97 @@
 .status-led.yellow { background: #eab308; box-shadow: 0 0 4px rgba(234,179,8,0.5); }
 .status-led.blink { opacity: 0.3; }
 
-/* Scenery: machine + conveyor */
-.scenery-machine {
-  position: absolute;
-  right: 3%;
-  bottom: 10%;
-  width: 80px;
-  height: 140px;
-  background: linear-gradient(180deg, #666 0%, #444 100%);
+/* Spec plate — industrial nameplate style */
+.spec-plate {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.35s ease;
+  margin-top: 0;
+  background: linear-gradient(135deg, #f5f0e8, #ece4d8);
+  border: 1.5px solid var(--accent);
   border-radius: 4px;
+  padding: 0 0.75rem;
+  font-size: 0.8rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+}
+.station.expanded .spec-plate {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+.spec-plate dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+}
+.spec-plate dt {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.spec-plate dd {
+  margin: 0;
+  color: rgba(45,45,45,0.8);
+  font-size: 0.78rem;
+}
+
+/* Scenery: Floor — actuator, load cell, conveyor */
+.scenery-actuator-svg {
+  position: absolute;
+  right: 4%;
+  bottom: 12%;
+  width: 70px;
+  opacity: 0.3;
+}
+.actuator-rod {
+  animation: actuator-move 3s ease-in-out infinite;
+}
+@keyframes actuator-move {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+.machine-led {
+  animation: led-pulse 1.5s ease-in-out infinite;
+}
+@keyframes led-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.scenery-loadcell-svg {
+  position: absolute;
+  right: 12%;
+  bottom: 8%;
+  width: 90px;
+  opacity: 0.35;
+}
+.loadcell-value {
+  animation: loadcell-tick 0.8s steps(1) infinite;
+}
+@keyframes loadcell-tick {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.scenery-conveyor-svg {
+  position: absolute;
+  bottom: 3%;
+  left: 0;
+  width: 100%;
+  height: 25px;
   opacity: 0.15;
 }
-.scenery-conveyor {
-  position: absolute;
-  bottom: 5%;
-  left: 0;
-  right: 0;
-  height: 12px;
-  background: repeating-linear-gradient(90deg, #555 0px, #555 20px, #777 20px, #777 40px);
-  opacity: 0.1;
+.conveyor-segments {
+  animation: conveyor-scroll 2s linear infinite;
+}
+@keyframes conveyor-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-40px); }
 }
 
 /* ── Rack zone ── */
@@ -525,28 +591,32 @@
   font-weight: bold;
 }
 
-.scenery-rack {
+/* Scenery: Rack — server rack & cables */
+.scenery-rack-svg {
   position: absolute;
   right: 5%;
-  top: 15%;
+  top: 12%;
   width: 60px;
-  height: 180px;
-  background: #333;
-  border-radius: 3px;
-  opacity: 0.15;
+  opacity: 0.35;
 }
-.scenery-rack::before, .scenery-rack::after {
-  content: '';
+.rack-led {
+  animation: rack-blink 2s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.3s);
+}
+.rack-led:nth-child(odd) { animation-delay: 0.5s; }
+.rack-led:nth-child(even) { animation-delay: 1.2s; }
+@keyframes rack-blink {
+  0%, 100% { opacity: 1; }
+  30% { opacity: 0.2; }
+  60% { opacity: 0.9; }
+}
+.scenery-cables-svg {
   position: absolute;
-  left: 8px;
-  right: 8px;
-  height: 3px;
-  background: #0f0;
-  border-radius: 1px;
-  opacity: 0.6;
+  right: 3%;
+  bottom: 15%;
+  width: 160px;
+  opacity: 0.4;
 }
-.scenery-rack::before { top: 20%; }
-.scenery-rack::after { top: 50%; }
 
 /* ── Stage zone ── */
 #zone-stage .zone-content p {
@@ -579,16 +649,24 @@
   text-decoration: none;
 }
 
-.scenery-stage {
+/* Scenery: Stage — microphone, guitar, floating notes */
+.scenery-stage-svg {
   position: absolute;
   bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 250px;
-  height: 16px;
-  background: linear-gradient(90deg, #8B5E3C, #a67c52, #8B5E3C);
-  border-radius: 4px 4px 0 0;
-  opacity: 0.2;
+  right: 5%;
+  width: 220px;
+  opacity: 0.35;
+}
+.music-note {
+  animation: note-float 4s ease-in-out infinite;
+}
+.note-1 { animation-delay: 0s; }
+.note-2 { animation-delay: 1.3s; }
+.note-3 { animation-delay: 2.6s; }
+@keyframes note-float {
+  0% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-20px); opacity: 0.2; }
+  100% { transform: translateY(-40px); opacity: 0; }
 }
 
 /* ── Library zone ── */
@@ -605,29 +683,20 @@
   color: rgba(45,45,45,0.85);
 }
 
-.scenery-bookshelf {
+/* Scenery: Library — bookshelf & chalkboard */
+.scenery-bookshelf-svg {
   position: absolute;
-  right: 5%;
-  top: 15%;
+  right: 4%;
+  top: 12%;
   width: 100px;
-  height: 160px;
-  background: repeating-linear-gradient(0deg,
-    #8B5E3C 0px, #8B5E3C 3px,
-    transparent 3px, transparent 35px
-  );
-  opacity: 0.15;
-  border-radius: 2px;
+  opacity: 0.4;
 }
-.scenery-chalkboard {
+.scenery-chalkboard-svg {
   position: absolute;
   right: 8%;
-  bottom: 25%;
-  width: 120px;
-  height: 80px;
-  background: #2a4a2a;
-  border: 4px solid #8B5E3C;
-  border-radius: 2px;
-  opacity: 0.15;
+  bottom: 18%;
+  width: 140px;
+  opacity: 0.35;
 }
 
 /* ── Exit zone ── */
@@ -660,26 +729,28 @@
   text-decoration: underline;
 }
 
-.scenery-exit-door {
+/* Scenery: Exit — door & mailbox */
+.scenery-exit-svg {
   position: absolute;
-  left: 8%;
-  bottom: 10%;
-  width: 100px;
-  height: 180px;
-  background: linear-gradient(180deg, #FAF8F5, #f0e8dc);
-  border: 3px solid #ccc;
-  border-radius: 6px 6px 0 0;
-  opacity: 0.2;
+  left: 6%;
+  bottom: 5%;
+  width: 120px;
+  opacity: 0.35;
 }
-.scenery-mailbox {
+.scenery-mailbox-svg {
   position: absolute;
   left: 18%;
-  bottom: 10%;
-  width: 30px;
-  height: 50px;
-  background: var(--blue);
-  border-radius: 4px 4px 0 0;
-  opacity: 0.2;
+  bottom: 8%;
+  width: 40px;
+  opacity: 0.35;
+}
+.mailbox-flag {
+  animation: flag-wave 2s ease-in-out infinite;
+  transform-origin: 44px 32px;
+}
+@keyframes flag-wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-15deg); }
 }
 
 /* ── Headings ── */
@@ -738,6 +809,16 @@
 
 .character.facing-left .character-svg {
   transform: scaleX(-1);
+}
+
+/* Pointing animation — arm raises to gesture at content */
+.character.pointing .arm-right {
+  animation: point-arm 0.4s ease-out forwards;
+  transform-origin: 39px 38px;
+}
+@keyframes point-arm {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-60deg); }
 }
 
 /* ══════════════════════════════════════
