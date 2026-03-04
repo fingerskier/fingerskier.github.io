@@ -2,7 +2,7 @@
 
 
 ## Curriculum Vitae
-[Matthew Currier](./me.md)
+[Matthew Currier](./CV.md)
 
 ## Playable Resume
 [fingerskier blog](https://fingerskier.github.io)
