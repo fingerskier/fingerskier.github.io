@@ -5,4 +5,4 @@
 [Matthew Currier](./CV.md)
 
 ## Playable Resume
-[fingerskier blog](https://fingerskier.github.io)
+[fingerskier](https://fingerskier.github.io/)
