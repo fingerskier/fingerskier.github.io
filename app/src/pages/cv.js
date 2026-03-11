@@ -11,7 +11,6 @@ const ZONES = [
         <div class="cv-links">
           <a href="https://github.com/fingerskier" target="_blank" rel="noopener">GitHub</a>
           <a href="https://linkedin.com/in/matt-currier" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:fingerskier@gmail.com">Email</a>
           <a href="https://x.com/fingerskier" target="_blank" rel="noopener">X</a>
           <a href="https://youtube.com/@fingerskier" target="_blank" rel="noopener">YouTube</a>
           <a href="https://bandcamp.com/mattcurrier" target="_blank" rel="noopener">Bandcamp</a>
@@ -418,7 +417,6 @@ const ZONES = [
       <div class="zone-content">
         <h2>Let&rsquo;s build something.</h2>
         <div class="contact-links">
-          <a href="mailto:fingerskier@gmail.com">fingerskier@gmail.com</a>
           <a href="https://github.com/fingerskier" target="_blank" rel="noopener">github.com/fingerskier</a>
           <a href="https://linkedin.com/in/matt-currier" target="_blank" rel="noopener">linkedin.com/in/matt-currier</a>
           <a href="https://x.com/fingerskier" target="_blank" rel="noopener">x.com/fingerskier</a>
