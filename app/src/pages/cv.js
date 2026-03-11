@@ -6,8 +6,8 @@ const ZONES = [
     content: () => `
       <div class="zone-content">
         <h1>Matt Currier</h1>
-        <p class="cv-title">Founder &amp; Principal Engineer &mdash; Turing Automations</p>
-        <p class="cv-tagline">Songwriter &middot; Thinker &middot; Builder of Things That Move</p>
+        <p class="cv-title">Co-Founder &amp; Principal Engineer &mdash; Turing Automations</p>
+        <p class="cv-tagline">Creator of things &middot; Songwriter &middot; Thinkster</p>
         <div class="cv-links">
           <a href="https://github.com/fingerskier" target="_blank" rel="noopener">GitHub</a>
           <a href="https://linkedin.com/in/matt-currier" target="_blank" rel="noopener">LinkedIn</a>
@@ -118,79 +118,77 @@ const ZONES = [
           <time>2017 &ndash; Present</time>
           <p><em>Primary Client: OsteoStrong</em></p>
           <ul>
-            <li>Architect and sole developer of the Spectrum platform: safety-critical Electron applications controlling exercise equipment across 200+ franchise locations worldwide</li>
+            <li>Architect and developer of the Spectrum platform: safety-critical applications controlling health/fitness equipment across 200+ franchise locations worldwide</li>
             <li>Designed FSM-based actuator control with real-time safety supervisor monitoring force limits, timeouts, wrong-way motion, and signal validity</li>
             <li>Built hardware abstraction layer supporting 5 actuator types and 3 load-cell types with automatic detection</li>
-            <li>Developed cloud infrastructure on AWS (Elastic Beanstalk, Aurora MySQL, S3, SES, SQS)</li>
-            <li>Created over-the-air auto-update system for fleet of deployed kiosk devices</li>
-            <li>Maintained ~1,000 module codebase spanning firmware control, desktop UI, cloud API, and member-facing apps</li>
+            <li>Developed cloud infrastructure on AWS infrastructure</li>
+            <li>Created over-the-air auto-update system for fleet of deployed devices w/ desktop apps on SBCs</li>
+            <li>Maintained complex codebase spanning firmware control, desktop UI, cloud API, and member-facing apps</li>
             <li>Built digital twin / simulator system enabling full development and testing without physical hardware</li>
           </ul>
+
           <div class="project-stations">
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
               <h4>Spectrum Application</h4>
-              <p>Core Electron app &mdash; actuator control, session management</p>
+              <p>Core app &mdash; actuator control, session management</p>
               <div class="spec-plate">
                 <dl>
-                  <dt>Stack</dt><dd>Electron &middot; Node.js &middot; USB-Serial</dd>
+                  <dt>Stack</dt><dd>Desktop &middot; I/O &middot; custom H/W</dd>
                   <dt>Deployed</dt><dd>200+ franchise locations worldwide</dd>
-                  <dt>Role</dt><dd>Architect &amp; sole developer since 2017</dd>
                 </dl>
               </div>
             </div>
+            
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
-              <h4>Spectrum UI</h4>
-              <p>Touch-screen kiosk interface for members</p>
+              <h4>Member Assessment Kiosk</h4>
+              <p>Touch-screen control, multi-screen kiosk for member health assessments</p>
               <div class="spec-plate">
                 <dl>
-                  <dt>Stack</dt><dd>React &middot; Electron renderer</dd>
+                  <dt>Stack</dt><dd>Embedded Desktop UI</dd>
                   <dt>Features</dt><dd>Session flow, real-time force display, member profiles</dd>
                 </dl>
               </div>
             </div>
+
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
-              <h4>OS Chroma</h4>
-              <p>Cloud API &amp; admin dashboard (Express/MySQL/AWS)</p>
+              <h4>Cloud Infrastructure</h4>
+              <p>Cloud API &amp; admin dashboard &amp; databases</p>
               <div class="spec-plate">
                 <dl>
-                  <dt>Stack</dt><dd>Express &middot; Aurora MySQL &middot; AWS EB &middot; S3 &middot; SES &middot; SQS</dd>
+                  <dt>Stack</dt><dd>Servers &middot; Databases &middot; Load-Balancing &middot; Data-Lake &middot; Cross-x Messaging</dd>
                   <dt>Features</dt><dd>Franchise ops, member management, telemetry sync, auto-scaling</dd>
                 </dl>
               </div>
             </div>
+
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
-              <h4>OS Firmware</h4>
-              <p>Hardware drivers, serial protocols, safety FSM</p>
+              <h4>Firmware</h4>
+              <p>Next-gen IoT hardware (h/w drivers, protocols, safety FSM)</p>
               <div class="spec-plate">
                 <dl>
-                  <dt>Stack</dt><dd>Node.js &middot; USB-Serial &middot; RS-232</dd>
-                  <dt>Features</dt><dd>5 actuator types, 3 load-cell types, auto-detect, safety supervisor</dd>
+                  <dt>Stack</dt>
+                  <dd>Node.js &middot; Micropython &middot; C</dd>
+                  
+                  <dt>Features</dt>
+                  <dd>Multiple types of actuators, load-cells and sensors;  Automatic h/w detect &amp; safety supervisor</dd>
                 </dl>
               </div>
             </div>
+
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
-              <h4>Believer App</h4>
-              <p>Member-facing mobile/web app</p>
+              <h4>Member Journey App</h4>
+              <p>Member-facing mobile/web apps</p>
               <div class="spec-plate">
                 <dl>
-                  <dt>Stack</dt><dd>React &middot; Express API</dd>
+                  <dt>Stack</dt><dd>Cloud API server</dd>
+                  <dt>Stack</dt><dd>PWA &middot; web-app</dd>
+                  <dt>Stack</dt><dd>Android/iOS &middot; mobile-apps</dd>
                   <dt>Features</dt><dd>Session history, progress tracking, appointment scheduling</dd>
-                </dl>
-              </div>
-            </div>
-            <div class="station" data-status="rnd" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led yellow"></span>
-              <h4>Shrewdy</h4>
-              <p>Next-gen IoT hardware (Pico W devices)</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt><dd>Raspberry Pi Pico W &middot; MicroPython</dd>
-                  <dt>Status</dt><dd>R&amp;D &mdash; next-generation hardware platform</dd>
                 </dl>
               </div>
             </div>
@@ -202,6 +200,9 @@ const ZONES = [
           <time>2017 &ndash; 2019</time>
           <ul>
             <li>Developed advanced PLC automated control systems and standards</li>
+            <li>World-first coiled-tubing unit auto-driller</li>
+            <li>World-first automated nitrogen pump</li>
+            <li>Automated coilted-tubing fluid pump</li>
             <li>Created automation controller function libraries for command-request processing, task queuing, sequencing</li>
             <li>Created Hardware-in-Loop machine simulators (Siemens, Wago, PC)</li>
             <li>Designed SCADA software for coiled-tubing, drilling fluid, and nitrogen pumping units</li>
@@ -235,6 +236,30 @@ const ZONES = [
             <li>Shell ERDD HLT: 22 wells, slant-well and horizontal wells for oil-shale recovery</li>
             <li>Anadarko gas-well surface program (Uintah Basin) with high anti-collision risks</li>
             <li>Barrick mine-shaft freeze wall: 36 wells in a ring with 2-foot spacing tolerances</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <h3>Nabors Drilling &mdash; Rig Hand</h3>
+          <time>2004 &ndash; 2005 &middot; Rocky Mountains, USA</time>
+          <ul>
+            <li>Directional natural gas wells in the Piceance Basin</li>
+            <li>Rig-hand for NDUSA on rig #909 drilling natural gas directional wells throughout western Colorado</li>
+            <li>Performed manual labor including rig floor equipment such as pipe-tongs and slips</li>
+            <li>Partially responsible for maintaining drilling fluid properties</li>
+            <li>General maintenance and operation of the rig&rsquo;s mechanical, hydraulic, and pneumatic systems</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <h3>ACS Online &mdash; IT and Programming</h3>
+          <time>1998 &ndash; 2003 &middot; Grand Junction, CO</time>
+          <ul>
+            <li>Medical Manager scripts and setup for clients, including determining software requirements</li>
+            <li>Refactored government reporting templates for pediatrics clinics</li>
+            <li>Acquired and installed hardware and software solutions for office work and networking</li>
+            <li>Assisted in architecting and building medical office computer record systems, including specifying PC/server systems and networking gear</li>
+            <li>Technical support for customers&rsquo; hardware and software: over-the-phone and on-site</li>
           </ul>
         </article>
       </div>
@@ -271,8 +296,8 @@ const ZONES = [
       <div class="zone-content">
         <h2>Architecture &amp; DevOps</h2>
         <ul>
-          <li>Electron app packaging and distribution across Windows kiosk fleet</li>
-          <li>AWS architecture: Elastic Beanstalk, Aurora MySQL Serverless, ALB with auto-scaling</li>
+          <li>Electron app packaging and distribution across a fleet of Windows and Linux devices</li>
+          <li>AWS architecture: Elastic Beanstalk, Aurora MySQL Serverless, ELB with auto-scaling</li>
           <li>Multi-environment deployment (dev &rarr; test &rarr; production)</li>
           <li>Real-time hardware telemetry and cloud sync</li>
           <li>Session-based auth, API key management, franchise-scoped data isolation</li>

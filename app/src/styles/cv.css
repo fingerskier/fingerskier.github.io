@@ -178,7 +178,6 @@
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 2rem clamp(2rem, 6vw, 6rem);
   position: relative;
   box-sizing: border-box;
@@ -189,6 +188,7 @@
   position: relative;
   z-index: 5;
   max-width: 800px;
+  margin-block: auto;
 }
 
 .zone-scenery {

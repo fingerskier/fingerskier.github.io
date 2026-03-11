@@ -19,14 +19,14 @@ Linux Windows Engineering HTML CSS JS TS Coldfusion	Pascal C Java Cloud Infrastr
  
 ## PROFESSIONAL EXPERIENCE
 
-### CTO / Founder
+### CTO / Co-Founder
 **Turing Automations**	2017 – Present	Houston, TX
 *	Responsible for programming, hardware/electronics design, and prototyping.
 *	Responsible for procurement and logistics.
 *	Responsible for training and technical support.
 * 5 patent applications filed for automation technology;  2 issued / 3 pending.
 
-### Engineering Director
+### Engineering
 **OsteoStrong**	2017 – Present	Houston, TX
 *	Responsible for developing hardware and software for automating OsteoStrong skeletal therapy machines.
 *	Created the database schema and systems for world-wide, distributed controls of OsteoStrong systems.
@@ -41,10 +41,10 @@ Linux Windows Engineering HTML CSS JS TS Coldfusion	Pascal C Java Cloud Infrastr
 *	Leveraging AI/ML for data analysis, product features, and development workflow acceleration since 2023.
 
 ### Controls/Software Engineer
-**Premier Coil Solutions**	2017-2019 Wallter, TX
+**Premier Coil Solutions**	2017-2019 Waller, TX
 *	Responsible for developing advanced PLC automated control systems and standards.
+* World's first coiled-tubing auto-driller;  world-first fully automated nitrogen pumping unit;  fully automated drilling fluid pump unit.
 *	Created automation controller function libraries for command-request processing, task queuing, sequencing, limit and tolerance evaluation and deviation, I/O processing, and myriad low-level functionality.
-*	Created Hardware-in-Loop machine simulators for testing automation controller logic in a test setting.  This included Siemens, Wago, and PC libraries and interactive simulations.
 *	Created Hardware-in-Loop machine simulators for testing automation controller logic in a test setting.  This included Siemens, Wago, and PC libraries and interactive simulations.
 *	Responsible for developing and implementing software design specifications.
 *	Designed SCADA software for controlling and logging operational systems on coiled-tubing units, drilling fluild pump units and nitrogen pumping units;  including specifying instruments, historical trending, and automated/minimalist controls.
@@ -80,24 +80,24 @@ Linux Windows Engineering HTML CSS JS TS Coldfusion	Pascal C Java Cloud Infrastr
 *	Responsible for planning and on-site, hands-on supervision of Shell ERDD HLT project.
   *	The first project involved drilling 22 wells from a rectangular surface pattern to a sub-surface ring to test synthetic kerogen geomorphology.
   *	The second project involved drilling a 60 degree slant-well and three close pass-by horizontal wells to test oil-shale recovery methods.  The drilling targets were achieved despite several setbacks in drilling fluid composition, rheological considerations, and prototype drilling techniques.
-*	Responsible for Anadarko gas-well surface program in Uintah Basin
-  *	This project involved drilling surface holes for gas wells on Anadarko tribal leases preceding production drilling rigs.
+*	Responsible for multiple gas-well surface programs in Rocky Mountain region.
+  *	Projects involved drilling directional wells for gas wells preceding production.
   *	Surface wells ranged from <1 to >40 degree inclinations with high anti-collision risks and complex well paths.
-  *	We met a tight drilling schedule while adhering to performance and safety metrics.
-*	Member of the Barrick Exploration mine-shaft freeze wall project; Elko, NV
-  *	This project involved two drilling rigs in close proximity making 36 wells in a ring which would be frozen and cemented to create a natural barrier wall in which a mine-shaft would be excavated.
-  *	This rheology was extremely challenging and was exacerbated by the tight tolerances (2’ spacing between wells); we also overcame many technological and client relational issues.
+  *	Operated under tight drilling schedule while adhering to performance and safety metrics.
+*	Multiple mine-shaft directional wells and a freeze wall project.
+  *	Freeze-well projects involved multiple drilling rigs in close proximity drilling mutiple wells, each, in a ring which would be frozen and cemented to create a natural barrier wall within which a mine-shaft would be excavated.
+  *	This rheology was extremely challenging and was exacerbated by the tight tolerances (2’ spacing between wells); we also overcame many technological and logistical challenges.
 *	Led and organized teams and drilling packages
-  *	Teams were 2-4 persons with variant schedules and capabilities.  It was necessary to integrate skillsets appropriately and manage manpower as well as logistics.
-  *	Had to select and manage custom tools designed for each job: MWD/LWD survey and logging tools, rotary steerable systems, bent motors, drilling bits, and non-magnetic drill collar arrangement.
+  *	2-4 person teams with variant schedules and capabilities.  Necessarily integrating skillsets appropriately and managing manpower as well as logistics.
+  *	Selecting and managing custom tools setup for each job: MWD/LWD survey and logging tools, rotary steerable systems, bent motors, drilling bits, and non-magnetic drill collar arrangement.
 *	Consulted regularly on best practices for drilling parameters and drilling fluids.
 *	Often required to build custom, no-notice reports for well-engineers and on-site managers to aide in their reporting and understanding of the operations.
 
 
 ### Rig Hand
 **Nabors Drilling**	2004 – 2005	Rocky Mountains, USA
-*	Directional natural gas wells in the Piceance Basin, western Colorado (Rig #909)
-*	I worked as a rig-hand for NDUSA on rig #909 drilling natural gas directional wells in the Piceance Basin throughout western Colorado.
+*	Directional natural gas wells in the Piceance Basin.
+*	Rig-hand for NDUSA on rig #909 drilling natural gas directional wells in the Piceance Basin throughout western Colorado.
 *	Performed manual labor to include rig floor equipment such as pipe-tongs and slips.
 *	Partially responsible for maintaining drilling fluid properties by periodically adding chemicals deemed necessary by a supervisor.
 *	Responsible for general maintenance and operation of the rig’s mechanical, hydraulic, and pneumatic systems.

@@ -175,9 +175,9 @@ A conveyor belt moves components across the scene.
 **Turing Automations — Founder & Principal Engineer | 2017–Present**
 *Primary Client: OsteoStrong*
 
-- Architect and sole developer of the Spectrum platform: safety-critical Electron applications controlling exercise equipment across 200+ franchise locations worldwide
+- Architect and developer of the Spectrum platform: safety-critical, commercial applications controlling health/fitness equipment across 200+ franchise locations worldwide
 - Designed and implemented FSM-based actuator control with real-time safety supervisor monitoring force limits, timeouts, wrong-way motion, and signal validity
-- Built hardware abstraction layer supporting 5 actuator types and 3 load-cell types with automatic detection via serial port enumeration and confidence scoring
+- Built hardware abstraction layer supporting multiple hardware types and permutations with automatic detection via serial port enumeration and confidence scoring
 - Developed cloud infrastructure on AWS (Elastic Beanstalk, Aurora MySQL, S3, SES, SQS) for member management, session tracking, and franchise operations
 - Created over-the-air auto-update system for fleet of deployed kiosk devices
 - Maintained ~1,000 module codebase spanning firmware control, desktop UI, cloud API, and member-facing applications

@@ -10,7 +10,11 @@
       "WebFetch(domain:fingerskier.github.io)",
       "mcp__plugin_playwright_playwright__browser_navigate",
       "mcp__plugin_playwright_playwright__browser_click",
-      "mcp__claude_ai_Reqall__upsert_record"
+      "mcp__claude_ai_Reqall__upsert_record",
+      "Bash(cd /c/dev/fingerskier/fingerskier.github.io/app && npm install 2>&1 | tail -5)",
+      "Bash(npm run:*)",
+      "Bash(find /c/dev/fingerskier/fingerskier.github.io/app/src -type f \\\\\\( -name \"*.js\" -o -name \"*.css\" -o -name \"*.html\" \\\\\\) 2>/dev/null | sort)",
+      "Bash(grep -r \"cv\\\\.json\\\\|CV\\\\.md\" /c/dev/fingerskier/fingerskier.github.io --include=*.json --include=*.js --include=*.md --include=*.sh)"
     ]
   }
 }
