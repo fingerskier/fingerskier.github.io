@@ -1,8 +1,8 @@
 (function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))n(s);new MutationObserver(s=>{for(const a of s)if(a.type==="childList")for(const d of a.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&n(d)}).observe(document,{childList:!0,subtree:!0});function r(s){const a={};return s.integrity&&(a.integrity=s.integrity),s.referrerPolicy&&(a.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?a.credentials="include":s.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function n(s){if(s.ep)return;s.ep=!0;const a=r(s);fetch(s.href,a)}})();const f=[{id:"entryway",label:"Entryway",content:()=>`
       <div class="zone-content">
         <h1>Matt Currier</h1>
-        <p class="cv-title">Founder &amp; Principal Engineer &mdash; Turing Automations</p>
-        <p class="cv-tagline">Songwriter &middot; Thinker &middot; Builder of Things That Move</p>
+        <p class="cv-title">Co-Founder &amp; Principal Engineer &mdash; Turing Automations</p>
+        <p class="cv-tagline">Creator of things &middot; Songwriter &middot; Thinkster</p>
         <div class="cv-links">
           <a href="https://github.com/fingerskier" target="_blank" rel="noopener">GitHub</a>
           <a href="https://linkedin.com/in/matt-currier" target="_blank" rel="noopener">LinkedIn</a>
@@ -101,79 +101,77 @@
           <time>2017 &ndash; Present</time>
           <p><em>Primary Client: OsteoStrong</em></p>
           <ul>
-            <li>Architect and sole developer of the Spectrum platform: safety-critical Electron applications controlling exercise equipment across 200+ franchise locations worldwide</li>
+            <li>Architect and developer of the Spectrum platform: safety-critical applications controlling health/fitness equipment across 200+ franchise locations worldwide</li>
             <li>Designed FSM-based actuator control with real-time safety supervisor monitoring force limits, timeouts, wrong-way motion, and signal validity</li>
             <li>Built hardware abstraction layer supporting 5 actuator types and 3 load-cell types with automatic detection</li>
-            <li>Developed cloud infrastructure on AWS (Elastic Beanstalk, Aurora MySQL, S3, SES, SQS)</li>
-            <li>Created over-the-air auto-update system for fleet of deployed kiosk devices</li>
-            <li>Maintained ~1,000 module codebase spanning firmware control, desktop UI, cloud API, and member-facing apps</li>
+            <li>Developed cloud infrastructure on AWS infrastructure</li>
+            <li>Created over-the-air auto-update system for fleet of deployed devices w/ desktop apps on SBCs</li>
+            <li>Maintained complex codebase spanning firmware control, desktop UI, cloud API, and member-facing apps</li>
             <li>Built digital twin / simulator system enabling full development and testing without physical hardware</li>
           </ul>
+
           <div class="project-stations">
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
               <h4>Spectrum Application</h4>
-              <p>Core Electron app &mdash; actuator control, session management</p>
+              <p>Core app &mdash; actuator control, session management</p>
               <div class="spec-plate">
                 <dl>
-                  <dt>Stack</dt><dd>Electron &middot; Node.js &middot; USB-Serial</dd>
+                  <dt>Stack</dt><dd>Desktop &middot; I/O &middot; custom H/W</dd>
                   <dt>Deployed</dt><dd>200+ franchise locations worldwide</dd>
-                  <dt>Role</dt><dd>Architect &amp; sole developer since 2017</dd>
                 </dl>
               </div>
             </div>
+            
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
-              <h4>Spectrum UI</h4>
-              <p>Touch-screen kiosk interface for members</p>
+              <h4>Member Assessment Kiosk</h4>
+              <p>Touch-screen control, multi-screen kiosk for member health assessments</p>
               <div class="spec-plate">
                 <dl>
-                  <dt>Stack</dt><dd>React &middot; Electron renderer</dd>
+                  <dt>Stack</dt><dd>Embedded Desktop UI</dd>
                   <dt>Features</dt><dd>Session flow, real-time force display, member profiles</dd>
                 </dl>
               </div>
             </div>
+
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
-              <h4>OS Chroma</h4>
-              <p>Cloud API &amp; admin dashboard (Express/MySQL/AWS)</p>
+              <h4>Cloud Infrastructure</h4>
+              <p>Cloud API &amp; admin dashboard &amp; databases</p>
               <div class="spec-plate">
                 <dl>
-                  <dt>Stack</dt><dd>Express &middot; Aurora MySQL &middot; AWS EB &middot; S3 &middot; SES &middot; SQS</dd>
+                  <dt>Stack</dt><dd>Servers &middot; Databases &middot; Load-Balancing &middot; Data-Lake &middot; Cross-x Messaging</dd>
                   <dt>Features</dt><dd>Franchise ops, member management, telemetry sync, auto-scaling</dd>
                 </dl>
               </div>
             </div>
+
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
-              <h4>OS Firmware</h4>
-              <p>Hardware drivers, serial protocols, safety FSM</p>
+              <h4>Firmware</h4>
+              <p>Next-gen IoT hardware (h/w drivers, protocols, safety FSM)</p>
               <div class="spec-plate">
                 <dl>
-                  <dt>Stack</dt><dd>Node.js &middot; USB-Serial &middot; RS-232</dd>
-                  <dt>Features</dt><dd>5 actuator types, 3 load-cell types, auto-detect, safety supervisor</dd>
+                  <dt>Stack</dt>
+                  <dd>Node.js &middot; Micropython &middot; C</dd>
+                  
+                  <dt>Features</dt>
+                  <dd>Multiple types of actuators, load-cells and sensors;  Automatic h/w detect &amp; safety supervisor</dd>
                 </dl>
               </div>
             </div>
+
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
-              <h4>Believer App</h4>
-              <p>Member-facing mobile/web app</p>
+              <h4>Member Journey App</h4>
+              <p>Member-facing mobile/web apps</p>
               <div class="spec-plate">
                 <dl>
-                  <dt>Stack</dt><dd>React &middot; Express API</dd>
+                  <dt>Stack</dt><dd>Cloud API server</dd>
+                  <dt>Stack</dt><dd>PWA &middot; web-app</dd>
+                  <dt>Stack</dt><dd>Android/iOS &middot; mobile-apps</dd>
                   <dt>Features</dt><dd>Session history, progress tracking, appointment scheduling</dd>
-                </dl>
-              </div>
-            </div>
-            <div class="station" data-status="rnd" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led yellow"></span>
-              <h4>Shrewdy</h4>
-              <p>Next-gen IoT hardware (Pico W devices)</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt><dd>Raspberry Pi Pico W &middot; MicroPython</dd>
-                  <dt>Status</dt><dd>R&amp;D &mdash; next-generation hardware platform</dd>
                 </dl>
               </div>
             </div>
@@ -185,6 +183,9 @@
           <time>2017 &ndash; 2019</time>
           <ul>
             <li>Developed advanced PLC automated control systems and standards</li>
+            <li>World-first coiled-tubing unit auto-driller</li>
+            <li>World-first automated nitrogen pump</li>
+            <li>Automated coilted-tubing fluid pump</li>
             <li>Created automation controller function libraries for command-request processing, task queuing, sequencing</li>
             <li>Created Hardware-in-Loop machine simulators (Siemens, Wago, PC)</li>
             <li>Designed SCADA software for coiled-tubing, drilling fluid, and nitrogen pumping units</li>
@@ -220,6 +221,30 @@
             <li>Barrick mine-shaft freeze wall: 36 wells in a ring with 2-foot spacing tolerances</li>
           </ul>
         </article>
+
+        <article class="role">
+          <h3>Nabors Drilling &mdash; Rig Hand</h3>
+          <time>2004 &ndash; 2005 &middot; Rocky Mountains, USA</time>
+          <ul>
+            <li>Directional natural gas wells in the Piceance Basin</li>
+            <li>Rig-hand for NDUSA on rig #909 drilling natural gas directional wells throughout western Colorado</li>
+            <li>Performed manual labor including rig floor equipment such as pipe-tongs and slips</li>
+            <li>Partially responsible for maintaining drilling fluid properties</li>
+            <li>General maintenance and operation of the rig&rsquo;s mechanical, hydraulic, and pneumatic systems</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <h3>ACS Online &mdash; IT and Programming</h3>
+          <time>1998 &ndash; 2003 &middot; Grand Junction, CO</time>
+          <ul>
+            <li>Medical Manager scripts and setup for clients, including determining software requirements</li>
+            <li>Refactored government reporting templates for pediatrics clinics</li>
+            <li>Acquired and installed hardware and software solutions for office work and networking</li>
+            <li>Assisted in architecting and building medical office computer record systems, including specifying PC/server systems and networking gear</li>
+            <li>Technical support for customers&rsquo; hardware and software: over-the-phone and on-site</li>
+          </ul>
+        </article>
       </div>
       <div class="zone-scenery" aria-hidden="true">
         <svg class="scenery-actuator-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
@@ -247,8 +272,8 @@
       <div class="zone-content">
         <h2>Architecture &amp; DevOps</h2>
         <ul>
-          <li>Electron app packaging and distribution across Windows kiosk fleet</li>
-          <li>AWS architecture: Elastic Beanstalk, Aurora MySQL Serverless, ALB with auto-scaling</li>
+          <li>Electron app packaging and distribution across a fleet of Windows and Linux devices</li>
+          <li>AWS architecture: Elastic Beanstalk, Aurora MySQL Serverless, ELB with auto-scaling</li>
           <li>Multi-environment deployment (dev &rarr; test &rarr; production)</li>
           <li>Real-time hardware telemetry and cloud sync</li>
           <li>Session-based auth, API key management, franchise-scoped data isolation</li>
@@ -412,7 +437,7 @@
           <rect class="mailbox-flag" x="42" y="14" width="4" height="18" rx="1" fill="#E8742A"/>
         </svg>
       </div>
-    `}];function T(){return`
+    `}];function M(){return`
   <svg class="character-svg" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
     <!-- hard hat -->
     <ellipse cx="30" cy="14" rx="16" ry="8" fill="#E8742A"/>
@@ -439,7 +464,7 @@
     <!-- arms -->
     <rect class="arm-left" x="11" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
     <rect class="arm-right" x="39" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
-  </svg>`}function M(){const e=document.getElementById("app"),i=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches;e.innerHTML=`
+  </svg>`}function T(){const e=document.getElementById("app"),i=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches;e.innerHTML=`
     <div class="icv${i?" plain-mode":""}">
       <a href="#main-content" class="skip-link">Skip to content</a>
 
@@ -463,7 +488,7 @@
       </div>
 
       <div class="character" aria-hidden="true">
-        ${T()}
+        ${M()}
       </div>
 
       <div class="zones-track" id="main-content">
@@ -474,7 +499,7 @@
         `).join("")}
       </div>
     </div>
-  `,$(e,i)}function $(e,i){const r=e.querySelector(".icv"),n=e.querySelector(".zones-track"),s=e.querySelector(".character"),a=Array.from(e.querySelectorAll(".zone")),d=e.querySelector(".hud-progress-fill"),C=e.querySelector(".hud-zone-label"),y=Array.from(e.querySelectorAll(".hud-dot")),u=e.querySelector(".mode-toggle"),v=e.querySelector(".parallax-sky"),x=e.querySelector(".parallax-wall");let o=i,p=0;u.addEventListener("click",()=>{o=!o,r.classList.toggle("plain-mode",o),sessionStorage.setItem("cv-plain",String(o)),u.textContent=o?"🎮":"📄"}),e.querySelector(".hud-home").addEventListener("click",()=>{o?a[0].scrollIntoView({behavior:"smooth",block:"start"}):a[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),y.forEach(l=>{l.addEventListener("click",()=>{const t=parseInt(l.dataset.zoneIndex,10);o?a[t].scrollIntoView({behavior:"smooth",block:"start"}):a[t].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function h(){if(o){const t=window.scrollY||document.documentElement.scrollTop,c=document.documentElement.scrollHeight-window.innerHeight;d.style.width=(c>0?t/c*100:0)+"%"}else{const t=n.scrollLeft,c=n.scrollWidth-n.clientWidth,E=c>0?t/c:0;d.style.width=E*100+"%";const P=E*(n.clientWidth-80);s.style.transform=`translateX(${P}px)`,Math.abs(t-p)>1&&(s.classList.add("walking"),s.classList.toggle("facing-left",t<p)),p=t,clearTimeout(s._wt),clearTimeout(s._pt),s.classList.remove("pointing"),s._wt=setTimeout(()=>{s.classList.remove("walking"),s._pt=setTimeout(()=>s.classList.add("pointing"),400)},200),v&&(v.style.transform=`translateX(${-t*.1}px)`),x&&(x.style.transform=`translateX(${-t*.3}px)`)}let l=0;if(o){for(let t=a.length-1;t>=0;t--)if(a[t].getBoundingClientRect().top<=window.innerHeight/3){l=t;break}}else for(let t=a.length-1;t>=0;t--)if(a[t].getBoundingClientRect().left<=n.clientWidth/2){l=t;break}C.textContent=f[l].label,y.forEach((t,c)=>t.classList.toggle("active",c===l))}n.addEventListener("scroll",h),window.addEventListener("scroll",h);function w(l){o||(l.key==="ArrowRight"?n.scrollBy({left:400,behavior:"smooth"}):l.key==="ArrowLeft"&&n.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",w);const L=e.querySelectorAll(".meter"),g=new IntersectionObserver(l=>{l.forEach(t=>{t.isIntersecting&&(t.target.classList.add("filled"),g.unobserve(t.target))})},{threshold:.2});L.forEach(l=>g.observe(l));const k=e.querySelectorAll(".station");k.forEach(l=>{l.addEventListener("click",()=>{const t=l.classList.contains("expanded");k.forEach(c=>{c.classList.remove("expanded"),c.setAttribute("aria-expanded","false")}),t||(l.classList.add("expanded"),l.setAttribute("aria-expanded","true"))})});const D=e.querySelectorAll(".status-led"),m=[];D.forEach(l=>{m.push(setInterval(()=>l.classList.toggle("blink"),800+Math.random()*1500))});const b=e.querySelector(".loadcell-value");b&&m.push(setInterval(()=>{b.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));const S=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",w),window.removeEventListener("scroll",h),m.forEach(clearInterval),g.disconnect(),S.disconnect())});S.observe(e,{childList:!0}),requestAnimationFrame(h)}const z=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function F(){const e=document.getElementById("app");e.innerHTML=`
+  `,q(e,i)}function q(e,i){const r=e.querySelector(".icv"),n=e.querySelector(".zones-track"),s=e.querySelector(".character"),a=Array.from(e.querySelectorAll(".zone")),d=e.querySelector(".hud-progress-fill"),B=e.querySelector(".hud-zone-label"),u=Array.from(e.querySelectorAll(".hud-dot")),y=e.querySelector(".mode-toggle"),v=e.querySelector(".parallax-sky"),x=e.querySelector(".parallax-wall");let o=i,p=0;y.addEventListener("click",()=>{o=!o,r.classList.toggle("plain-mode",o),sessionStorage.setItem("cv-plain",String(o)),y.textContent=o?"🎮":"📄"}),e.querySelector(".hud-home").addEventListener("click",()=>{o?a[0].scrollIntoView({behavior:"smooth",block:"start"}):a[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),u.forEach(l=>{l.addEventListener("click",()=>{const t=parseInt(l.dataset.zoneIndex,10);o?a[t].scrollIntoView({behavior:"smooth",block:"start"}):a[t].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function h(){if(o){const t=window.scrollY||document.documentElement.scrollTop,c=document.documentElement.scrollHeight-window.innerHeight;d.style.width=(c>0?t/c*100:0)+"%"}else{const t=n.scrollLeft,c=n.scrollWidth-n.clientWidth,S=c>0?t/c:0;d.style.width=S*100+"%";const P=S*(n.clientWidth-80);s.style.transform=`translateX(${P}px)`,Math.abs(t-p)>1&&(s.classList.add("walking"),s.classList.toggle("facing-left",t<p)),p=t,clearTimeout(s._wt),clearTimeout(s._pt),s.classList.remove("pointing"),s._wt=setTimeout(()=>{s.classList.remove("walking"),s._pt=setTimeout(()=>s.classList.add("pointing"),400)},200),v&&(v.style.transform=`translateX(${-t*.1}px)`),x&&(x.style.transform=`translateX(${-t*.3}px)`)}let l=0;if(o){for(let t=a.length-1;t>=0;t--)if(a[t].getBoundingClientRect().top<=window.innerHeight/3){l=t;break}}else for(let t=a.length-1;t>=0;t--)if(a[t].getBoundingClientRect().left<=n.clientWidth/2){l=t;break}B.textContent=f[l].label,u.forEach((t,c)=>t.classList.toggle("active",c===l))}n.addEventListener("scroll",h),window.addEventListener("scroll",h);function w(l){o||(l.key==="ArrowRight"?n.scrollBy({left:400,behavior:"smooth"}):l.key==="ArrowLeft"&&n.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",w);const D=e.querySelectorAll(".meter"),g=new IntersectionObserver(l=>{l.forEach(t=>{t.isIntersecting&&(t.target.classList.add("filled"),g.unobserve(t.target))})},{threshold:.2});D.forEach(l=>g.observe(l));const k=e.querySelectorAll(".station");k.forEach(l=>{l.addEventListener("click",()=>{const t=l.classList.contains("expanded");k.forEach(c=>{c.classList.remove("expanded"),c.setAttribute("aria-expanded","false")}),t||(l.classList.add("expanded"),l.setAttribute("aria-expanded","true"))})});const L=e.querySelectorAll(".status-led"),m=[];L.forEach(l=>{m.push(setInterval(()=>l.classList.toggle("blink"),800+Math.random()*1500))});const b=e.querySelector(".loadcell-value");b&&m.push(setInterval(()=>{b.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));const A=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",w),window.removeEventListener("scroll",h),m.forEach(clearInterval),g.disconnect(),A.disconnect())});A.observe(e,{childList:!0}),requestAnimationFrame(h)}const I=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function $(){const e=document.getElementById("app");e.innerHTML=`
     <div class="icv projects-page">
       <div class="hud" role="navigation" aria-label="Projects navigation">
         <div class="hud-left">
@@ -491,7 +516,7 @@
         <p class="projects-subtitle">Public repositories, apps, and experiments.</p>
 
         <div class="projects-grid">
-          ${z.map(i=>`
+          ${I.map(i=>`
             <section class="project-category" id="cat-${i.id}">
               <h2>${i.label}</h2>
               <p class="category-desc">${i.description}</p>
@@ -512,4 +537,4 @@
         </div>
       </main>
     </div>
-  `}let A=null;function B(){const e=window.location.hash==="#projects"?"projects":"cv";e!==A&&(A=e,e==="projects"?F():M())}window.addEventListener("hashchange",B);B();
+  `}let E=null;function C(){const e=window.location.hash==="#projects"?"projects":"cv";e!==E&&(E=e,e==="projects"?$():T())}window.addEventListener("hashchange",C);C();
