@@ -97,7 +97,7 @@
       <div class="zone-content">
         <h2>Experience</h2>
         <article class="role">
-          <h3>Turing Automations &mdash; Founder &amp; Principal Engineer</h3>
+          <h3>Turing Automations &mdash; Co-Founder &amp; Principal Engineer</h3>
           <time>2017 &ndash; Present</time>
           <p><em>Primary Client: OsteoStrong</em></p>
           <ul>
