@@ -3,9 +3,13 @@ import './styles/cv.css'
 import { renderCV } from './pages/cv.js'
 import { renderProjects } from './pages/projects.js'
 
+let currentPage = null
+
 function route() {
-  const hash = window.location.hash
-  if (hash === '#projects') {
+  const page = window.location.hash === '#projects' ? 'projects' : 'cv'
+  if (page === currentPage) return
+  currentPage = page
+  if (page === 'projects') {
     renderProjects()
   } else {
     renderCV()

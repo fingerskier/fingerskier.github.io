@@ -925,26 +925,26 @@
   padding: 5rem 1.5rem 3rem;
 }
 
-.projects-main h1 {
+.projects-page .projects-main h1 {
   font-family: "JetBrains Mono", monospace;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   letter-spacing: 0.04em;
   margin: 0 0 0.25rem;
 }
 
-.projects-subtitle {
+.projects-page .projects-subtitle {
   color: rgba(45,45,45,0.6);
   font-style: italic;
   margin: 0 0 2.5rem;
 }
 
-.projects-grid {
+.projects-page .projects-grid {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 }
 
-.project-category h2 {
+.projects-page .project-category h2 {
   font-family: "JetBrains Mono", monospace;
   font-size: 1rem;
   text-transform: uppercase;
@@ -955,49 +955,49 @@
   margin: 0 0 0.25rem;
 }
 
-.category-desc {
+.projects-page .category-desc {
   font-size: 0.85rem;
   color: rgba(45,45,45,0.6);
   margin: 0 0 1rem;
 }
 
-.category-items {
+.projects-page .category-items {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
 }
 
-.project-card {
+.projects-page .project-card {
   background: rgba(45,45,45,0.05);
   border: 1.5px solid rgba(45,45,45,0.12);
   border-radius: 0.75rem;
   padding: 1rem 1.25rem;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-.project-card:hover {
+.projects-page .project-card:hover {
   border-color: var(--accent);
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.project-card h3 {
+.projects-page .project-card h3 {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.95rem;
   margin: 0 0 0.35rem;
 }
 
-.project-card p {
+.projects-page .project-card p {
   font-size: 0.85rem;
   color: rgba(45,45,45,0.7);
   margin: 0 0 0.75rem;
   line-height: 1.4;
 }
 
-.project-links {
+.projects-page .project-links {
   display: flex;
   gap: 0.5rem;
 }
 
-.project-links a {
+.projects-page .project-links a {
   padding: 0.3rem 0.8rem;
   border: 1.5px solid var(--blue);
   border-radius: 2rem;
@@ -1006,7 +1006,7 @@
   font-size: 0.8rem;
   transition: background 0.2s, color 0.2s;
 }
-.project-links a:hover {
+.projects-page .project-links a:hover {
   background: var(--blue);
   color: var(--light);
 }

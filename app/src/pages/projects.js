@@ -80,8 +80,8 @@ export function renderProjects() {
                     <h3>${p.name}</h3>
                     <p>${p.description}</p>
                     <div class="project-links">
-                      ${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">Visit</a>` : ''}
-                      ${p.repo ? `<a href="${p.repo}" target="_blank" rel="noopener">Repo</a>` : ''}
+                      ${p.url ? `<a href="${p.url}" target="_blank" rel="noopener" aria-label="Visit ${p.name} site">Visit</a>` : ''}
+                      ${p.repo ? `<a href="${p.repo}" target="_blank" rel="noopener" aria-label="View ${p.name} repository">Repo</a>` : ''}
                     </div>
                   </div>
                 `).join('')}
