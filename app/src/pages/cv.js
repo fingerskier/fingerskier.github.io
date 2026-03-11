@@ -15,6 +15,7 @@ const ZONES = [
           <a href="https://x.com/fingerskier" target="_blank" rel="noopener">X</a>
           <a href="https://youtube.com/@fingerskier" target="_blank" rel="noopener">YouTube</a>
           <a href="https://bandcamp.com/mattcurrier" target="_blank" rel="noopener">Bandcamp</a>
+          <a href="#projects" class="projects-link">Projects</a>
         </div>
       </div>
       <div class="zone-scenery" aria-hidden="true">
