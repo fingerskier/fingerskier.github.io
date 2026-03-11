@@ -918,6 +918,108 @@
   }
 }
 
+/* ── Projects page ── */
+.projects-page .projects-main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 3rem;
+}
+
+.projects-page .projects-main h1 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  letter-spacing: 0.04em;
+  margin: 0 0 0.25rem;
+}
+
+.projects-page .projects-subtitle {
+  color: rgba(45,45,45,0.6);
+  font-style: italic;
+  margin: 0 0 2.5rem;
+}
+
+.projects-page .projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.projects-page .project-category h2 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+  border-bottom: 2px solid var(--teal);
+  padding-bottom: 0.25rem;
+  margin: 0 0 0.25rem;
+}
+
+.projects-page .category-desc {
+  font-size: 0.85rem;
+  color: rgba(45,45,45,0.6);
+  margin: 0 0 1rem;
+}
+
+.projects-page .category-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.projects-page .project-card {
+  background: rgba(45,45,45,0.05);
+  border: 1.5px solid rgba(45,45,45,0.12);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.projects-page .project-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.projects-page .project-card h3 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
+  margin: 0 0 0.35rem;
+}
+
+.projects-page .project-card p {
+  font-size: 0.85rem;
+  color: rgba(45,45,45,0.7);
+  margin: 0 0 0.75rem;
+  line-height: 1.4;
+}
+
+.projects-page .project-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.projects-page .project-links a {
+  padding: 0.3rem 0.8rem;
+  border: 1.5px solid var(--blue);
+  border-radius: 2rem;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: background 0.2s, color 0.2s;
+}
+.projects-page .project-links a:hover {
+  background: var(--blue);
+  color: var(--light);
+}
+
+.cv-links .projects-link {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.cv-links .projects-link:hover {
+  background: var(--accent);
+  color: var(--light);
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   .character, .parallax-layer, .zone-scenery {
