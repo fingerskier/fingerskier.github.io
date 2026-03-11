@@ -26,7 +26,7 @@ QUALIFICATIONS
 
  
 PROFESSIONAL EXPERIENCE
-CTO / Founder	Turing Automations	2017 – Present	Houston, TX
+CTO / Co-Founder	Turing Automations	2017 – Present	Houston, TX
 •	Responsible for programming, hardware/electronics design, and prototyping.
 •	Responsible for procurement and logistics.
 •	Responsible for training and technical support.
