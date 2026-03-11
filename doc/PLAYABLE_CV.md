@@ -93,7 +93,7 @@ The game layer is purely visual enhancement:
   <div class="zone-content">
     <h2>Experience</h2>
     <article class="role">
-      <h3>Turing Automations — Founder & Principal Engineer</h3>
+      <h3>Turing Automations — Co-Founder & Principal Engineer</h3>
       <time>2017–Present</time>
       <p>Primary Client: OsteoStrong</p>
       ...
@@ -117,7 +117,7 @@ The game layer is purely visual enhancement:
 **Content:**
 ```
 Matt
-Founder & Principal Engineer — Turing Automations
+Co-Founder & Principal Engineer — Turing Automations
 Songwriter · Thinker · Builder of Things That Move
 
 [Blog] [GitHub] [Contact]
@@ -172,7 +172,7 @@ A conveyor belt moves components across the scene.
 
 **Content:**
 
-**Turing Automations — Founder & Principal Engineer | 2017–Present**
+**Turing Automations — Co-Founder & Principal Engineer | 2017–Present**
 *Primary Client: OsteoStrong*
 
 - Architect and developer of the Spectrum platform: safety-critical, commercial applications controlling health/fitness equipment across 200+ franchise locations worldwide
@@ -189,10 +189,10 @@ A conveyor belt moves components across the scene.
 |---------|-------------|-------------|
 | Spectrum Application | Core Electron app — actuator control, session management | 🟢 Active |
 | Spectrum UI | Touch-screen kiosk interface for members | 🟢 Active |
-| OS Chroma | Cloud API & admin dashboard (Express/MySQL/AWS) | 🟢 Active |
-| OS Firmware | Hardware drivers, serial protocols, safety FSM | 🟢 Active |
-| Believer App | Member-facing mobile/web app | 🟢 Active |
-| Shrewdy | Next-gen IoT hardware (Pico W devices) | 🟡 R&D |
+| Chroma | Cloud API & admin dashboard (Express/MySQL/AWS) | 🟢 Active |
+| Firmware | Hardware drivers, serial protocols, safety FSM | 🟢 Active |
+| Member App | Member-facing mobile/web app | 🟢 Active |
+| Hardware | Next-gen IoT hardware (ESP & RP devices) | 🟡 R&D |
 
 **Interactive:** Clicking/tapping a machine opens a "spec plate" (like an industrial nameplate) with project details. The actuator visually extends when hovered.  The load cell display shows real force values ticking.
 
@@ -222,7 +222,7 @@ A conveyor belt moves components across the scene.
 
 - Songwriter and musician
 - Compositions include "Conqueror's Song" and "The Father's Hand" (modern hymn based on Ashokan Farewell)
-- Interests in music theory, hymn writing, and the intersection of mathematics and music
+- Interests in music theory, worship/hymn writing, and the intersection of mathematics and music
 - This section demonstrates range — the same mind that designs safety-critical state machines also writes songs
 
 **Interactive:** Subtle ambient audio option (off by default, click to enable). Musical notes float up from the stage in a particle effect. Sheet music on the stand could show a real snippet.
