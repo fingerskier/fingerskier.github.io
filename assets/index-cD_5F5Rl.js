@@ -1,4 +1,4 @@
-(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))r(t);new MutationObserver(t=>{for(const a of t)if(a.type==="childList")for(const d of a.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&r(d)}).observe(document,{childList:!0,subtree:!0});function c(t){const a={};return t.integrity&&(a.integrity=t.integrity),t.referrerPolicy&&(a.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?a.credentials="include":t.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function r(t){if(t.ep)return;t.ep=!0;const a=c(t);fetch(t.href,a)}})();const m=[{id:"entryway",label:"Entryway",content:()=>`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))n(s);new MutationObserver(s=>{for(const l of s)if(l.type==="childList")for(const d of l.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&n(d)}).observe(document,{childList:!0,subtree:!0});function r(s){const l={};return s.integrity&&(l.integrity=s.integrity),s.referrerPolicy&&(l.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?l.credentials="include":s.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function n(s){if(s.ep)return;s.ep=!0;const l=r(s);fetch(s.href,l)}})();const f=[{id:"entryway",label:"Entryway",content:()=>`
       <div class="zone-content">
         <h1>Matt Currier</h1>
         <p class="cv-title">Founder &amp; Principal Engineer &mdash; Turing Automations</p>
@@ -10,6 +10,7 @@
           <a href="https://x.com/fingerskier" target="_blank" rel="noopener">X</a>
           <a href="https://youtube.com/@fingerskier" target="_blank" rel="noopener">YouTube</a>
           <a href="https://bandcamp.com/mattcurrier" target="_blank" rel="noopener">Bandcamp</a>
+          <a href="#projects" class="projects-link">Projects</a>
         </div>
       </div>
       <div class="zone-scenery" aria-hidden="true">
@@ -83,7 +84,7 @@
         </svg>
         <svg class="scenery-pegboard-svg" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="0" width="120" height="180" rx="2" fill="#c4a882" opacity="0.3"/>
-          ${[0,1,2,3,4,5,6,7].map(i=>[0,1,2,3,4].map(l=>'<circle cx="'+(12+l*24)+'" cy="'+(12+i*22)+'" r="3" fill="rgba(0,0,0,0.15)"/>').join("")).join("")}
+          ${[0,1,2,3,4,5,6,7].map(e=>[0,1,2,3,4].map(i=>'<circle cx="'+(12+i*24)+'" cy="'+(12+e*22)+'" r="3" fill="rgba(0,0,0,0.15)"/>').join("")).join("")}
           <!-- wrench -->
           <rect x="20" y="25" width="6" height="50" rx="3" fill="#888" opacity="0.5" transform="rotate(-15 23 50)"/>
           <!-- screwdriver -->
@@ -239,7 +240,7 @@
         <svg class="scenery-conveyor-svg" viewBox="0 0 800 30" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="5" width="800" height="20" rx="3" fill="#444"/>
           <g class="conveyor-segments">
-            ${Array.from({length:20},(i,l)=>'<rect x="'+l*40+'" y="7" width="35" height="16" rx="1" fill="#'+(l%2?"666":"555")+'"/>').join("")}
+            ${Array.from({length:20},(e,i)=>'<rect x="'+i*40+'" y="7" width="35" height="16" rx="1" fill="#'+(i%2?"666":"555")+'"/>').join("")}
           </g>
         </svg>
       </div>
@@ -267,12 +268,12 @@
         <svg class="scenery-rack-svg" viewBox="0 0 80 240" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="0" width="80" height="240" rx="3" fill="#2a2a2a" stroke="#444" stroke-width="2"/>
           <rect x="4" y="4" width="72" height="232" rx="2" fill="#1a1a1a"/>
-          ${Array.from({length:8},(i,l)=>`
-            <rect x="10" y="${12+l*28}" width="60" height="22" rx="2" fill="#333" stroke="#444" stroke-width="1"/>
-            <circle cx="20" cy="${23+l*28}" r="2.5" fill="${["#0f0","#0f0","#ff0","#0f0","#0ff","#0f0","#f80","#0f0"][l]}" class="rack-led"/>
-            <circle cx="30" cy="${23+l*28}" r="2.5" fill="${["#0f0","#ff0","#0f0","#0f0","#0f0","#0ff","#0f0","#ff0"][l]}" class="rack-led"/>
-            <rect x="40" y="${17+l*28}" width="24" height="3" rx="1" fill="#555"/>
-            <rect x="40" y="${23+l*28}" width="24" height="3" rx="1" fill="#555"/>
+          ${Array.from({length:8},(e,i)=>`
+            <rect x="10" y="${12+i*28}" width="60" height="22" rx="2" fill="#333" stroke="#444" stroke-width="1"/>
+            <circle cx="20" cy="${23+i*28}" r="2.5" fill="${["#0f0","#0f0","#ff0","#0f0","#0ff","#0f0","#f80","#0f0"][i]}" class="rack-led"/>
+            <circle cx="30" cy="${23+i*28}" r="2.5" fill="${["#0f0","#ff0","#0f0","#0f0","#0f0","#0ff","#0f0","#ff0"][i]}" class="rack-led"/>
+            <rect x="40" y="${17+i*28}" width="24" height="3" rx="1" fill="#555"/>
+            <rect x="40" y="${23+i*28}" width="24" height="3" rx="1" fill="#555"/>
           `).join("")}
         </svg>
         <svg class="scenery-cables-svg" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
@@ -413,7 +414,7 @@
           <rect class="mailbox-flag" x="42" y="14" width="4" height="18" rx="1" fill="#E8742A"/>
         </svg>
       </div>
-    `}];function D(){return`
+    `}];function T(){return`
   <svg class="character-svg" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
     <!-- hard hat -->
     <ellipse cx="30" cy="14" rx="16" ry="8" fill="#E8742A"/>
@@ -440,8 +441,8 @@
     <!-- arms -->
     <rect class="arm-left" x="11" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
     <rect class="arm-right" x="39" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
-  </svg>`}function T(){const i=document.getElementById("app"),l=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches;i.innerHTML=`
-    <div class="icv${l?" plain-mode":""}">
+  </svg>`}function M(){const e=document.getElementById("app"),i=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches;e.innerHTML=`
+    <div class="icv${i?" plain-mode":""}">
       <a href="#main-content" class="skip-link">Skip to content</a>
 
       <div class="parallax-layer parallax-sky" aria-hidden="true"></div>
@@ -457,22 +458,60 @@
         </div>
         <div class="hud-right">
           <div class="hud-nav-dots">
-            ${m.map((c,r)=>`<button class="hud-dot${r===0?" active":""}" data-zone-index="${r}" title="${c.label}"></button>`).join("")}
+            ${f.map((r,n)=>`<button class="hud-dot${n===0?" active":""}" data-zone-index="${n}" title="${r.label}"></button>`).join("")}
           </div>
-          <button class="mode-toggle" aria-label="Toggle plain mode">${l?"🎮":"📄"}</button>
+          <button class="mode-toggle" aria-label="Toggle plain mode">${i?"🎮":"📄"}</button>
         </div>
       </div>
 
       <div class="character" aria-hidden="true">
-        ${D()}
+        ${T()}
       </div>
 
       <div class="zones-track" id="main-content">
-        ${m.map((c,r)=>`
-          <section class="zone" id="zone-${c.id}" data-zone="${c.id}" data-zone-index="${r}">
-            ${c.content()}
+        ${f.map((r,n)=>`
+          <section class="zone" id="zone-${r.id}" data-zone="${r.id}" data-zone-index="${n}">
+            ${r.content()}
           </section>
         `).join("")}
       </div>
     </div>
-  `,z(i,l)}function z(i,l){const c=i.querySelector(".icv"),r=i.querySelector(".zones-track"),t=i.querySelector(".character"),a=Array.from(i.querySelectorAll(".zone")),d=i.querySelector(".hud-progress-fill"),E=i.querySelector(".hud-zone-label"),y=Array.from(i.querySelectorAll(".hud-dot")),x=i.querySelector(".mode-toggle"),u=i.querySelector(".parallax-sky"),v=i.querySelector(".parallax-wall");let n=l,p=0;x.addEventListener("click",()=>{n=!n,c.classList.toggle("plain-mode",n),sessionStorage.setItem("cv-plain",String(n)),x.textContent=n?"🎮":"📄"}),i.querySelector(".hud-home").addEventListener("click",()=>{n?a[0].scrollIntoView({behavior:"smooth",block:"start"}):a[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),y.forEach(s=>{s.addEventListener("click",()=>{const e=parseInt(s.dataset.zoneIndex,10);n?a[e].scrollIntoView({behavior:"smooth",block:"start"}):a[e].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function h(){if(n){const e=window.scrollY||document.documentElement.scrollTop,o=document.documentElement.scrollHeight-window.innerHeight;d.style.width=(o>0?e/o*100:0)+"%"}else{const e=r.scrollLeft,o=r.scrollWidth-r.clientWidth,A=o>0?e/o:0;d.style.width=A*100+"%";const L=A*(r.clientWidth-80);t.style.transform=`translateX(${L}px)`,Math.abs(e-p)>1&&(t.classList.add("walking"),t.classList.toggle("facing-left",e<p)),p=e,clearTimeout(t._wt),clearTimeout(t._pt),t.classList.remove("pointing"),t._wt=setTimeout(()=>{t.classList.remove("walking"),t._pt=setTimeout(()=>t.classList.add("pointing"),400)},200),u&&(u.style.transform=`translateX(${-e*.1}px)`),v&&(v.style.transform=`translateX(${-e*.3}px)`)}let s=0;if(n){for(let e=a.length-1;e>=0;e--)if(a[e].getBoundingClientRect().top<=window.innerHeight/3){s=e;break}}else for(let e=a.length-1;e>=0;e--)if(a[e].getBoundingClientRect().left<=r.clientWidth/2){s=e;break}E.textContent=m[s].label,y.forEach((e,o)=>e.classList.toggle("active",o===s))}r.addEventListener("scroll",h),window.addEventListener("scroll",h);function w(s){n||(s.key==="ArrowRight"?r.scrollBy({left:400,behavior:"smooth"}):s.key==="ArrowLeft"&&r.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",w);const B=i.querySelectorAll(".meter"),f=new IntersectionObserver(s=>{s.forEach(e=>{e.isIntersecting&&(e.target.classList.add("filled"),f.unobserve(e.target))})},{threshold:.2});B.forEach(s=>f.observe(s));const k=i.querySelectorAll(".station");k.forEach(s=>{s.addEventListener("click",()=>{const e=s.classList.contains("expanded");k.forEach(o=>{o.classList.remove("expanded"),o.setAttribute("aria-expanded","false")}),e||(s.classList.add("expanded"),s.setAttribute("aria-expanded","true"))})});const C=i.querySelectorAll(".status-led"),g=[];C.forEach(s=>{g.push(setInterval(()=>s.classList.toggle("blink"),800+Math.random()*1500))});const b=i.querySelector(".loadcell-value");b&&g.push(setInterval(()=>{b.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));const S=new MutationObserver(()=>{i.querySelector(".icv")||(window.removeEventListener("keydown",w),window.removeEventListener("scroll",h),g.forEach(clearInterval),f.disconnect(),S.disconnect())});S.observe(i,{childList:!0}),requestAnimationFrame(h)}T();
+  `,$(e,i)}function $(e,i){const r=e.querySelector(".icv"),n=e.querySelector(".zones-track"),s=e.querySelector(".character"),l=Array.from(e.querySelectorAll(".zone")),d=e.querySelector(".hud-progress-fill"),C=e.querySelector(".hud-zone-label"),y=Array.from(e.querySelectorAll(".hud-dot")),u=e.querySelector(".mode-toggle"),v=e.querySelector(".parallax-sky"),x=e.querySelector(".parallax-wall");let o=i,p=0;u.addEventListener("click",()=>{o=!o,r.classList.toggle("plain-mode",o),sessionStorage.setItem("cv-plain",String(o)),u.textContent=o?"🎮":"📄"}),e.querySelector(".hud-home").addEventListener("click",()=>{o?l[0].scrollIntoView({behavior:"smooth",block:"start"}):l[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),y.forEach(a=>{a.addEventListener("click",()=>{const t=parseInt(a.dataset.zoneIndex,10);o?l[t].scrollIntoView({behavior:"smooth",block:"start"}):l[t].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function h(){if(o){const t=window.scrollY||document.documentElement.scrollTop,c=document.documentElement.scrollHeight-window.innerHeight;d.style.width=(c>0?t/c*100:0)+"%"}else{const t=n.scrollLeft,c=n.scrollWidth-n.clientWidth,E=c>0?t/c:0;d.style.width=E*100+"%";const P=E*(n.clientWidth-80);s.style.transform=`translateX(${P}px)`,Math.abs(t-p)>1&&(s.classList.add("walking"),s.classList.toggle("facing-left",t<p)),p=t,clearTimeout(s._wt),clearTimeout(s._pt),s.classList.remove("pointing"),s._wt=setTimeout(()=>{s.classList.remove("walking"),s._pt=setTimeout(()=>s.classList.add("pointing"),400)},200),v&&(v.style.transform=`translateX(${-t*.1}px)`),x&&(x.style.transform=`translateX(${-t*.3}px)`)}let a=0;if(o){for(let t=l.length-1;t>=0;t--)if(l[t].getBoundingClientRect().top<=window.innerHeight/3){a=t;break}}else for(let t=l.length-1;t>=0;t--)if(l[t].getBoundingClientRect().left<=n.clientWidth/2){a=t;break}C.textContent=f[a].label,y.forEach((t,c)=>t.classList.toggle("active",c===a))}n.addEventListener("scroll",h),window.addEventListener("scroll",h);function w(a){o||(a.key==="ArrowRight"?n.scrollBy({left:400,behavior:"smooth"}):a.key==="ArrowLeft"&&n.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",w);const L=e.querySelectorAll(".meter"),g=new IntersectionObserver(a=>{a.forEach(t=>{t.isIntersecting&&(t.target.classList.add("filled"),g.unobserve(t.target))})},{threshold:.2});L.forEach(a=>g.observe(a));const k=e.querySelectorAll(".station");k.forEach(a=>{a.addEventListener("click",()=>{const t=a.classList.contains("expanded");k.forEach(c=>{c.classList.remove("expanded"),c.setAttribute("aria-expanded","false")}),t||(a.classList.add("expanded"),a.setAttribute("aria-expanded","true"))})});const D=e.querySelectorAll(".status-led"),m=[];D.forEach(a=>{m.push(setInterval(()=>a.classList.toggle("blink"),800+Math.random()*1500))});const b=e.querySelector(".loadcell-value");b&&m.push(setInterval(()=>{b.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));const S=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",w),window.removeEventListener("scroll",h),m.forEach(clearInterval),g.disconnect(),S.disconnect())});S.observe(e,{childList:!0}),requestAnimationFrame(h)}const z=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function F(){const e=document.getElementById("app");e.innerHTML=`
+    <div class="icv projects-page">
+      <div class="hud" role="navigation" aria-label="Projects navigation">
+        <div class="hud-left">
+          <a href="#" class="hud-home" aria-label="Back to CV">&larr;</a>
+          <span class="hud-zone-label">Projects</span>
+        </div>
+        <div class="hud-progress">
+          <div class="hud-progress-fill" style="width:100%"></div>
+        </div>
+      </div>
+
+      <main class="projects-main">
+        <h1>Projects &amp; Sites</h1>
+        <p class="projects-subtitle">Public repositories, apps, and experiments.</p>
+
+        <div class="projects-grid">
+          ${z.map(i=>`
+            <section class="project-category" id="cat-${i.id}">
+              <h2>${i.label}</h2>
+              <p class="category-desc">${i.description}</p>
+              <div class="category-items">
+                ${i.projects.map(r=>`
+                  <div class="project-card">
+                    <h3>${r.name}</h3>
+                    <p>${r.description}</p>
+                    <div class="project-links">
+                      ${r.url?`<a href="${r.url}" target="_blank" rel="noopener" aria-label="Visit ${r.name} site">Visit</a>`:""}
+                      ${r.repo?`<a href="${r.repo}" target="_blank" rel="noopener" aria-label="View ${r.name} repository">Repo</a>`:""}
+                    </div>
+                  </div>
+                `).join("")}
+              </div>
+            </section>
+          `).join("")}
+        </div>
+      </main>
+    </div>
+  `}let A=null;function B(){const e=window.location.hash==="#projects"?"projects":"cv";e!==A&&(A=e,e==="projects"?F():M())}window.addEventListener("hashchange",B);B();
