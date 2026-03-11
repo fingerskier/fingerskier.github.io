@@ -19,7 +19,7 @@ Linux Windows Engineering HTML CSS JS TS Coldfusion	Pascal C Java Cloud Infrastr
  
 ## PROFESSIONAL EXPERIENCE
 
-### CTO / Founder
+### CTO / Co-Founder
 **Turing Automations**	2017 – Present	Houston, TX
 *	Responsible for programming, hardware/electronics design, and prototyping.
 *	Responsible for procurement and logistics.
