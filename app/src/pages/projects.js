@@ -6,16 +6,19 @@ const CATEGORIES = [
     projects: [
       {
         name: 'GRE Prep',
+        url: 'https://fingerskier.github.io/gre_prep',
         repo: 'https://github.com/fingerskier/gre_prep',
         description: 'GRE preparation tool',
       },
       {
         name: 'SpeakEasy',
+        url: 'https://fingerskier.github.io/speakeasy',
         repo: 'https://github.com/fingerskier/speakeasy',
         description: 'Speech &amp; communication practice',
       },
       {
         name: 'NumberSense',
+        url: 'https://fingerskier.github.io/numbersense',
         repo: 'https://github.com/fingerskier/numbersense',
         description: 'Numerical intuition trainer',
       },
@@ -23,6 +26,25 @@ const CATEGORIES = [
         name: 'PsyDev',
         url: 'https://psydev.vercel.app',
         description: 'Psychology &amp; development app',
+      },
+    ],
+  },
+  {
+    id: 'simulations',
+    label: 'Simulations &amp; Visualizations',
+    description: 'Interactive simulations and visual experiments',
+    projects: [
+      {
+        name: 'SolarSystem',
+        url: 'https://fingerskier.github.io/SolarSystem',
+        repo: 'https://github.com/fingerskier/SolarSystem',
+        description: 'Interactive solar system simulation',
+      },
+      {
+        name: 'Biologize Me',
+        url: 'https://fingerskier.github.io/biologize_me',
+        repo: 'https://github.com/fingerskier/biologize_me',
+        description: 'Biology-inspired visualization experiment',
       },
     ],
   },
