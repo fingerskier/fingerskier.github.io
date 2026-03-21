@@ -1,6 +1,6 @@
 {
   "name": "Matt Currier",
-  "bio": "A versatile engineering leader and eclecticist with a passion for innovation.   Currently a director of engineering, Matt combines expertise in control systems, full stack development, embedded systems, and IT infrastructure with an R&D mindset.  His background spans engineering leadership, hardware, firmware and software development, and professional musicianship, reflecting an ethos of creativity meets technology.",
+  "bio": "A versatile engineering leader and eclecticist with a passion for innovation.  Currently a Director of Engineering, Matt combines expertise in control systems, full stack development, embedded systems, and IT infrastructure with an R&D mindset.  His background spans engineering leadership, hardware, firmware and software development, and professional musicianship, reflecting an ethos of creativity meets technology.",
   "level": 7,
   "xp": 12000,
   "skills": [
@@ -26,7 +26,7 @@
     },
     {
       "title": "Spectrum",
-      "description": "An interactive, reactive osteogenic system that visualizes force production.",
+      "description": "An interactiv, reactive osteogenic system that visualizes force production.",
       "tags": [
         "Audio Reactive",
         "LED Lighting",
@@ -36,7 +36,7 @@
     },
     {
       "title": "OsteoStrong Automation Systems",
-      "description": "Developed health automation systems for OsteoStrong’s osteogenic loading equipment.  Integrated sensors, controllers, and software to automate skeletal training devices, improving safety and tracking performance data.",
+      "description": "Developed health automation systems for OsteoStrong’s osteogenic loading equipment. Integrated sensors, PLCs, and software to automate strength training devices, improving safety and tracking performance data.",
       "tags": [
         "Fitness Tech",
         "Automation",
@@ -55,6 +55,12 @@
     }
   ],
   "experience": [
+    {
+      "company": "MCPCodex (AI Platform Startup)",
+      "title": "Director of Engineering",
+      "dates": "2022 - Present",
+      "responsibilities": "Leading the engineering team and R&D efforts for an AI-powered development platform. Architecting solutions that integrate model context protocols and AI (Codex) to automate and enhance software development workflows."
+    },
     {
       "company": "OsteoStrong",
       "title": "Lead Automation Engineer (Consultant)",
