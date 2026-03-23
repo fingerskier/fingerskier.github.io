@@ -1,95 +1,123 @@
 {
-  "name": "Matt Currier",
-  "bio": "A versatile engineering leader and eclecticist with a passion for innovation.  Currently a Director of Engineering, Matt combines expertise in control systems, full stack development, embedded systems, and IT infrastructure with an R&D mindset.  His background spans engineering leadership, hardware, firmware and software development, and professional musicianship, reflecting an ethos of creativity meets technology.",
+  "name": "Matthew Currier",
+  "bio": "I've been using computers since watching my dad solder together a Zenith H89 CP/M machine when I was 4. Since then I've worked on personal, commercial, and industrial systems from electronics to firmware, software, databases, and cloud services. I was an oilfield directional drilling service hand for nearly 10 years. I read & write music, books and code. Father of 5 — husband of 1. My true passion is to create and help others do what they were made to do.",
   "level": 7,
   "xp": 12000,
   "skills": [
-    "Control Systems",
-    "Full Stack Development",
-    "Embedded Systems",
-    "IT Infrastructure",
-    "Firmware Development",
-    "PLC Programming",
-    "Engineering Leadership",
-    "Research & Development",
-    "Music Technology"
+    "Linux",
+    "Windows",
+    "HTML/CSS",
+    "JavaScript/TypeScript",
+    "Coldfusion",
+    "Pascal",
+    "C",
+    "Java",
+    "Cloud Infrastructure",
+    "MySQL",
+    "Postgres",
+    "SQL Server",
+    "Directional Drilling",
+    "MWD/LWD",
+    "API/DNV",
+    "VBA.NET",
+    "PLC/HMI",
+    "Industrial Automation",
+    "GD&T",
+    "IEC-61131-3",
+    "Data Wrangling/ETL",
+    "Data Analysis",
+    "AI/ML Integration",
+    "LLM-Powered Applications",
+    "AI-Augmented Development"
   ],
   "projects": [
     {
-      "title": "Poemia",
-      "description": "An innovative AI ghostwriting product enabling unique forms of story-telling.",
+      "title": "OsteoStrong Automation Systems",
+      "description": "Developed hardware and software for automating OsteoStrong skeletal therapy machines. Created distributed control systems, self-service kiosks, and manufacturing processes. 6 patent applications (2 issued, 4 pending).",
       "tags": [
-        "Writing Interface",
-        "Software",
-        "Interactive Art"
+        "Fitness Tech",
+        "Automation",
+        "PLC",
+        "Control Systems",
+        "Embedded"
       ]
     },
     {
       "title": "Spectrum",
-      "description": "An interactiv, reactive osteogenic system that visualizes force production.",
+      "description": "An interactive, reactive osteogenic system that visualizes force production.",
       "tags": [
         "Audio Reactive",
         "LED Lighting",
         "Embedded Control",
         "Visualization"
       ]
-    },
-    {
-      "title": "OsteoStrong Automation Systems",
-      "description": "Developed health automation systems for OsteoStrong’s osteogenic loading equipment. Integrated sensors, PLCs, and software to automate strength training devices, improving safety and tracking performance data.",
-      "tags": [
-        "Fitness Tech",
-        "Automation",
-        "PLC",
-        "Control Systems"
-      ]
-    },
-    {
-      "title": "MCP/Codex Enterprise Architecture",
-      "description": "Led an enterprise architecture initiative combining Model Context Protocol (MCP) with AI code generation (Codex). Built a platform to streamline enterprise software development by integrating AI-driven tools into the workflow.",
-      "tags": [
-        "Enterprise Architecture",
-        "AI Integration",
-        "Software Development"
-      ]
     }
   ],
   "experience": [
     {
-      "company": "MCPCodex (AI Platform Startup)",
-      "title": "Director of Engineering",
-      "dates": "2022 - Present",
-      "responsibilities": "Leading the engineering team and R&D efforts for an AI-powered development platform. Architecting solutions that integrate model context protocols and AI (Codex) to automate and enhance software development workflows."
+      "company": "Turing Automations",
+      "title": "CTO / Co-Founder",
+      "dates": "2017 - Present",
+      "location": "Houston, TX",
+      "responsibilities": "Responsible for programming, hardware/electronics design, and prototyping. Responsible for procurement, logistics, training, and technical support. 5 patent applications filed for automation technology (2 issued, 3 pending)."
     },
     {
       "company": "OsteoStrong",
-      "title": "Lead Automation Engineer (Consultant)",
-      "dates": "2017 - 2020",
-      "responsibilities": "Designed and implemented automated control systems for OsteoStrong’s bone-strengthening equipment. Developed firmware and PLC programs to control high-impact training devices, improving safety features and data collection."
+      "title": "Engineering Director",
+      "dates": "2017 - Present",
+      "location": "Houston, TX",
+      "responsibilities": "Developing hardware and software for automating OsteoStrong skeletal therapy machines. Created database schema and systems for world-wide distributed controls. Developed self-service kiosk (full-stack hardware and software) for member performance assessments. Implemented manufacturing processes, QA/QC, logistics, and customer support systems. Leveraging AI/ML for data analysis, product features, and development workflow acceleration since 2023. 6 patent applications (2 issued, 4 pending)."
     },
     {
-      "company": "Independent Projects",
-      "title": "Founder & Engineer",
-      "dates": "2015 - 2018",
-      "responsibilities": "Pursued independent tech projects including 'Poemia' and 'Spectrum'. Handled end-to-end development from concept to prototype, covering hardware design, software/firmware development, and integration of creative feedback."
+      "company": "Premier Coil Solutions",
+      "title": "Controls/Software Engineer",
+      "dates": "2017 - 2019",
+      "location": "Waller, TX",
+      "responsibilities": "Developed advanced PLC automated control systems and standards. Created automation controller function libraries for command-request processing, task queuing, sequencing, limit/tolerance evaluation, and I/O processing. Created Hardware-in-Loop machine simulators (Siemens, Wago, PC). Designed SCADA software for coiled-tubing, drilling fluid pump, and nitrogen pumping units."
+    },
+    {
+      "company": "Aker Solutions / MHWirth / AFGlobal",
+      "title": "Controls/Software Engineer",
+      "dates": "2014 - 2017",
+      "responsibilities": "Developed advanced PLC automated control systems and standards. Created PLC-based mux system for subsea distributed control systems. Worked on control system for robotic drilling rig machinery and automated drilling safety manifold for Managed Pressure Operations. Designed SCADA software for land and off-shore drilling rigs."
+    },
+    {
+      "company": "Paragon Web Solutions",
+      "title": "Web Developer",
+      "dates": "2009 - 2015",
+      "responsibilities": "Designed and implemented database schemas, domain-specific data formats, user-interface templating, and feedback logging. Built charter school web application for tracking learning plans, grading, transcripts, and document management. Assisted in architecting a document control system for Sisters of Charity of Leavenworth hospital network. Various web applications including e-commerce, content management, and data visualization."
+    },
+    {
+      "company": "Scientific Drilling",
+      "title": "Directional Drilling",
+      "dates": "2005 - 2013",
+      "responsibilities": "MWD electronics assembly, configuration, and drilling utility software. Planned and supervised Shell ERDD HLT project (22 wells from rectangular surface pattern to sub-surface ring). Managed Anadarko gas-well surface program in Uintah Basin. Member of Barrick Exploration mine-shaft freeze wall project. Led and organized drilling teams and packages."
+    },
+    {
+      "company": "Nabors Drilling",
+      "title": "Rig Hand",
+      "dates": "2004 - 2005",
+      "location": "Rocky Mountains, USA",
+      "responsibilities": "Directional natural gas wells in the Piceance Basin, western Colorado (Rig #909). Performed manual labor including rig floor equipment. Maintained drilling fluid properties and general rig mechanical, hydraulic, and pneumatic systems."
     },
     {
       "company": "ACS Online",
       "title": "IT and Programming",
       "dates": "1998 - 2003",
+      "location": "Grand Junction, CO",
       "responsibilities": "Crafted Medical Manager scripts and performed client setup including requirements determination. Refactored government reporting templates for pediatrics clinics. Acquired and installed hardware and software solutions for office work and networking. Architected and built medical office computer record systems including PC/server systems and networking gear. Provided technical support for customers' hardware and software both over-the-phone and on-site."
     }
   ],
   "education": [
     {
-      "degree": "B.S. in Computer Science",
-      "institution": "Mesa State College",
-      "year": 2003
-    },
-    {
-      "degree": "M.S. Computer Information Systems",
+      "degree": "M.S. Information Systems",
       "institution": "University of Phoenix",
       "year": 2005
+    },
+    {
+      "degree": "B.S. Computer Science",
+      "institution": "Colorado Mesa University",
+      "year": 2003
     }
   ],
   "achievements": [],
