@@ -16,7 +16,8 @@
       "Bash(find /c/dev/fingerskier/fingerskier.github.io/app/src -type f \\\\\\( -name \"*.js\" -o -name \"*.css\" -o -name \"*.html\" \\\\\\) 2>/dev/null | sort)",
       "Bash(grep -r \"cv\\\\.json\\\\|CV\\\\.md\" /c/dev/fingerskier/fingerskier.github.io --include=*.json --include=*.js --include=*.md --include=*.sh)",
       "mcp__reqall-net__upsert_project",
-      "mcp__reqall-net__search"
+      "mcp__reqall-net__search",
+      "Bash(git diff:*)"
     ]
   }
 }
