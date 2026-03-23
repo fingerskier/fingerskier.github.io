@@ -17,7 +17,9 @@
       "Bash(grep -r \"cv\\\\.json\\\\|CV\\\\.md\" /c/dev/fingerskier/fingerskier.github.io --include=*.json --include=*.js --include=*.md --include=*.sh)",
       "mcp__reqall-net__upsert_project",
       "mcp__reqall-net__search",
-      "Bash(git diff:*)"
+      "Bash(git diff:*)",
+      "Bash(gh issue:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
