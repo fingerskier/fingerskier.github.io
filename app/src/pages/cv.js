@@ -516,9 +516,10 @@ export function renderCV() {
   const appEl = document.getElementById('app')
   const plain = sessionStorage.getItem('cv-plain') === 'true' ||
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const theme = document.documentElement.dataset.theme || 'light'
 
   appEl.innerHTML = `
-    <div class="icv${plain ? ' plain-mode' : ''}">
+    <div class="icv${plain ? ' plain-mode' : ''}" data-theme="${theme}">
       <a href="#main-content" class="skip-link">Skip to content</a>
 
       <div class="parallax-layer parallax-sky" aria-hidden="true"></div>
@@ -536,6 +537,7 @@ export function renderCV() {
           <div class="hud-nav-dots">
             ${ZONES.map((z, i) => `<button class="hud-dot${i === 0 ? ' active' : ''}" data-zone-index="${i}" title="${z.label}"></button>`).join('')}
           </div>
+          <button class="theme-toggle" aria-label="Toggle dark mode">${theme === 'dark' ? '☀️' : '🌙'}</button>
           <button class="mode-toggle" aria-label="Toggle plain mode">${plain ? '🎮' : '📄'}</button>
         </div>
       </div>
@@ -577,6 +579,24 @@ function initInteractiveCV(root, startPlain) {
     icv.classList.toggle('plain-mode', isPlain)
     sessionStorage.setItem('cv-plain', String(isPlain))
     modeToggle.textContent = isPlain ? '🎮' : '📄'
+  })
+
+  /* ── Theme toggle ── */
+  const themeToggle = root.querySelector('.theme-toggle')
+  themeToggle.addEventListener('click', () => {
+    const isDark = icv.dataset.theme === 'dark'
+    icv.dataset.theme = isDark ? 'light' : 'dark'
+    document.documentElement.dataset.theme = icv.dataset.theme
+    localStorage.setItem('cv-theme', icv.dataset.theme)
+    themeToggle.textContent = isDark ? '🌙' : '☀️'
+  })
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('cv-theme')) {
+      const t = e.matches ? 'dark' : 'light'
+      icv.dataset.theme = t
+      document.documentElement.dataset.theme = t
+      themeToggle.textContent = e.matches ? '☀️' : '🌙'
+    }
   })
 
   /* ── Home button ── */

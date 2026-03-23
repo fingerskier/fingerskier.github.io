@@ -11,6 +11,11 @@
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      document.documentElement.dataset.theme =
+        localStorage.getItem('cv-theme') ||
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    </script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

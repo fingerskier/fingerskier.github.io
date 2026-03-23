@@ -5,17 +5,62 @@
   --bg: #E8E0D8;
   --bg-grain: #DDD5CC;
   --accent: #E8742A;
+  --accent-hover: #d4651f;
   --teal: #1A6B5C;
   --blue: #4A6FA5;
   --dark: #2D2D2D;
   --light: #FAF8F5;
   --belt: #8B5E3C;
+  --text-body: rgba(45, 45, 45, 0.85);
+  --text-muted: rgba(45, 45, 45, 0.7);
+  --text-dim: rgba(45, 45, 45, 0.6);
+  --text-faint: rgba(45, 45, 45, 0.65);
+  --text-spec: rgba(45, 45, 45, 0.8);
+  --border-subtle: rgba(45, 45, 45, 0.15);
+  --border-card: rgba(45, 45, 45, 0.12);
+  --surface-card: rgba(45, 45, 45, 0.06);
+  --surface-card-light: rgba(45, 45, 45, 0.05);
+  --hud-bg: rgba(45, 45, 45, 0.92);
+  --sky-top: #d4c8b8;
+  --sky-mid: #E8E0D8;
+  --sky-bot: #ded4c8;
+  --spec-plate-from: #f5f0e8;
+  --spec-plate-to: #ece4d8;
   font-family: "Source Serif 4", "Georgia", serif;
   color: var(--dark);
   background: var(--bg);
   position: relative;
   overflow: hidden;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode */
+.icv[data-theme="dark"] {
+  --bg: #1a1a2e;
+  --bg-grain: #16213e;
+  --accent: #f0883e;
+  --accent-hover: #f59e5e;
+  --teal: #2EB086;
+  --blue: #6B8FBF;
+  --dark: #E8E0D8;
+  --light: #1a1a2e;
+  --belt: #a67c52;
+  --text-body: rgba(232, 224, 216, 0.85);
+  --text-muted: rgba(232, 224, 216, 0.7);
+  --text-dim: rgba(232, 224, 216, 0.6);
+  --text-faint: rgba(232, 224, 216, 0.65);
+  --text-spec: rgba(232, 224, 216, 0.8);
+  --border-subtle: rgba(232, 224, 216, 0.15);
+  --border-card: rgba(232, 224, 216, 0.12);
+  --surface-card: rgba(232, 224, 216, 0.06);
+  --surface-card-light: rgba(232, 224, 216, 0.05);
+  --hud-bg: rgba(15, 15, 30, 0.92);
+  --sky-top: #0f0f23;
+  --sky-mid: #1a1a2e;
+  --sky-bot: #16213e;
+  --spec-plate-from: #2a2a3e;
+  --spec-plate-to: #1e1e32;
 }
 
 /* ── Skip link ── */
@@ -44,7 +89,7 @@
   align-items: center;
   gap: 1rem;
   padding: 0.5rem 1rem;
-  background: rgba(45, 45, 45, 0.92);
+  background: var(--hud-bg);
   backdrop-filter: blur(8px);
   color: var(--light);
   font-family: "JetBrains Mono", "Fira Code", monospace;
@@ -123,6 +168,18 @@
 }
 .mode-toggle:hover { background: rgba(255,255,255,0.2); }
 
+.theme-toggle {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background 0.2s;
+}
+.theme-toggle:hover { background: rgba(255,255,255,0.2); }
+
 /* ── Parallax layers ── */
 .parallax-layer {
   position: fixed;
@@ -135,7 +192,7 @@
   will-change: transform;
 }
 .parallax-sky {
-  background: linear-gradient(180deg, #d4c8b8 0%, #E8E0D8 40%, #ded4c8 100%);
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 40%, var(--sky-bot) 100%);
   z-index: 0;
 }
 .parallax-wall {
@@ -224,7 +281,7 @@
 .cv-tagline {
   font-size: 1rem;
   margin: 0 0 2rem;
-  color: rgba(45,45,45,0.7);
+  color: var(--text-muted);
   font-style: italic;
 }
 .cv-links {
@@ -357,7 +414,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(45,45,45,0.6);
+  color: var(--text-dim);
 }
 
 /* Scenery: Workbench — oscilloscope & pegboard */
@@ -389,7 +446,7 @@
 .role {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(45,45,45,0.15);
+  border-bottom: 1px solid var(--border-subtle);
 }
 .role:last-child { border-bottom: none; }
 
@@ -417,7 +474,7 @@
   margin-bottom: 0.35rem;
   font-size: 0.9rem;
   line-height: 1.5;
-  color: rgba(45,45,45,0.85);
+  color: var(--text-body);
 }
 
 /* Project stations */
@@ -429,8 +486,8 @@
 }
 
 .station {
-  background: rgba(45,45,45,0.06);
-  border: 1.5px solid rgba(45,45,45,0.15);
+  background: var(--surface-card);
+  border: 1.5px solid var(--border-subtle);
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
   position: relative;
@@ -449,7 +506,7 @@
 .station p {
   margin: 0.25rem 0 0;
   font-size: 0.8rem;
-  color: rgba(45,45,45,0.65);
+  color: var(--text-faint);
 }
 
 .station[role="button"] { cursor: pointer; }
@@ -473,7 +530,7 @@
   opacity: 0;
   transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.35s ease;
   margin-top: 0;
-  background: linear-gradient(135deg, #f5f0e8, #ece4d8);
+  background: linear-gradient(135deg, var(--spec-plate-from), var(--spec-plate-to));
   border: 1.5px solid var(--accent);
   border-radius: 4px;
   padding: 0 0.75rem;
@@ -503,7 +560,7 @@
 }
 .spec-plate dd {
   margin: 0;
-  color: rgba(45,45,45,0.8);
+  color: var(--text-spec);
   font-size: 0.78rem;
 }
 
@@ -567,7 +624,7 @@
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   line-height: 1.5;
-  color: rgba(45,45,45,0.85);
+  color: var(--text-body);
 }
 
 .deploy-pipeline {
@@ -622,12 +679,12 @@
 #zone-stage .zone-content p {
   font-size: 1rem;
   line-height: 1.6;
-  color: rgba(45,45,45,0.85);
+  color: var(--text-body);
 }
 #zone-stage .zone-content li {
   margin-bottom: 0.4rem;
   font-size: 0.9rem;
-  color: rgba(45,45,45,0.85);
+  color: var(--text-body);
 }
 
 .music-links {
@@ -645,7 +702,7 @@
   transition: background 0.2s;
 }
 .music-links a:hover {
-  background: #d4651f;
+  background: var(--accent-hover);
   text-decoration: none;
 }
 
@@ -680,7 +737,7 @@
 #zone-library li {
   margin-bottom: 0.4rem;
   font-size: 0.9rem;
-  color: rgba(45,45,45,0.85);
+  color: var(--text-body);
 }
 
 /* Scenery: Library — bookshelf & chalkboard */
@@ -850,7 +907,7 @@
 }
 
 .icv.plain-mode .zone + .zone {
-  border-top: 1px solid rgba(45,45,45,0.15);
+  border-top: 1px solid var(--border-subtle);
 }
 
 /* ── Print ── */
@@ -933,7 +990,7 @@
 }
 
 .projects-page .projects-subtitle {
-  color: rgba(45,45,45,0.6);
+  color: var(--text-dim);
   font-style: italic;
   margin: 0 0 2.5rem;
 }
@@ -957,7 +1014,7 @@
 
 .projects-page .category-desc {
   font-size: 0.85rem;
-  color: rgba(45,45,45,0.6);
+  color: var(--text-dim);
   margin: 0 0 1rem;
 }
 
@@ -968,8 +1025,8 @@
 }
 
 .projects-page .project-card {
-  background: rgba(45,45,45,0.05);
-  border: 1.5px solid rgba(45,45,45,0.12);
+  background: var(--surface-card-light);
+  border: 1.5px solid var(--border-card);
   border-radius: 0.75rem;
   padding: 1rem 1.25rem;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -987,7 +1044,7 @@
 
 .projects-page .project-card p {
   font-size: 0.85rem;
-  color: rgba(45,45,45,0.7);
+  color: var(--text-muted);
   margin: 0 0 0.75rem;
   line-height: 1.4;
 }
