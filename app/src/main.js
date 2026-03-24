@@ -5,14 +5,14 @@ import { renderProjects } from './pages/projects.js'
 
 let currentPage = null
 
-function route() {
+async function route() {
   const page = window.location.hash === '#projects' ? 'projects' : 'cv'
   if (page === currentPage) return
   currentPage = page
   if (page === 'projects') {
     renderProjects()
   } else {
-    renderCV()
+    await renderCV()
   }
 }
 

@@ -1,19 +1,133 @@
+/* ── Data ── */
+let cvData = null
+
+async function loadCVData() {
+  if (cvData) return cvData
+  const resp = await fetch('./cv.json')
+  cvData = await resp.json()
+  return cvData
+}
+
+/* ── Helpers ── */
+function escHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+}
+
+function linksHtml(links) {
+  return Object.entries(links)
+    .filter(([key]) => key !== 'Email')
+    .map(([label, url]) => `<a href="${escHtml(url)}" target="_blank" rel="noopener">${escHtml(label)}</a>`)
+    .join('\n          ')
+}
+
+function responsibilitiesToList(text) {
+  return text.split(/\.\s+/).filter(s => s.trim()).map(s => {
+    const sentence = s.endsWith('.') ? s : s + '.'
+    return `<li>${escHtml(sentence)}</li>`
+  }).join('\n            ')
+}
+
+/* ── Project stations for Turing Automations (presentation-only enrichment) ── */
+const TURING_STATIONS = `
+          <div class="project-stations">
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Spectrum Application</h4>
+              <p>Core app &mdash; actuator control, session management</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>Desktop &middot; I/O &middot; custom H/W</dd>
+                  <dt>Deployed</dt><dd>200+ franchise locations worldwide</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Member Assessment Kiosk</h4>
+              <p>Touch-screen control, multi-screen kiosk for member health assessments</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>Embedded Desktop UI</dd>
+                  <dt>Features</dt><dd>Session flow, real-time force display, member profiles</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Cloud Infrastructure</h4>
+              <p>Cloud API &amp; admin dashboard &amp; databases</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>Servers &middot; Databases &middot; Load-Balancing &middot; Data-Lake &middot; Cross-x Messaging</dd>
+                  <dt>Features</dt><dd>Franchise ops, member management, telemetry sync, auto-scaling</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Firmware</h4>
+              <p>Next-gen IoT hardware (h/w drivers, protocols, safety FSM)</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt>
+                  <dd>Node.js &middot; Micropython &middot; C</dd>
+
+                  <dt>Features</dt>
+                  <dd>Multiple types of actuators, load-cells and sensors;  Automatic h/w detect &amp; safety supervisor</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Member Journey App</h4>
+              <p>Member-facing mobile/web apps</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>Cloud API server</dd>
+                  <dt>Stack</dt><dd>PWA &middot; web-app</dd>
+                  <dt>Stack</dt><dd>Android/iOS &middot; mobile-apps</dd>
+                  <dt>Features</dt><dd>Session history, progress tracking, appointment scheduling</dd>
+                </dl>
+              </div>
+            </div>
+          </div>`
+
+function experienceHtml(data) {
+  return data.experience.map(entry => {
+    const isTuring = entry.company === 'Turing Automations'
+    const location = entry.location ? ` &middot; ${escHtml(entry.location)}` : ''
+    return `
+        <article class="role">
+          <h3>${escHtml(entry.company)} &mdash; ${escHtml(entry.title)}</h3>
+          <time>${escHtml(entry.dates)}${location}</time>
+          <ul>
+            ${responsibilitiesToList(entry.responsibilities)}
+          </ul>${isTuring ? TURING_STATIONS : ''}
+        </article>`
+  }).join('\n')
+}
+
+function educationHtml(data) {
+  return data.education.map(e =>
+    `<li><strong>${escHtml(e.degree)}</strong> &mdash; ${escHtml(e.institution)}, ${e.year}</li>`
+  ).join('\n          ')
+}
 
 const ZONES = [
   {
     id: 'entryway',
     label: 'Entryway',
-    content: () => `
+    content: (data) => `
       <div class="zone-content">
-        <h1>Matt Currier</h1>
+        <h1>${escHtml(data.name)}</h1>
         <p class="cv-title">Co-Founder &amp; Principal Engineer &mdash; Turing Automations</p>
         <p class="cv-tagline">Creator of things &middot; Songwriter &middot; Thinkster</p>
         <div class="cv-links">
-          <a href="https://github.com/fingerskier" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://linkedin.com/in/matt-currier" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://x.com/fingerskier" target="_blank" rel="noopener">X</a>
-          <a href="https://youtube.com/@fingerskier" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://bandcamp.com/mattcurrier" target="_blank" rel="noopener">Bandcamp</a>
+          ${linksHtml(data.links)}
           <a href="#projects" class="projects-link">Projects</a>
         </div>
       </div>
@@ -37,7 +151,7 @@ const ZONES = [
   {
     id: 'workbench',
     label: 'Workbench',
-    content: () => `
+    content: (data) => `
       <div class="zone-content">
         <h2>Skills &amp; Technologies</h2>
         <div class="skills-shelf">
@@ -110,158 +224,10 @@ const ZONES = [
   {
     id: 'floor',
     label: 'The Floor',
-    content: () => `
+    content: (data) => `
       <div class="zone-content">
         <h2>Experience</h2>
-        <article class="role">
-          <h3>Turing Automations &mdash; Co-Founder &amp; Principal Engineer</h3>
-          <time>2017 &ndash; Present</time>
-          <p><em>Primary Client: OsteoStrong</em></p>
-          <ul>
-            <li>Architect and developer of the Spectrum platform: safety-critical applications controlling health/fitness equipment across 200+ franchise locations worldwide</li>
-            <li>Designed FSM-based actuator control with real-time safety supervisor monitoring force limits, timeouts, wrong-way motion, and signal validity</li>
-            <li>Built hardware abstraction layer supporting 5 actuator types and 3 load-cell types with automatic detection</li>
-            <li>Developed cloud infrastructure on AWS infrastructure</li>
-            <li>Created over-the-air auto-update system for fleet of deployed devices w/ desktop apps on SBCs</li>
-            <li>Maintained complex codebase spanning firmware control, desktop UI, cloud API, and member-facing apps</li>
-            <li>Built digital twin / simulator system enabling full development and testing without physical hardware</li>
-          </ul>
-
-          <div class="project-stations">
-            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led green"></span>
-              <h4>Spectrum Application</h4>
-              <p>Core app &mdash; actuator control, session management</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt><dd>Desktop &middot; I/O &middot; custom H/W</dd>
-                  <dt>Deployed</dt><dd>200+ franchise locations worldwide</dd>
-                </dl>
-              </div>
-            </div>
-            
-            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led green"></span>
-              <h4>Member Assessment Kiosk</h4>
-              <p>Touch-screen control, multi-screen kiosk for member health assessments</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt><dd>Embedded Desktop UI</dd>
-                  <dt>Features</dt><dd>Session flow, real-time force display, member profiles</dd>
-                </dl>
-              </div>
-            </div>
-
-            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led green"></span>
-              <h4>Cloud Infrastructure</h4>
-              <p>Cloud API &amp; admin dashboard &amp; databases</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt><dd>Servers &middot; Databases &middot; Load-Balancing &middot; Data-Lake &middot; Cross-x Messaging</dd>
-                  <dt>Features</dt><dd>Franchise ops, member management, telemetry sync, auto-scaling</dd>
-                </dl>
-              </div>
-            </div>
-
-            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led green"></span>
-              <h4>Firmware</h4>
-              <p>Next-gen IoT hardware (h/w drivers, protocols, safety FSM)</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt>
-                  <dd>Node.js &middot; Micropython &middot; C</dd>
-                  
-                  <dt>Features</dt>
-                  <dd>Multiple types of actuators, load-cells and sensors;  Automatic h/w detect &amp; safety supervisor</dd>
-                </dl>
-              </div>
-            </div>
-
-            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led green"></span>
-              <h4>Member Journey App</h4>
-              <p>Member-facing mobile/web apps</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt><dd>Cloud API server</dd>
-                  <dt>Stack</dt><dd>PWA &middot; web-app</dd>
-                  <dt>Stack</dt><dd>Android/iOS &middot; mobile-apps</dd>
-                  <dt>Features</dt><dd>Session history, progress tracking, appointment scheduling</dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="role">
-          <h3>Premier Coil Solutions &mdash; Controls/Software Engineer</h3>
-          <time>2017 &ndash; 2019</time>
-          <ul>
-            <li>Developed advanced PLC automated control systems and standards</li>
-            <li>World-first coiled-tubing unit auto-driller</li>
-            <li>World-first automated nitrogen pump</li>
-            <li>Automated coilted-tubing fluid pump</li>
-            <li>Created automation controller function libraries for command-request processing, task queuing, sequencing</li>
-            <li>Created Hardware-in-Loop machine simulators (Siemens, Wago, PC)</li>
-            <li>Designed SCADA software for coiled-tubing, drilling fluid, and nitrogen pumping units</li>
-          </ul>
-        </article>
-
-        <article class="role">
-          <h3>Aker Solutions / MHWirth / AFGlobal &mdash; Controls/Software Engineer</h3>
-          <time>2014 &ndash; 2017</time>
-          <ul>
-            <li>PLC-based mux system for subsea distributed control (direct-hydraulic, remote hydraulic, mechanical)</li>
-            <li>Control system for robotic drilling rig machinery and automated drilling safety manifold</li>
-            <li>SCADA software for land and offshore drilling rigs</li>
-          </ul>
-        </article>
-
-        <article class="role">
-          <h3>Paragon Web Solutions &mdash; Web Developer</h3>
-          <time>2009 &ndash; 2015</time>
-          <ul>
-            <li>Charter school web application: learning plans, grading, transcripts, document management with e-signing</li>
-            <li>Document control system for Sisters of Charity hospital network</li>
-            <li>E-commerce, content management, and data visualization web apps</li>
-          </ul>
-        </article>
-
-        <article class="role">
-          <h3>Scientific Drilling &mdash; Directional Drilling</h3>
-          <time>2005 &ndash; 2013</time>
-          <ul>
-            <li>Shell ERDD HLT: 22 wells, slant-well and horizontal wells for oil-shale recovery</li>
-            <li>Anadarko gas-well surface program (Uintah Basin) with high anti-collision risks</li>
-            <li>Barrick mine-shaft freeze wall: 36 wells in a ring with 2-foot spacing tolerances</li>
-          </ul>
-        </article>
-
-        <article class="role">
-          <h3>Nabors Drilling &mdash; Rig Hand</h3>
-          <time>2004 &ndash; 2005 &middot; Rocky Mountains, USA</time>
-          <ul>
-            <li>Directional natural gas wells in the Piceance Basin</li>
-            <li>Rig-hand for NDUSA on rig #909 drilling natural gas directional wells throughout western Colorado</li>
-            <li>Performed manual labor including rig floor equipment such as pipe-tongs and slips</li>
-            <li>Partially responsible for maintaining drilling fluid properties</li>
-            <li>General maintenance and operation of the rig&rsquo;s mechanical, hydraulic, and pneumatic systems</li>
-          </ul>
-        </article>
-
-        <article class="role">
-          <h3>ACS Online &mdash; IT and Programming</h3>
-          <time>1998 &ndash; 2003 &middot; Grand Junction, CO</time>
-          <ul>
-            <li>Medical Manager scripts and setup for clients, including determining software requirements</li>
-            <li>Refactored government reporting templates for pediatrics clinics</li>
-            <li>Acquired and installed hardware and software solutions for office work and networking</li>
-            <li>Assisted in architecting and building medical office computer record systems, including specifying PC/server systems and networking gear</li>
-            <li>Technical support for customers&rsquo; hardware and software: over-the-phone and on-site</li>
-          </ul>
-        </article>
+        ${experienceHtml(data)}
       </div>
       <div class="zone-scenery" aria-hidden="true">
         <svg class="scenery-actuator-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
@@ -292,7 +258,7 @@ const ZONES = [
   {
     id: 'rack',
     label: 'The Rack',
-    content: () => `
+    content: (data) => `
       <div class="zone-content">
         <h2>Architecture &amp; DevOps</h2>
         <ul>
@@ -335,7 +301,7 @@ const ZONES = [
   {
     id: 'stage',
     label: 'The Stage',
-    content: () => `
+    content: (data) => `
       <div class="zone-content">
         <h2>Music &amp; Creativity</h2>
         <p>Songwriter and musician. The same mind that designs safety-critical state machines also writes songs.</p>
@@ -376,7 +342,7 @@ const ZONES = [
   {
     id: 'library',
     label: 'The Library',
-    content: () => `
+    content: (data) => `
       <div class="zone-content">
         <h2>Intellectual Interests</h2>
         <ul>
@@ -387,8 +353,7 @@ const ZONES = [
         </ul>
         <h3>Education</h3>
         <ul>
-          <li><strong>M.S. Information Systems</strong> &mdash; University of Phoenix, 2003&ndash;2005</li>
-          <li><strong>B.S. Computer Science</strong> &mdash; Colorado Mesa University, 1995&ndash;2003</li>
+          ${educationHtml(data)}
         </ul>
       </div>
       <div class="zone-scenery" aria-hidden="true">
@@ -438,13 +403,15 @@ const ZONES = [
   {
     id: 'exit',
     label: 'The Exit',
-    content: () => `
+    content: (data) => `
       <div class="zone-content">
         <h2>Let&rsquo;s build something.</h2>
         <div class="contact-links">
-          <a href="https://github.com/fingerskier" target="_blank" rel="noopener">github.com/fingerskier</a>
-          <a href="https://linkedin.com/in/matt-currier" target="_blank" rel="noopener">linkedin.com/in/matt-currier</a>
-          <a href="https://x.com/fingerskier" target="_blank" rel="noopener">x.com/fingerskier</a>
+          ${['GitHub', 'LinkedIn', 'X'].filter(k => data.links[k]).map(k => {
+            const url = data.links[k]
+            const display = url.replace(/^https?:\/\//, '')
+            return `<a href="${escHtml(url)}" target="_blank" rel="noopener">${escHtml(display)}</a>`
+          }).join('\n          ')}
         </div>
         <p class="cv-tagline">Father of 5 &mdash; husband of 1.<br>My true passion is to create and help others do what they were made to do.</p>
       </div>
@@ -512,11 +479,13 @@ function characterSVG() {
   </svg>`
 }
 
-export function renderCV() {
+export async function renderCV() {
   const appEl = document.getElementById('app')
   const plain = sessionStorage.getItem('cv-plain') === 'true' ||
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const theme = document.documentElement.dataset.theme || 'light'
+
+  const data = await loadCVData()
 
   appEl.innerHTML = `
     <div class="icv${plain ? ' plain-mode' : ''}" data-theme="${theme}">
@@ -549,7 +518,7 @@ export function renderCV() {
       <div class="zones-track" id="main-content">
         ${ZONES.map((z, i) => `
           <section class="zone" id="zone-${z.id}" data-zone="${z.id}" data-zone-index="${i}">
-            ${z.content()}
+            ${z.content(data)}
           </section>
         `).join('')}
       </div>
