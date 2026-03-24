@@ -19,7 +19,8 @@
       "mcp__reqall-net__search",
       "Bash(git diff:*)",
       "Bash(gh issue:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(wc:*)"
     ]
   }
 }
