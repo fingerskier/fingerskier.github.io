@@ -1,14 +1,87 @@
-(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const r of i)if(r.type==="childList")for(const d of r.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&n(d)}).observe(document,{childList:!0,subtree:!0});function l(i){const r={};return i.integrity&&(r.integrity=i.integrity),i.referrerPolicy&&(r.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?r.credentials="include":i.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function n(i){if(i.ep)return;i.ep=!0;const r=l(i);fetch(i.href,r)}})();const u=[{id:"entryway",label:"Entryway",content:()=>`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const r of i)if(r.type==="childList")for(const h of r.addedNodes)h.tagName==="LINK"&&h.rel==="modulepreload"&&n(h)}).observe(document,{childList:!0,subtree:!0});function s(i){const r={};return i.integrity&&(r.integrity=i.integrity),i.referrerPolicy&&(r.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?r.credentials="include":i.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function n(i){if(i.ep)return;i.ep=!0;const r=s(i);fetch(i.href,r)}})();let m=null;async function D(){return m||(m=await(await fetch("./cv.json")).json(),m)}function o(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function M(e){return Object.entries(e).filter(([t])=>t!=="Email").map(([t,s])=>`<a href="${o(s)}" target="_blank" rel="noopener">${o(t)}</a>`).join(`
+          `)}function F(e){return e.split(/\.\s+/).filter(t=>t.trim()).map(t=>{const s=t.endsWith(".")?t:t+".";return`<li>${o(s)}</li>`}).join(`
+            `)}const P=`
+          <div class="project-stations">
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Spectrum Application</h4>
+              <p>Core app &mdash; actuator control, session management</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>Desktop &middot; I/O &middot; custom H/W</dd>
+                  <dt>Deployed</dt><dd>200+ franchise locations worldwide</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Member Assessment Kiosk</h4>
+              <p>Touch-screen control, multi-screen kiosk for member health assessments</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>Embedded Desktop UI</dd>
+                  <dt>Features</dt><dd>Session flow, real-time force display, member profiles</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Cloud Infrastructure</h4>
+              <p>Cloud API &amp; admin dashboard &amp; databases</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>Servers &middot; Databases &middot; Load-Balancing &middot; Data-Lake &middot; Cross-x Messaging</dd>
+                  <dt>Features</dt><dd>Franchise ops, member management, telemetry sync, auto-scaling</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Firmware</h4>
+              <p>Next-gen IoT hardware (h/w drivers, protocols, safety FSM)</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt>
+                  <dd>Node.js &middot; Micropython &middot; C</dd>
+
+                  <dt>Features</dt>
+                  <dd>Multiple types of actuators, load-cells and sensors;  Automatic h/w detect &amp; safety supervisor</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Member Journey App</h4>
+              <p>Member-facing mobile/web apps</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>Cloud API server</dd>
+                  <dt>Stack</dt><dd>PWA &middot; web-app</dd>
+                  <dt>Stack</dt><dd>Android/iOS &middot; mobile-apps</dd>
+                  <dt>Features</dt><dd>Session history, progress tracking, appointment scheduling</dd>
+                </dl>
+              </div>
+            </div>
+          </div>`;function q(e){return e.experience.map(t=>{const s=t.company==="Turing Automations",n=t.location?` &middot; ${o(t.location)}`:"";return`
+        <article class="role">
+          <h3>${o(t.company)} &mdash; ${o(t.title)}</h3>
+          <time>${o(t.dates)}${n}</time>
+          <ul>
+            ${F(t.responsibilities)}
+          </ul>${s?P:""}
+        </article>`}).join(`
+`)}function O(e){return e.education.map(t=>`<li><strong>${o(t.degree)}</strong> &mdash; ${o(t.institution)}, ${t.year}</li>`).join(`
+          `)}const v=[{id:"entryway",label:"Entryway",content:e=>`
       <div class="zone-content">
-        <h1>Matt Currier</h1>
+        <h1>${o(e.name)}</h1>
         <p class="cv-title">Co-Founder &amp; Principal Engineer &mdash; Turing Automations</p>
         <p class="cv-tagline">Creator of things &middot; Songwriter &middot; Thinkster</p>
         <div class="cv-links">
-          <a href="https://github.com/fingerskier" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://linkedin.com/in/matt-currier" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://x.com/fingerskier" target="_blank" rel="noopener">X</a>
-          <a href="https://youtube.com/@fingerskier" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://bandcamp.com/mattcurrier" target="_blank" rel="noopener">Bandcamp</a>
+          ${M(e.links)}
           <a href="#projects" class="projects-link">Projects</a>
         </div>
       </div>
@@ -27,7 +100,7 @@
           <text x="110" y="35" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="18" font-weight="600" letter-spacing="6" class="neon-text">WORKSHOP</text>
         </svg>
       </div>
-    `},{id:"workbench",label:"Workbench",content:()=>`
+    `},{id:"workbench",label:"Workbench",content:e=>`
       <div class="zone-content">
         <h2>Skills &amp; Technologies</h2>
         <div class="skills-shelf">
@@ -83,7 +156,7 @@
         </svg>
         <svg class="scenery-pegboard-svg" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="0" width="120" height="180" rx="2" fill="#c4a882" opacity="0.3"/>
-          ${[0,1,2,3,4,5,6,7].map(e=>[0,1,2,3,4].map(s=>'<circle cx="'+(12+s*24)+'" cy="'+(12+e*22)+'" r="3" fill="rgba(0,0,0,0.15)"/>').join("")).join("")}
+          ${[0,1,2,3,4,5,6,7].map(t=>[0,1,2,3,4].map(s=>'<circle cx="'+(12+s*24)+'" cy="'+(12+t*22)+'" r="3" fill="rgba(0,0,0,0.15)"/>').join("")).join("")}
           <!-- wrench -->
           <rect x="20" y="25" width="6" height="50" rx="3" fill="#888" opacity="0.5" transform="rotate(-15 23 50)"/>
           <!-- screwdriver -->
@@ -93,158 +166,10 @@
           <rect x="90" y="30" width="5" height="40" rx="2" fill="#666" opacity="0.4" transform="rotate(10 92 50)"/>
         </svg>
       </div>
-    `},{id:"floor",label:"The Floor",content:()=>`
+    `},{id:"floor",label:"The Floor",content:e=>`
       <div class="zone-content">
         <h2>Experience</h2>
-        <article class="role">
-          <h3>Turing Automations &mdash; Co-Founder &amp; Principal Engineer</h3>
-          <time>2017 &ndash; Present</time>
-          <p><em>Primary Client: OsteoStrong</em></p>
-          <ul>
-            <li>Architect and developer of the Spectrum platform: safety-critical applications controlling health/fitness equipment across 200+ franchise locations worldwide</li>
-            <li>Designed FSM-based actuator control with real-time safety supervisor monitoring force limits, timeouts, wrong-way motion, and signal validity</li>
-            <li>Built hardware abstraction layer supporting 5 actuator types and 3 load-cell types with automatic detection</li>
-            <li>Developed cloud infrastructure on AWS infrastructure</li>
-            <li>Created over-the-air auto-update system for fleet of deployed devices w/ desktop apps on SBCs</li>
-            <li>Maintained complex codebase spanning firmware control, desktop UI, cloud API, and member-facing apps</li>
-            <li>Built digital twin / simulator system enabling full development and testing without physical hardware</li>
-          </ul>
-
-          <div class="project-stations">
-            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led green"></span>
-              <h4>Spectrum Application</h4>
-              <p>Core app &mdash; actuator control, session management</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt><dd>Desktop &middot; I/O &middot; custom H/W</dd>
-                  <dt>Deployed</dt><dd>200+ franchise locations worldwide</dd>
-                </dl>
-              </div>
-            </div>
-            
-            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led green"></span>
-              <h4>Member Assessment Kiosk</h4>
-              <p>Touch-screen control, multi-screen kiosk for member health assessments</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt><dd>Embedded Desktop UI</dd>
-                  <dt>Features</dt><dd>Session flow, real-time force display, member profiles</dd>
-                </dl>
-              </div>
-            </div>
-
-            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led green"></span>
-              <h4>Cloud Infrastructure</h4>
-              <p>Cloud API &amp; admin dashboard &amp; databases</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt><dd>Servers &middot; Databases &middot; Load-Balancing &middot; Data-Lake &middot; Cross-x Messaging</dd>
-                  <dt>Features</dt><dd>Franchise ops, member management, telemetry sync, auto-scaling</dd>
-                </dl>
-              </div>
-            </div>
-
-            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led green"></span>
-              <h4>Firmware</h4>
-              <p>Next-gen IoT hardware (h/w drivers, protocols, safety FSM)</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt>
-                  <dd>Node.js &middot; Micropython &middot; C</dd>
-                  
-                  <dt>Features</dt>
-                  <dd>Multiple types of actuators, load-cells and sensors;  Automatic h/w detect &amp; safety supervisor</dd>
-                </dl>
-              </div>
-            </div>
-
-            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
-              <span class="status-led green"></span>
-              <h4>Member Journey App</h4>
-              <p>Member-facing mobile/web apps</p>
-              <div class="spec-plate">
-                <dl>
-                  <dt>Stack</dt><dd>Cloud API server</dd>
-                  <dt>Stack</dt><dd>PWA &middot; web-app</dd>
-                  <dt>Stack</dt><dd>Android/iOS &middot; mobile-apps</dd>
-                  <dt>Features</dt><dd>Session history, progress tracking, appointment scheduling</dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="role">
-          <h3>Premier Coil Solutions &mdash; Controls/Software Engineer</h3>
-          <time>2017 &ndash; 2019</time>
-          <ul>
-            <li>Developed advanced PLC automated control systems and standards</li>
-            <li>World-first coiled-tubing unit auto-driller</li>
-            <li>World-first automated nitrogen pump</li>
-            <li>Automated coilted-tubing fluid pump</li>
-            <li>Created automation controller function libraries for command-request processing, task queuing, sequencing</li>
-            <li>Created Hardware-in-Loop machine simulators (Siemens, Wago, PC)</li>
-            <li>Designed SCADA software for coiled-tubing, drilling fluid, and nitrogen pumping units</li>
-          </ul>
-        </article>
-
-        <article class="role">
-          <h3>Aker Solutions / MHWirth / AFGlobal &mdash; Controls/Software Engineer</h3>
-          <time>2014 &ndash; 2017</time>
-          <ul>
-            <li>PLC-based mux system for subsea distributed control (direct-hydraulic, remote hydraulic, mechanical)</li>
-            <li>Control system for robotic drilling rig machinery and automated drilling safety manifold</li>
-            <li>SCADA software for land and offshore drilling rigs</li>
-          </ul>
-        </article>
-
-        <article class="role">
-          <h3>Paragon Web Solutions &mdash; Web Developer</h3>
-          <time>2009 &ndash; 2015</time>
-          <ul>
-            <li>Charter school web application: learning plans, grading, transcripts, document management with e-signing</li>
-            <li>Document control system for Sisters of Charity hospital network</li>
-            <li>E-commerce, content management, and data visualization web apps</li>
-          </ul>
-        </article>
-
-        <article class="role">
-          <h3>Scientific Drilling &mdash; Directional Drilling</h3>
-          <time>2005 &ndash; 2013</time>
-          <ul>
-            <li>Shell ERDD HLT: 22 wells, slant-well and horizontal wells for oil-shale recovery</li>
-            <li>Anadarko gas-well surface program (Uintah Basin) with high anti-collision risks</li>
-            <li>Barrick mine-shaft freeze wall: 36 wells in a ring with 2-foot spacing tolerances</li>
-          </ul>
-        </article>
-
-        <article class="role">
-          <h3>Nabors Drilling &mdash; Rig Hand</h3>
-          <time>2004 &ndash; 2005 &middot; Rocky Mountains, USA</time>
-          <ul>
-            <li>Directional natural gas wells in the Piceance Basin</li>
-            <li>Rig-hand for NDUSA on rig #909 drilling natural gas directional wells throughout western Colorado</li>
-            <li>Performed manual labor including rig floor equipment such as pipe-tongs and slips</li>
-            <li>Partially responsible for maintaining drilling fluid properties</li>
-            <li>General maintenance and operation of the rig&rsquo;s mechanical, hydraulic, and pneumatic systems</li>
-          </ul>
-        </article>
-
-        <article class="role">
-          <h3>ACS Online &mdash; IT and Programming</h3>
-          <time>1998 &ndash; 2003 &middot; Grand Junction, CO</time>
-          <ul>
-            <li>Medical Manager scripts and setup for clients, including determining software requirements</li>
-            <li>Refactored government reporting templates for pediatrics clinics</li>
-            <li>Acquired and installed hardware and software solutions for office work and networking</li>
-            <li>Assisted in architecting and building medical office computer record systems, including specifying PC/server systems and networking gear</li>
-            <li>Technical support for customers&rsquo; hardware and software: over-the-phone and on-site</li>
-          </ul>
-        </article>
+        ${q(e)}
       </div>
       <div class="zone-scenery" aria-hidden="true">
         <svg class="scenery-actuator-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
@@ -264,11 +189,11 @@
         <svg class="scenery-conveyor-svg" viewBox="0 0 800 30" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="5" width="800" height="20" rx="3" fill="#444"/>
           <g class="conveyor-segments">
-            ${Array.from({length:20},(e,s)=>'<rect x="'+s*40+'" y="7" width="35" height="16" rx="1" fill="#'+(s%2?"666":"555")+'"/>').join("")}
+            ${Array.from({length:20},(t,s)=>'<rect x="'+s*40+'" y="7" width="35" height="16" rx="1" fill="#'+(s%2?"666":"555")+'"/>').join("")}
           </g>
         </svg>
       </div>
-    `},{id:"rack",label:"The Rack",content:()=>`
+    `},{id:"rack",label:"The Rack",content:e=>`
       <div class="zone-content">
         <h2>Architecture &amp; DevOps</h2>
         <ul>
@@ -292,7 +217,7 @@
         <svg class="scenery-rack-svg" viewBox="0 0 80 240" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="0" width="80" height="240" rx="3" fill="#2a2a2a" stroke="#444" stroke-width="2"/>
           <rect x="4" y="4" width="72" height="232" rx="2" fill="#1a1a1a"/>
-          ${Array.from({length:8},(e,s)=>`
+          ${Array.from({length:8},(t,s)=>`
             <rect x="10" y="${12+s*28}" width="60" height="22" rx="2" fill="#333" stroke="#444" stroke-width="1"/>
             <circle cx="20" cy="${23+s*28}" r="2.5" fill="${["#0f0","#0f0","#ff0","#0f0","#0ff","#0f0","#f80","#0f0"][s]}" class="rack-led"/>
             <circle cx="30" cy="${23+s*28}" r="2.5" fill="${["#0f0","#ff0","#0f0","#0f0","#0f0","#0ff","#0f0","#ff0"][s]}" class="rack-led"/>
@@ -306,7 +231,7 @@
           <path d="M0 75 Q60 65, 100 80 T200 70" fill="none" stroke="#1A6B5C" stroke-width="3" opacity="0.3"/>
         </svg>
       </div>
-    `},{id:"stage",label:"The Stage",content:()=>`
+    `},{id:"stage",label:"The Stage",content:e=>`
       <div class="zone-content">
         <h2>Music &amp; Creativity</h2>
         <p>Songwriter and musician. The same mind that designs safety-critical state machines also writes songs.</p>
@@ -342,7 +267,7 @@
           <text class="music-note note-3" x="180" y="40" font-size="20" fill="#1A6B5C" opacity="0.4">&#9833;</text>
         </svg>
       </div>
-    `},{id:"library",label:"The Library",content:()=>`
+    `},{id:"library",label:"The Library",content:e=>`
       <div class="zone-content">
         <h2>Intellectual Interests</h2>
         <ul>
@@ -353,8 +278,7 @@
         </ul>
         <h3>Education</h3>
         <ul>
-          <li><strong>M.S. Information Systems</strong> &mdash; University of Phoenix, 2003&ndash;2005</li>
-          <li><strong>B.S. Computer Science</strong> &mdash; Colorado Mesa University, 1995&ndash;2003</li>
+          ${O(e)}
         </ul>
       </div>
       <div class="zone-scenery" aria-hidden="true">
@@ -399,13 +323,12 @@
           <rect x="90" y="108" width="20" height="3" rx="1" fill="rgba(255,255,255,0.1)"/>
         </svg>
       </div>
-    `},{id:"exit",label:"The Exit",content:()=>`
+    `},{id:"exit",label:"The Exit",content:e=>`
       <div class="zone-content">
         <h2>Let&rsquo;s build something.</h2>
         <div class="contact-links">
-          <a href="https://github.com/fingerskier" target="_blank" rel="noopener">github.com/fingerskier</a>
-          <a href="https://linkedin.com/in/matt-currier" target="_blank" rel="noopener">linkedin.com/in/matt-currier</a>
-          <a href="https://x.com/fingerskier" target="_blank" rel="noopener">x.com/fingerskier</a>
+          ${["GitHub","LinkedIn","X"].filter(t=>e.links[t]).map(t=>{const s=e.links[t],n=s.replace(/^https?:\/\//,"");return`<a href="${o(s)}" target="_blank" rel="noopener">${o(n)}</a>`}).join(`
+          `)}
         </div>
         <p class="cv-tagline">Father of 5 &mdash; husband of 1.<br>My true passion is to create and help others do what they were made to do.</p>
       </div>
@@ -437,7 +360,7 @@
           <rect class="mailbox-flag" x="42" y="14" width="4" height="18" rx="1" fill="#E8742A"/>
         </svg>
       </div>
-    `}];function T(){return`
+    `}];function _(){return`
   <svg class="character-svg" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
     <!-- hard hat -->
     <ellipse cx="30" cy="14" rx="16" ry="8" fill="#E8742A"/>
@@ -464,8 +387,8 @@
     <!-- arms -->
     <rect class="arm-left" x="11" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
     <rect class="arm-right" x="39" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
-  </svg>`}function z(){const e=document.getElementById("app"),s=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches,l=document.documentElement.dataset.theme||"light";e.innerHTML=`
-    <div class="icv${s?" plain-mode":""}" data-theme="${l}">
+  </svg>`}async function H(){const e=document.getElementById("app"),t=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches,s=document.documentElement.dataset.theme||"light",n=await D();e.innerHTML=`
+    <div class="icv${t?" plain-mode":""}" data-theme="${s}">
       <a href="#main-content" class="skip-link">Skip to content</a>
 
       <div class="parallax-layer parallax-sky" aria-hidden="true"></div>
@@ -481,26 +404,26 @@
         </div>
         <div class="hud-right">
           <div class="hud-nav-dots">
-            ${u.map((n,i)=>`<button class="hud-dot${i===0?" active":""}" data-zone-index="${i}" title="${n.label}"></button>`).join("")}
+            ${v.map((i,r)=>`<button class="hud-dot${r===0?" active":""}" data-zone-index="${r}" title="${i.label}"></button>`).join("")}
           </div>
-          <button class="theme-toggle" aria-label="Toggle dark mode">${l==="dark"?"☀️":"🌙"}</button>
-          <button class="mode-toggle" aria-label="Toggle plain mode">${s?"🎮":"📄"}</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode">${s==="dark"?"☀️":"🌙"}</button>
+          <button class="mode-toggle" aria-label="Toggle plain mode">${t?"🎮":"📄"}</button>
         </div>
       </div>
 
       <div class="character" aria-hidden="true">
-        ${T()}
+        ${_()}
       </div>
 
       <div class="zones-track" id="main-content">
-        ${u.map((n,i)=>`
-          <section class="zone" id="zone-${n.id}" data-zone="${n.id}" data-zone-index="${i}">
-            ${n.content()}
+        ${v.map((i,r)=>`
+          <section class="zone" id="zone-${i.id}" data-zone="${i.id}" data-zone-index="${r}">
+            ${i.content(n)}
           </section>
         `).join("")}
       </div>
     </div>
-  `,I(e,s)}function I(e,s){const l=e.querySelector(".icv"),n=e.querySelector(".zones-track"),i=e.querySelector(".character"),r=Array.from(e.querySelectorAll(".zone")),d=e.querySelector(".hud-progress-fill"),L=e.querySelector(".hud-zone-label"),y=Array.from(e.querySelectorAll(".hud-dot")),v=e.querySelector(".mode-toggle"),x=e.querySelector(".parallax-sky"),w=e.querySelector(".parallax-wall");let o=s,p=0;v.addEventListener("click",()=>{o=!o,l.classList.toggle("plain-mode",o),sessionStorage.setItem("cv-plain",String(o)),v.textContent=o?"🎮":"📄"});const m=e.querySelector(".theme-toggle");m.addEventListener("click",()=>{const a=l.dataset.theme==="dark";l.dataset.theme=a?"light":"dark",document.documentElement.dataset.theme=l.dataset.theme,localStorage.setItem("cv-theme",l.dataset.theme),m.textContent=a?"🌙":"☀️"}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",a=>{if(!localStorage.getItem("cv-theme")){const t=a.matches?"dark":"light";l.dataset.theme=t,document.documentElement.dataset.theme=t,m.textContent=a.matches?"☀️":"🌙"}}),e.querySelector(".hud-home").addEventListener("click",()=>{o?r[0].scrollIntoView({behavior:"smooth",block:"start"}):r[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),y.forEach(a=>{a.addEventListener("click",()=>{const t=parseInt(a.dataset.zoneIndex,10);o?r[t].scrollIntoView({behavior:"smooth",block:"start"}):r[t].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function h(){if(o){const t=window.scrollY||document.documentElement.scrollTop,c=document.documentElement.scrollHeight-window.innerHeight;d.style.width=(c>0?t/c*100:0)+"%"}else{const t=n.scrollLeft,c=n.scrollWidth-n.clientWidth,E=c>0?t/c:0;d.style.width=E*100+"%";const M=E*(n.clientWidth-80);i.style.transform=`translateX(${M}px)`,Math.abs(t-p)>1&&(i.classList.add("walking"),i.classList.toggle("facing-left",t<p)),p=t,clearTimeout(i._wt),clearTimeout(i._pt),i.classList.remove("pointing"),i._wt=setTimeout(()=>{i.classList.remove("walking"),i._pt=setTimeout(()=>i.classList.add("pointing"),400)},200),x&&(x.style.transform=`translateX(${-t*.1}px)`),w&&(w.style.transform=`translateX(${-t*.3}px)`)}let a=0;if(o){for(let t=r.length-1;t>=0;t--)if(r[t].getBoundingClientRect().top<=window.innerHeight/3){a=t;break}}else for(let t=r.length-1;t>=0;t--)if(r[t].getBoundingClientRect().left<=n.clientWidth/2){a=t;break}L.textContent=u[a].label,y.forEach((t,c)=>t.classList.toggle("active",c===a))}n.addEventListener("scroll",h),window.addEventListener("scroll",h);function k(a){o||(a.key==="ArrowRight"?n.scrollBy({left:400,behavior:"smooth"}):a.key==="ArrowLeft"&&n.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",k);const D=e.querySelectorAll(".meter"),g=new IntersectionObserver(a=>{a.forEach(t=>{t.isIntersecting&&(t.target.classList.add("filled"),g.unobserve(t.target))})},{threshold:.2});D.forEach(a=>g.observe(a));const b=e.querySelectorAll(".station");b.forEach(a=>{a.addEventListener("click",()=>{const t=a.classList.contains("expanded");b.forEach(c=>{c.classList.remove("expanded"),c.setAttribute("aria-expanded","false")}),t||(a.classList.add("expanded"),a.setAttribute("aria-expanded","true"))})});const P=e.querySelectorAll(".status-led"),f=[];P.forEach(a=>{f.push(setInterval(()=>a.classList.toggle("blink"),800+Math.random()*1500))});const S=e.querySelector(".loadcell-value");S&&f.push(setInterval(()=>{S.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));const A=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",k),window.removeEventListener("scroll",h),f.forEach(clearInterval),g.disconnect(),A.disconnect())});A.observe(e,{childList:!0}),requestAnimationFrame(h)}const q=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",url:"https://fingerskier.github.io/gre_prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",url:"https://fingerskier.github.io/speakeasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",url:"https://fingerskier.github.io/numbersense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"simulations",label:"Simulations &amp; Visualizations",description:"Interactive simulations and visual experiments",projects:[{name:"SolarSystem",url:"https://fingerskier.github.io/SolarSystem",repo:"https://github.com/fingerskier/SolarSystem",description:"Interactive solar system simulation"},{name:"Biologize Me",url:"https://fingerskier.github.io/biologize_me",repo:"https://github.com/fingerskier/biologize_me",description:"Biology-inspired visualization experiment"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function $(){const e=document.getElementById("app");e.innerHTML=`
+  `,R(e,t)}function R(e,t){const s=e.querySelector(".icv"),n=e.querySelector(".zones-track"),i=e.querySelector(".character"),r=Array.from(e.querySelectorAll(".zone")),h=e.querySelector(".hud-progress-fill"),T=e.querySelector(".hud-zone-label"),x=Array.from(e.querySelectorAll(".hud-dot")),w=e.querySelector(".mode-toggle"),k=e.querySelector(".parallax-sky"),b=e.querySelector(".parallax-wall");let c=t,g=0;w.addEventListener("click",()=>{c=!c,s.classList.toggle("plain-mode",c),sessionStorage.setItem("cv-plain",String(c)),w.textContent=c?"🎮":"📄"});const f=e.querySelector(".theme-toggle");f.addEventListener("click",()=>{const l=s.dataset.theme==="dark";s.dataset.theme=l?"light":"dark",document.documentElement.dataset.theme=s.dataset.theme,localStorage.setItem("cv-theme",s.dataset.theme),f.textContent=l?"🌙":"☀️"}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",l=>{if(!localStorage.getItem("cv-theme")){const a=l.matches?"dark":"light";s.dataset.theme=a,document.documentElement.dataset.theme=a,f.textContent=l.matches?"☀️":"🌙"}}),e.querySelector(".hud-home").addEventListener("click",()=>{c?r[0].scrollIntoView({behavior:"smooth",block:"start"}):r[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),x.forEach(l=>{l.addEventListener("click",()=>{const a=parseInt(l.dataset.zoneIndex,10);c?r[a].scrollIntoView({behavior:"smooth",block:"start"}):r[a].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function p(){if(c){const a=window.scrollY||document.documentElement.scrollTop,d=document.documentElement.scrollHeight-window.innerHeight;h.style.width=(d>0?a/d*100:0)+"%"}else{const a=n.scrollLeft,d=n.scrollWidth-n.clientWidth,C=d>0?a/d:0;h.style.width=C*100+"%";const z=C*(n.clientWidth-80);i.style.transform=`translateX(${z}px)`,Math.abs(a-g)>1&&(i.classList.add("walking"),i.classList.toggle("facing-left",a<g)),g=a,clearTimeout(i._wt),clearTimeout(i._pt),i.classList.remove("pointing"),i._wt=setTimeout(()=>{i.classList.remove("walking"),i._pt=setTimeout(()=>i.classList.add("pointing"),400)},200),k&&(k.style.transform=`translateX(${-a*.1}px)`),b&&(b.style.transform=`translateX(${-a*.3}px)`)}let l=0;if(c){for(let a=r.length-1;a>=0;a--)if(r[a].getBoundingClientRect().top<=window.innerHeight/3){l=a;break}}else for(let a=r.length-1;a>=0;a--)if(r[a].getBoundingClientRect().left<=n.clientWidth/2){l=a;break}T.textContent=v[l].label,x.forEach((a,d)=>a.classList.toggle("active",d===l))}n.addEventListener("scroll",p),window.addEventListener("scroll",p);function E(l){c||(l.key==="ArrowRight"?n.scrollBy({left:400,behavior:"smooth"}):l.key==="ArrowLeft"&&n.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",E);const j=e.querySelectorAll(".meter"),u=new IntersectionObserver(l=>{l.forEach(a=>{a.isIntersecting&&(a.target.classList.add("filled"),u.unobserve(a.target))})},{threshold:.2});j.forEach(l=>u.observe(l));const S=e.querySelectorAll(".station");S.forEach(l=>{l.addEventListener("click",()=>{const a=l.classList.contains("expanded");S.forEach(d=>{d.classList.remove("expanded"),d.setAttribute("aria-expanded","false")}),a||(l.classList.add("expanded"),l.setAttribute("aria-expanded","true"))})});const I=e.querySelectorAll(".status-led"),y=[];I.forEach(l=>{y.push(setInterval(()=>l.classList.toggle("blink"),800+Math.random()*1500))});const A=e.querySelector(".loadcell-value");A&&y.push(setInterval(()=>{A.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));const B=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",E),window.removeEventListener("scroll",p),y.forEach(clearInterval),u.disconnect(),B.disconnect())});B.observe(e,{childList:!0}),requestAnimationFrame(p)}const V=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",url:"https://fingerskier.github.io/gre_prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",url:"https://fingerskier.github.io/speakeasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",url:"https://fingerskier.github.io/numbersense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"simulations",label:"Simulations &amp; Visualizations",description:"Interactive simulations and visual experiments",projects:[{name:"SolarSystem",url:"https://fingerskier.github.io/SolarSystem",repo:"https://github.com/fingerskier/SolarSystem",description:"Interactive solar system simulation"},{name:"Biologize Me",url:"https://fingerskier.github.io/biologize_me",repo:"https://github.com/fingerskier/biologize_me",description:"Biology-inspired visualization experiment"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function W(){const e=document.getElementById("app");e.innerHTML=`
     <div class="icv projects-page">
       <div class="hud" role="navigation" aria-label="Projects navigation">
         <div class="hud-left">
@@ -517,18 +440,18 @@
         <p class="projects-subtitle">Public repositories, apps, and experiments.</p>
 
         <div class="projects-grid">
-          ${q.map(s=>`
-            <section class="project-category" id="cat-${s.id}">
-              <h2>${s.label}</h2>
-              <p class="category-desc">${s.description}</p>
+          ${V.map(t=>`
+            <section class="project-category" id="cat-${t.id}">
+              <h2>${t.label}</h2>
+              <p class="category-desc">${t.description}</p>
               <div class="category-items">
-                ${s.projects.map(l=>`
+                ${t.projects.map(s=>`
                   <div class="project-card">
-                    <h3>${l.name}</h3>
-                    <p>${l.description}</p>
+                    <h3>${s.name}</h3>
+                    <p>${s.description}</p>
                     <div class="project-links">
-                      ${l.url?`<a href="${l.url}" target="_blank" rel="noopener" aria-label="Visit ${l.name} site">Visit</a>`:""}
-                      ${l.repo?`<a href="${l.repo}" target="_blank" rel="noopener" aria-label="View ${l.name} repository">Repo</a>`:""}
+                      ${s.url?`<a href="${s.url}" target="_blank" rel="noopener" aria-label="Visit ${s.name} site">Visit</a>`:""}
+                      ${s.repo?`<a href="${s.repo}" target="_blank" rel="noopener" aria-label="View ${s.name} repository">Repo</a>`:""}
                     </div>
                   </div>
                 `).join("")}
@@ -538,4 +461,4 @@
         </div>
       </main>
     </div>
-  `}let C=null;function B(){const e=window.location.hash==="#projects"?"projects":"cv";e!==C&&(C=e,e==="projects"?$():z())}window.addEventListener("hashchange",B);B();
+  `}let $=null;async function L(){const e=window.location.hash==="#projects"?"projects":"cv";e!==$&&($=e,e==="projects"?W():await H())}window.addEventListener("hashchange",L);L();
