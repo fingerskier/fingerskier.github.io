@@ -41,16 +41,15 @@ Linux Windows Engineering HTML CSS JS TS Coldfusion	Pascal C Java Cloud Infrastr
 *	Leveraging AI/ML for data analysis, product features, and development workflow acceleration since 2023.
 
 ### Controls/Software Engineer
-**Premier Coil Solutions**	2017-2019 Wallter, TX
+**Premier Coil Solutions**	2017-2019	Waller, TX
 *	Responsible for developing advanced PLC automated control systems and standards.
 *	Created automation controller function libraries for command-request processing, task queuing, sequencing, limit and tolerance evaluation and deviation, I/O processing, and myriad low-level functionality.
 *	Created Hardware-in-Loop machine simulators for testing automation controller logic in a test setting.  This included Siemens, Wago, and PC libraries and interactive simulations.
-*	Created Hardware-in-Loop machine simulators for testing automation controller logic in a test setting.  This included Siemens, Wago, and PC libraries and interactive simulations.
 *	Responsible for developing and implementing software design specifications.
-*	Designed SCADA software for controlling and logging operational systems on coiled-tubing units, drilling fluild pump units and nitrogen pumping units;  including specifying instruments, historical trending, and automated/minimalist controls.
+*	Designed SCADA software for controlling and logging operational systems on coiled-tubing units, drilling fluid pump units and nitrogen pumping units;  including specifying instruments, historical trending, and automated/minimalist controls.
 
 ### Controls/Software Engineer
-**Aker Solutions → MHWirth → AFGlobal**
+**Aker Solutions → MHWirth → AFGlobal**	2014 – 2017
 *	Responsible for developing advanced PLC automated control systems and standards.
 *	Created automation controller function libraries for command-request processing, task queuing, sequencing, limit and tolerance evaluation and deviation, I/O processing, and myriad low-level functionality.
 *	Created Hardware-in-Loop machine simulators for testing automation controller logic in a test setting.  This included Siemens, Wago, and PC libraries and interactive simulations.
