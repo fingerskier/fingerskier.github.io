@@ -20,7 +20,8 @@
       "Bash(git diff:*)",
       "Bash(gh issue:*)",
       "Bash(git commit:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(grep:*)"
     ]
   }
 }
