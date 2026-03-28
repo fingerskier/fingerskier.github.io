@@ -29,7 +29,8 @@
       "Bash(echo \"Syntax check result: $?\")",
       "Bash(node -c /Users/fingerskier/dev/fingerskier/fingerskier.github.io/app/src/pages/cv.js)",
       "Bash(node -c /Users/fingerskier/dev/fingerskier/fingerskier.github.io/app/src/pages/projects.js)",
-      "mcp__reqall-net__upsert_record"
+      "mcp__reqall-net__upsert_record",
+      "mcp__reqall-net__get_record"
     ]
   }
 }
