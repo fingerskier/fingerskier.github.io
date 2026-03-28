@@ -1,6 +1,6 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const l of i)if(l.type==="childList")for(const p of l.addedNodes)p.tagName==="LINK"&&p.rel==="modulepreload"&&n(p)}).observe(document,{childList:!0,subtree:!0});function s(i){const l={};return i.integrity&&(l.integrity=i.integrity),i.referrerPolicy&&(l.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?l.credentials="include":i.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function n(i){if(i.ep)return;i.ep=!0;const l=s(i);fetch(i.href,l)}})();let m=null;async function M(){return m||(m=await(await fetch("./cv.json")).json(),m)}function o(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function j(e){return Object.entries(e).filter(([t])=>t!=="Email").map(([t,s])=>`<a href="${o(s)}" target="_blank" rel="noopener">${o(t)}</a>`).join(`
-          `)}function z(e){return e.split(/\.\s+/).filter(t=>t.trim()).map(t=>{const s=t.endsWith(".")?t:t+".";return`<li>${o(s)}</li>`}).join(`
-            `)}const F=`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const l of document.querySelectorAll('link[rel="modulepreload"]'))o(l);new MutationObserver(l=>{for(const n of l)if(n.type==="childList")for(const p of n.addedNodes)p.tagName==="LINK"&&p.rel==="modulepreload"&&o(p)}).observe(document,{childList:!0,subtree:!0});function s(l){const n={};return l.integrity&&(n.integrity=l.integrity),l.referrerPolicy&&(n.referrerPolicy=l.referrerPolicy),l.crossOrigin==="use-credentials"?n.credentials="include":l.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(l){if(l.ep)return;l.ep=!0;const n=s(l);fetch(l.href,n)}})();let y=null;async function H(){return y||(y=await(await fetch("./cv.json")).json(),y)}function d(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function N(e){return Object.entries(e).filter(([t])=>t!=="Email").map(([t,s])=>`<a href="${d(s)}" target="_blank" rel="noopener">${d(t)}</a>`).join(`
+          `)}function _(e){return e.split(/\.\s+/).filter(t=>t.trim()).map(t=>{const s=t.endsWith(".")?t:t+".";return`<li>${d(s)}</li>`}).join(`
+            `)}const W=`
           <div class="project-stations">
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
@@ -66,7 +66,7 @@
                 </dl>
               </div>
             </div>
-          </div>`,q=`
+          </div>`,V=`
           <div class="project-stations">
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
@@ -103,22 +103,22 @@
                 </dl>
               </div>
             </div>
-          </div>`;function O(e){return e.experience.map(t=>{const s=t.company==="Turing Automations",n=t.company==="Premier Coil Solutions",i=t.location?` &middot; ${o(t.location)}`:"",l=s?F:n?q:"";return`
+          </div>`;function G(e){return e.experience.map(t=>{const s=t.company==="Turing Automations",o=t.company==="Premier Coil Solutions",l=t.location?` &middot; ${d(t.location)}`:"",n=s?W:o?V:"";return`
         <article class="role">
-          <h3>${o(t.company)} &mdash; ${o(t.title)}</h3>
-          <time>${o(t.dates)}${i}</time>
+          <h3>${d(t.company)} &mdash; ${d(t.title)}</h3>
+          <time>${d(t.dates)}${l}</time>
           <ul>
-            ${z(t.responsibilities)}
-          </ul>${l}
+            ${_(t.responsibilities)}
+          </ul>${n}
         </article>`}).join(`
-`)}function H(e){return e.education.map(t=>`<li><strong>${o(t.degree)}</strong> &mdash; ${o(t.institution)}, ${t.year}</li>`).join(`
-          `)}const y=[{id:"entryway",label:"Entryway",content:e=>`
+`)}function Q(e){return e.education.map(t=>`<li><strong>${d(t.degree)}</strong> &mdash; ${d(t.institution)}, ${t.year}</li>`).join(`
+          `)}const A=[{id:"entryway",label:"Entryway",content:e=>`
       <div class="zone-content">
-        <h1>${o(e.name)}</h1>
+        <h1>${d(e.name)}</h1>
         <p class="cv-title">Co-Founder &amp; Principal Engineer &mdash; Turing Automations</p>
         <p class="cv-tagline">Creator of things &middot; Songwriter &middot; Thinkster</p>
         <div class="cv-links">
-          ${j(e.links)}
+          ${N(e.links)}
           <a href="#projects" class="projects-link">Projects</a>
         </div>
       </div>
@@ -206,7 +206,7 @@
     `},{id:"floor",label:"The Floor",content:e=>`
       <div class="zone-content">
         <h2>Experience</h2>
-        ${O(e)}
+        ${G(e)}
       </div>
       <div class="zone-scenery" aria-hidden="true">
         <svg class="scenery-actuator-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
@@ -315,7 +315,7 @@
         </ul>
         <h3>Education</h3>
         <ul>
-          ${H(e)}
+          ${Q(e)}
         </ul>
       </div>
       <div class="zone-scenery" aria-hidden="true">
@@ -364,7 +364,7 @@
       <div class="zone-content">
         <h2>Let&rsquo;s build something.</h2>
         <div class="contact-links">
-          ${["GitHub","LinkedIn","X"].filter(t=>e.links[t]).map(t=>{const s=e.links[t],n=s.replace(/^https?:\/\//,"");return`<a href="${o(s)}" target="_blank" rel="noopener">${o(n)}</a>`}).join(`
+          ${["GitHub","LinkedIn","X"].filter(t=>e.links[t]).map(t=>{const s=e.links[t],o=s.replace(/^https?:\/\//,"");return`<a href="${d(s)}" target="_blank" rel="noopener">${d(o)}</a>`}).join(`
           `)}
         </div>
         <p class="cv-tagline">Father of 5 &mdash; husband of 1.<br>My true passion is to create and help others do what they were made to do.</p>
@@ -397,7 +397,7 @@
           <rect class="mailbox-flag" x="42" y="14" width="4" height="18" rx="1" fill="#E8742A"/>
         </svg>
       </div>
-    `}];function R(){return`
+    `}];function K(){return`
   <svg class="character-svg" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
     <!-- hard hat -->
     <ellipse cx="30" cy="14" rx="16" ry="8" fill="#E8742A"/>
@@ -424,7 +424,7 @@
     <!-- arms -->
     <rect class="arm-left" x="11" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
     <rect class="arm-right" x="39" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
-  </svg>`}async function _(){const e=document.getElementById("app"),t=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches,s=document.documentElement.dataset.theme||"light",n=await M();e.innerHTML=`
+  </svg>`}async function U(){const e=document.getElementById("app"),t=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches,s=document.documentElement.dataset.theme||"light",o=await H();e.innerHTML=`
     <div class="icv${t?" plain-mode":""}" data-theme="${s}">
       <a href="#main-content" class="skip-link">Skip to content</a>
 
@@ -441,7 +441,7 @@
         </div>
         <div class="hud-right">
           <div class="hud-nav-dots">
-            ${y.map((i,l)=>`<button class="hud-dot${l===0?" active":""}" data-zone-index="${l}" title="${i.label}"></button>`).join("")}
+            ${A.map((l,n)=>`<button class="hud-dot${n===0?" active":""}" data-zone-index="${n}" title="${l.label}"></button>`).join("")}
           </div>
           <button class="theme-toggle" aria-label="Toggle dark mode">${s==="dark"?"☀️":"🌙"}</button>
           <button class="mode-toggle" aria-label="Toggle plain mode">${t?"🎮":"📄"}</button>
@@ -449,18 +449,18 @@
       </div>
 
       <div class="character" aria-hidden="true">
-        ${R()}
+        ${K()}
       </div>
 
       <div class="zones-track" id="main-content">
-        ${y.map((i,l)=>`
-          <section class="zone" id="zone-${i.id}" data-zone="${i.id}" data-zone-index="${l}">
-            ${i.content(n)}
+        ${A.map((l,n)=>`
+          <section class="zone" id="zone-${l.id}" data-zone="${l.id}" data-zone-index="${n}">
+            ${l.content(o)}
           </section>
         `).join("")}
       </div>
     </div>
-  `,N(e,t)}function N(e,t){const s=e.querySelector(".icv"),n=e.querySelector(".zones-track"),i=e.querySelector(".character"),l=Array.from(e.querySelectorAll(".zone")),p=e.querySelector(".hud-progress-fill"),T=e.querySelector(".hud-zone-label"),x=Array.from(e.querySelectorAll(".hud-dot")),w=e.querySelector(".mode-toggle"),k=e.querySelector(".parallax-sky"),b=e.querySelector(".parallax-wall");let c=t,g=0;w.addEventListener("click",()=>{c=!c,s.classList.toggle("plain-mode",c),sessionStorage.setItem("cv-plain",String(c)),w.textContent=c?"🎮":"📄"});const f=e.querySelector(".theme-toggle");f.addEventListener("click",()=>{const r=s.dataset.theme==="dark";s.dataset.theme=r?"light":"dark",document.documentElement.dataset.theme=s.dataset.theme,localStorage.setItem("cv-theme",s.dataset.theme),f.textContent=r?"🌙":"☀️"}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",r=>{if(!localStorage.getItem("cv-theme")){const a=r.matches?"dark":"light";s.dataset.theme=a,document.documentElement.dataset.theme=a,f.textContent=r.matches?"☀️":"🌙"}}),e.querySelector(".hud-home").addEventListener("click",()=>{c?l[0].scrollIntoView({behavior:"smooth",block:"start"}):l[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),x.forEach(r=>{r.addEventListener("click",()=>{const a=parseInt(r.dataset.zoneIndex,10);c?l[a].scrollIntoView({behavior:"smooth",block:"start"}):l[a].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function h(){if(c){const a=window.scrollY||document.documentElement.scrollTop,d=document.documentElement.scrollHeight-window.innerHeight;p.style.width=(d>0?a/d*100:0)+"%"}else{const a=n.scrollLeft,d=n.scrollWidth-n.clientWidth,B=d>0?a/d:0;p.style.width=B*100+"%";const P=B*(n.clientWidth-80);i.style.transform=`translateX(${P}px)`,Math.abs(a-g)>1&&(i.classList.add("walking"),i.classList.toggle("facing-left",a<g)),g=a,clearTimeout(i._wt),clearTimeout(i._pt),i.classList.remove("pointing"),i._wt=setTimeout(()=>{i.classList.remove("walking"),i._pt=setTimeout(()=>i.classList.add("pointing"),400)},200),k&&(k.style.transform=`translateX(${-a*.1}px)`),b&&(b.style.transform=`translateX(${-a*.3}px)`)}let r=0;if(c){for(let a=l.length-1;a>=0;a--)if(l[a].getBoundingClientRect().top<=window.innerHeight/3){r=a;break}}else for(let a=l.length-1;a>=0;a--)if(l[a].getBoundingClientRect().left<=n.clientWidth/2){r=a;break}T.textContent=y[r].label,x.forEach((a,d)=>a.classList.toggle("active",d===r))}n.addEventListener("scroll",h),window.addEventListener("scroll",h);function A(r){c||(r.key==="ArrowRight"?n.scrollBy({left:400,behavior:"smooth"}):r.key==="ArrowLeft"&&n.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",A);const I=e.querySelectorAll(".meter"),u=new IntersectionObserver(r=>{r.forEach(a=>{a.isIntersecting&&(a.target.classList.add("filled"),u.unobserve(a.target))})},{threshold:.2});I.forEach(r=>u.observe(r));const E=e.querySelectorAll(".station");E.forEach(r=>{r.addEventListener("click",()=>{const a=r.classList.contains("expanded");E.forEach(d=>{d.classList.remove("expanded"),d.setAttribute("aria-expanded","false")}),a||(r.classList.add("expanded"),r.setAttribute("aria-expanded","true"))})});const D=e.querySelectorAll(".status-led"),v=[];D.forEach(r=>{v.push(setInterval(()=>r.classList.toggle("blink"),800+Math.random()*1500))});const S=e.querySelector(".loadcell-value");S&&v.push(setInterval(()=>{S.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));const C=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",A),window.removeEventListener("scroll",h),v.forEach(clearInterval),u.disconnect(),C.disconnect())});C.observe(e,{childList:!0}),requestAnimationFrame(h)}const V=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",url:"https://fingerskier.github.io/gre_prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",url:"https://fingerskier.github.io/speakeasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",url:"https://fingerskier.github.io/numbersense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"simulations",label:"Simulations &amp; Visualizations",description:"Interactive simulations and visual experiments",projects:[{name:"SolarSystem",url:"https://fingerskier.github.io/SolarSystem",repo:"https://github.com/fingerskier/SolarSystem",description:"Interactive solar system simulation"},{name:"Biologize Me",url:"https://fingerskier.github.io/biologize_me",repo:"https://github.com/fingerskier/biologize_me",description:"Biology-inspired visualization experiment"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function W(){const e=document.getElementById("app");e.innerHTML=`
+  `,J(e,t)}function J(e,t){const s=e.querySelector(".icv"),o=e.querySelector(".zones-track"),l=e.querySelector(".character"),n=Array.from(e.querySelectorAll(".zone")),p=e.querySelector(".hud-progress-fill"),j=e.querySelector(".hud-zone-label"),E=Array.from(e.querySelectorAll(".hud-dot")),S=e.querySelector(".mode-toggle"),C=e.querySelector(".parallax-sky"),B=e.querySelector(".parallax-wall");let c=t,x=0;S.addEventListener("click",()=>{c=!c,s.classList.toggle("plain-mode",c),sessionStorage.setItem("cv-plain",String(c)),S.textContent=c?"🎮":"📄"});const w=e.querySelector(".theme-toggle");w.addEventListener("click",()=>{const i=s.dataset.theme==="dark";s.dataset.theme=i?"light":"dark",document.documentElement.dataset.theme=s.dataset.theme,localStorage.setItem("cv-theme",s.dataset.theme),w.textContent=i?"🌙":"☀️"}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",i=>{if(!localStorage.getItem("cv-theme")){const a=i.matches?"dark":"light";s.dataset.theme=a,document.documentElement.dataset.theme=a,w.textContent=i.matches?"☀️":"🌙"}}),e.querySelector(".hud-home").addEventListener("click",()=>{c?n[0].scrollIntoView({behavior:"smooth",block:"start"}):n[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),E.forEach(i=>{i.addEventListener("click",()=>{const a=parseInt(i.dataset.zoneIndex,10);c?n[a].scrollIntoView({behavior:"smooth",block:"start"}):n[a].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function g(){if(c){const a=window.scrollY||document.documentElement.scrollTop,r=document.documentElement.scrollHeight-window.innerHeight;p.style.width=(r>0?a/r*100:0)+"%"}else{const a=o.scrollLeft,r=o.scrollWidth-o.clientWidth,v=r>0?a/r:0;p.style.width=v*100+"%";const O=v*(o.clientWidth-80);l.style.transform=`translateX(${O}px)`,Math.abs(a-x)>1&&(l.classList.add("walking"),l.classList.toggle("facing-left",a<x)),x=a,clearTimeout(l._wt),clearTimeout(l._pt),l.classList.remove("pointing"),l._wt=setTimeout(()=>{l.classList.remove("walking"),l._pt=setTimeout(()=>l.classList.add("pointing"),400)},200),C&&(C.style.transform=`translateX(${-a*.1}px)`),B&&(B.style.transform=`translateX(${-a*.3}px)`)}let i=0;if(c){for(let a=n.length-1;a>=0;a--)if(n[a].getBoundingClientRect().top<=window.innerHeight/3){i=a;break}}else for(let a=n.length-1;a>=0;a--)if(n[a].getBoundingClientRect().left<=o.clientWidth/2){i=a;break}j.textContent=A[i].label,E.forEach((a,r)=>a.classList.toggle("active",r===i))}o.addEventListener("scroll",g),window.addEventListener("scroll",g);function L(i){c||(i.key==="ArrowRight"?o.scrollBy({left:400,behavior:"smooth"}):i.key==="ArrowLeft"&&o.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",L);const F=e.querySelectorAll(".meter"),k=new IntersectionObserver(i=>{i.forEach(a=>{a.isIntersecting&&(a.target.classList.add("filled"),k.unobserve(a.target))})},{threshold:.2});F.forEach(i=>k.observe(i));const $=e.querySelectorAll(".station");$.forEach(i=>{i.addEventListener("click",()=>{const a=i.classList.contains("expanded");$.forEach(r=>{r.classList.remove("expanded"),r.setAttribute("aria-expanded","false")}),a||(i.classList.add("expanded"),i.setAttribute("aria-expanded","true"))})});const q=e.querySelectorAll(".status-led"),h=[];q.forEach(i=>{h.push(setInterval(()=>i.classList.toggle("blink"),800+Math.random()*1500))});const M=e.querySelector(".loadcell-value");M&&h.push(setInterval(()=>{M.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));function T(i,a){const r=document.createElement("span");r.classList.add("particle",`particle-${a}`),r.setAttribute("aria-hidden","true");const v=Math.random()*100;r.style.left=v+"%",r.style.setProperty("--drift",(Math.random()-.5)*40+"px"),a==="spark"?r.textContent=["*","•","✱"][Math.floor(Math.random()*3)]:r.textContent=["♫","♪","♩","♬"][Math.floor(Math.random()*4)],i.appendChild(r),r.addEventListener("animationend",()=>r.remove())}const u=e.querySelector("#zone-floor .zone-scenery"),f=e.querySelector("#zone-stage .zone-scenery");u&&h.push(setInterval(()=>{!c&&u.getBoundingClientRect().right>0&&u.getBoundingClientRect().left<window.innerWidth&&T(u,"spark")},800)),f&&h.push(setInterval(()=>{!c&&f.getBoundingClientRect().right>0&&f.getBoundingClientRect().left<window.innerWidth&&T(f,"note")},1200));const b=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];let m=0;function I(i){i.key===b[m]?(m++,m===b.length&&(m=0,R())):m=i.key===b[0]?1:0}window.addEventListener("keydown",I);function R(){s.classList.add("easter-egg");const i=document.createElement("div");i.className="easter-egg-overlay",i.setAttribute("aria-hidden","true"),i.innerHTML='<span class="ee-text">+ 1UP +</span>';for(let a=0;a<30;a++){const r=document.createElement("span");r.className="ee-confetti",r.style.left=Math.random()*100+"%",r.style.top=Math.random()*100+"%",r.style.setProperty("--drift",(Math.random()-.5)*200+"px"),r.style.setProperty("--dist",(Math.random()-.5)*200+"px"),r.textContent=["★","✦","✶","◆","✱"][Math.floor(Math.random()*5)],i.appendChild(r)}s.appendChild(i),setTimeout(()=>{i.remove(),s.classList.remove("easter-egg")},2500)}const P=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",L),window.removeEventListener("keydown",I),window.removeEventListener("scroll",g),h.forEach(clearInterval),k.disconnect(),P.disconnect())});P.observe(e,{childList:!0}),requestAnimationFrame(g)}const X=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",url:"https://fingerskier.github.io/gre_prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",url:"https://fingerskier.github.io/speakeasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",url:"https://fingerskier.github.io/numbersense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"simulations",label:"Simulations &amp; Visualizations",description:"Interactive simulations and visual experiments",projects:[{name:"SolarSystem",url:"https://fingerskier.github.io/SolarSystem",repo:"https://github.com/fingerskier/SolarSystem",description:"Interactive solar system simulation"},{name:"Biologize Me",url:"https://fingerskier.github.io/biologize_me",repo:"https://github.com/fingerskier/biologize_me",description:"Biology-inspired visualization experiment"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function Y(){const e=document.getElementById("app");e.innerHTML=`
     <div class="icv projects-page">
       <div class="hud" role="navigation" aria-label="Projects navigation">
         <div class="hud-left">
@@ -477,7 +477,7 @@
         <p class="projects-subtitle">Public repositories, apps, and experiments.</p>
 
         <div class="projects-grid">
-          ${V.map(t=>`
+          ${X.map(t=>`
             <section class="project-category" id="cat-${t.id}">
               <h2>${t.label}</h2>
               <p class="category-desc">${t.description}</p>
@@ -498,4 +498,4 @@
         </div>
       </main>
     </div>
-  `}let $=null;async function L(){const e=window.location.hash==="#projects"?"projects":"cv";e!==$&&($=e,e==="projects"?W():await _())}window.addEventListener("hashchange",L);L();
+  `}let D=null;async function z(){const e=window.location.hash==="#projects"?"projects":"cv";e!==D&&(D=e,e==="projects"?Y():await U())}window.addEventListener("hashchange",z);z();
