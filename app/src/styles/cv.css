@@ -78,6 +78,21 @@
   top: 0;
 }
 
+/* ── Focus indicators ── */
+.hud-dot:focus-visible,
+.hud-home:focus-visible,
+.mode-toggle:focus-visible,
+.theme-toggle:focus-visible,
+.sound-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.station:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(232, 116, 42, 0.3);
+  outline: none;
+}
+
 /* ── HUD ── */
 .hud {
   position: fixed;

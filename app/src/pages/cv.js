@@ -830,17 +830,24 @@ function initInteractiveCV(root, startPlain) {
 
   /* ── Station spec plates ── */
   const stations = root.querySelectorAll('.station')
+  function toggleStation(station) {
+    sound.playClick()
+    const wasOpen = station.classList.contains('expanded')
+    stations.forEach(s => {
+      s.classList.remove('expanded')
+      s.setAttribute('aria-expanded', 'false')
+    })
+    if (!wasOpen) {
+      station.classList.add('expanded')
+      station.setAttribute('aria-expanded', 'true')
+    }
+  }
   stations.forEach(station => {
-    station.addEventListener('click', () => {
-      sound.playClick()
-      const wasOpen = station.classList.contains('expanded')
-      stations.forEach(s => {
-        s.classList.remove('expanded')
-        s.setAttribute('aria-expanded', 'false')
-      })
-      if (!wasOpen) {
-        station.classList.add('expanded')
-        station.setAttribute('aria-expanded', 'true')
+    station.addEventListener('click', () => toggleStation(station))
+    station.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        toggleStation(station)
       }
     })
   })
