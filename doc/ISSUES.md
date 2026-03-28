@@ -1,0 +1,11 @@
+Playable CV Issues
+- Remove or downgrade Rust
+- Add PLC, industrial control systems and IEC 61131-3
+- Combine "Load Cells & Force" w/ "Actuator Control" into "Sensors & Actuators"
+- Change "Frameworks & Tools" section
+  - "Desktop (Electron, Tauri, etc.)"
+  - "Web (React, Express, etc.)"
+  - "Mobile (React Native, Flutter, Kotlin)"
+  - "Embedded (Micropython, Codesys, Siemens)"
+- Under "Infrastructure"
+  - change "AWS (EB, S3, SES, SQS, Aurora)" to "Cloud (AWS, Azure, GCP)"

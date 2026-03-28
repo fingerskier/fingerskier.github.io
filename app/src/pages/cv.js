@@ -96,17 +96,59 @@ const TURING_STATIONS = `
             </div>
           </div>`
 
+/* ── Project stations for Premier Coil Solutions ── */
+const PREMIER_STATIONS = `
+          <div class="project-stations">
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Coiled-Tubing Unit Auto-Driller</h4>
+              <p>PLC-based automated control for coiled-tubing operations</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>PLC &middot; SCADA &middot; HMI</dd>
+                  <dt>Features</dt><dd>Automated drilling control, real-time instrument monitoring, historical trending</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Automated Nitrogen Pump</h4>
+              <p>Automated control system for nitrogen pumping units</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>PLC &middot; SCADA &middot; HMI</dd>
+                  <dt>Features</dt><dd>Pressure &amp; flow control, safety interlocks, minimalist operator interface</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Automated Drilling-Fluid Pump</h4>
+              <p>Automated control system for drilling fluid pump units</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>PLC &middot; SCADA &middot; HMI</dd>
+                  <dt>Features</dt><dd>Fluid management, automated mixing control, operational logging</dd>
+                </dl>
+              </div>
+            </div>
+          </div>`
+
 function experienceHtml(data) {
   return data.experience.map(entry => {
     const isTuring = entry.company === 'Turing Automations'
+    const isPremier = entry.company === 'Premier Coil Solutions'
     const location = entry.location ? ` &middot; ${escHtml(entry.location)}` : ''
+    const stations = isTuring ? TURING_STATIONS : isPremier ? PREMIER_STATIONS : ''
     return `
         <article class="role">
           <h3>${escHtml(entry.company)} &mdash; ${escHtml(entry.title)}</h3>
           <time>${escHtml(entry.dates)}${location}</time>
           <ul>
             ${responsibilitiesToList(entry.responsibilities)}
-          </ul>${isTuring ? TURING_STATIONS : ''}
+          </ul>${stations}
         </article>`
   }).join('\n')
 }
@@ -160,34 +202,34 @@ const ZONES = [
             <ul class="skill-meters">
               <li><span class="skill-name">JavaScript / Node.js</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
               <li><span class="skill-name">Python</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
-              <li><span class="skill-name">Rust</span><span class="meter" data-level="45"></span><span class="skill-label">Intermediate</span></li>
               <li><span class="skill-name">HTML / CSS</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
               <li><span class="skill-name">SQL</span><span class="meter" data-level="75"></span><span class="skill-label">Advanced</span></li>
+              <li><span class="skill-name">PLC / IEC 61131-3</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
             </ul>
           </div>
           <div class="skill-group">
             <h3>Frameworks &amp; Tools</h3>
             <ul class="skill-meters">
-              <li><span class="skill-name">Electron</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
-              <li><span class="skill-name">React</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
-              <li><span class="skill-name">Express</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
-              <li><span class="skill-name">Git</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
+              <li><span class="skill-name">Desktop (Electron, Tauri, etc.)</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
+              <li><span class="skill-name">Web (React, Express, etc.)</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
+              <li><span class="skill-name">Mobile (React Native, Flutter, Kotlin)</span><span class="meter" data-level="60"></span><span class="skill-label">Advanced</span></li>
+              <li><span class="skill-name">Embedded (Micropython, Codesys, Siemens)</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
             </ul>
           </div>
           <div class="skill-group">
             <h3>Hardware &amp; Embedded</h3>
             <ul class="skill-meters">
               <li><span class="skill-name">Serial Protocols</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
-              <li><span class="skill-name">Load Cells &amp; Force</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
-              <li><span class="skill-name">Actuator Control</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
+              <li><span class="skill-name">Sensors &amp; Actuators</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
               <li><span class="skill-name">Raspberry Pi / Pico W</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
               <li><span class="skill-name">Safety FSMs</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
+              <li><span class="skill-name">Industrial Control Systems</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
             </ul>
           </div>
           <div class="skill-group">
             <h3>Infrastructure</h3>
             <ul class="skill-meters">
-              <li><span class="skill-name">AWS (EB, S3, SES, SQS, Aurora)</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
+              <li><span class="skill-name">Cloud (AWS, Azure, GCP)</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
               <li><span class="skill-name">Auto-update Systems</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
               <li><span class="skill-name">CI/CD Pipelines</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
             </ul>
