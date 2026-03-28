@@ -1,6 +1,6 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const r of i)if(r.type==="childList")for(const h of r.addedNodes)h.tagName==="LINK"&&h.rel==="modulepreload"&&n(h)}).observe(document,{childList:!0,subtree:!0});function s(i){const r={};return i.integrity&&(r.integrity=i.integrity),i.referrerPolicy&&(r.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?r.credentials="include":i.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function n(i){if(i.ep)return;i.ep=!0;const r=s(i);fetch(i.href,r)}})();let m=null;async function D(){return m||(m=await(await fetch("./cv.json")).json(),m)}function o(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function M(e){return Object.entries(e).filter(([t])=>t!=="Email").map(([t,s])=>`<a href="${o(s)}" target="_blank" rel="noopener">${o(t)}</a>`).join(`
-          `)}function F(e){return e.split(/\.\s+/).filter(t=>t.trim()).map(t=>{const s=t.endsWith(".")?t:t+".";return`<li>${o(s)}</li>`}).join(`
-            `)}const P=`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const l of i)if(l.type==="childList")for(const p of l.addedNodes)p.tagName==="LINK"&&p.rel==="modulepreload"&&n(p)}).observe(document,{childList:!0,subtree:!0});function s(i){const l={};return i.integrity&&(l.integrity=i.integrity),i.referrerPolicy&&(l.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?l.credentials="include":i.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function n(i){if(i.ep)return;i.ep=!0;const l=s(i);fetch(i.href,l)}})();let m=null;async function M(){return m||(m=await(await fetch("./cv.json")).json(),m)}function o(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function j(e){return Object.entries(e).filter(([t])=>t!=="Email").map(([t,s])=>`<a href="${o(s)}" target="_blank" rel="noopener">${o(t)}</a>`).join(`
+          `)}function z(e){return e.split(/\.\s+/).filter(t=>t.trim()).map(t=>{const s=t.endsWith(".")?t:t+".";return`<li>${o(s)}</li>`}).join(`
+            `)}const F=`
           <div class="project-stations">
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
@@ -66,22 +66,59 @@
                 </dl>
               </div>
             </div>
-          </div>`;function q(e){return e.experience.map(t=>{const s=t.company==="Turing Automations",n=t.location?` &middot; ${o(t.location)}`:"";return`
+          </div>`,q=`
+          <div class="project-stations">
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Coiled-Tubing Unit Auto-Driller</h4>
+              <p>PLC-based automated control for coiled-tubing operations</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>PLC &middot; SCADA &middot; HMI</dd>
+                  <dt>Features</dt><dd>Automated drilling control, real-time instrument monitoring, historical trending</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Automated Nitrogen Pump</h4>
+              <p>Automated control system for nitrogen pumping units</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>PLC &middot; SCADA &middot; HMI</dd>
+                  <dt>Features</dt><dd>Pressure &amp; flow control, safety interlocks, minimalist operator interface</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
+              <span class="status-led green"></span>
+              <h4>Automated Drilling-Fluid Pump</h4>
+              <p>Automated control system for drilling fluid pump units</p>
+              <div class="spec-plate">
+                <dl>
+                  <dt>Stack</dt><dd>PLC &middot; SCADA &middot; HMI</dd>
+                  <dt>Features</dt><dd>Fluid management, automated mixing control, operational logging</dd>
+                </dl>
+              </div>
+            </div>
+          </div>`;function O(e){return e.experience.map(t=>{const s=t.company==="Turing Automations",n=t.company==="Premier Coil Solutions",i=t.location?` &middot; ${o(t.location)}`:"",l=s?F:n?q:"";return`
         <article class="role">
           <h3>${o(t.company)} &mdash; ${o(t.title)}</h3>
-          <time>${o(t.dates)}${n}</time>
+          <time>${o(t.dates)}${i}</time>
           <ul>
-            ${F(t.responsibilities)}
-          </ul>${s?P:""}
+            ${z(t.responsibilities)}
+          </ul>${l}
         </article>`}).join(`
-`)}function O(e){return e.education.map(t=>`<li><strong>${o(t.degree)}</strong> &mdash; ${o(t.institution)}, ${t.year}</li>`).join(`
-          `)}const v=[{id:"entryway",label:"Entryway",content:e=>`
+`)}function H(e){return e.education.map(t=>`<li><strong>${o(t.degree)}</strong> &mdash; ${o(t.institution)}, ${t.year}</li>`).join(`
+          `)}const y=[{id:"entryway",label:"Entryway",content:e=>`
       <div class="zone-content">
         <h1>${o(e.name)}</h1>
         <p class="cv-title">Co-Founder &amp; Principal Engineer &mdash; Turing Automations</p>
         <p class="cv-tagline">Creator of things &middot; Songwriter &middot; Thinkster</p>
         <div class="cv-links">
-          ${M(e.links)}
+          ${j(e.links)}
           <a href="#projects" class="projects-link">Projects</a>
         </div>
       </div>
@@ -109,34 +146,34 @@
             <ul class="skill-meters">
               <li><span class="skill-name">JavaScript / Node.js</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
               <li><span class="skill-name">Python</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
-              <li><span class="skill-name">Rust</span><span class="meter" data-level="45"></span><span class="skill-label">Intermediate</span></li>
               <li><span class="skill-name">HTML / CSS</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
               <li><span class="skill-name">SQL</span><span class="meter" data-level="75"></span><span class="skill-label">Advanced</span></li>
+              <li><span class="skill-name">PLC / IEC 61131-3</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
             </ul>
           </div>
           <div class="skill-group">
             <h3>Frameworks &amp; Tools</h3>
             <ul class="skill-meters">
-              <li><span class="skill-name">Electron</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
-              <li><span class="skill-name">React</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
-              <li><span class="skill-name">Express</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
-              <li><span class="skill-name">Git</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
+              <li><span class="skill-name">Desktop (Electron, Tauri, etc.)</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
+              <li><span class="skill-name">Web (React, Express, etc.)</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
+              <li><span class="skill-name">Mobile (React Native, Flutter, Kotlin)</span><span class="meter" data-level="60"></span><span class="skill-label">Advanced</span></li>
+              <li><span class="skill-name">Embedded (Micropython, Codesys, Siemens)</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
             </ul>
           </div>
           <div class="skill-group">
             <h3>Hardware &amp; Embedded</h3>
             <ul class="skill-meters">
               <li><span class="skill-name">Serial Protocols</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
-              <li><span class="skill-name">Load Cells &amp; Force</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
-              <li><span class="skill-name">Actuator Control</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
+              <li><span class="skill-name">Sensors &amp; Actuators</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
               <li><span class="skill-name">Raspberry Pi / Pico W</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
               <li><span class="skill-name">Safety FSMs</span><span class="meter" data-level="90"></span><span class="skill-label">Expert</span></li>
+              <li><span class="skill-name">Industrial Control Systems</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
             </ul>
           </div>
           <div class="skill-group">
             <h3>Infrastructure</h3>
             <ul class="skill-meters">
-              <li><span class="skill-name">AWS (EB, S3, SES, SQS, Aurora)</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
+              <li><span class="skill-name">Cloud (AWS, Azure, GCP)</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
               <li><span class="skill-name">Auto-update Systems</span><span class="meter" data-level="85"></span><span class="skill-label">Expert</span></li>
               <li><span class="skill-name">CI/CD Pipelines</span><span class="meter" data-level="70"></span><span class="skill-label">Advanced</span></li>
             </ul>
@@ -169,7 +206,7 @@
     `},{id:"floor",label:"The Floor",content:e=>`
       <div class="zone-content">
         <h2>Experience</h2>
-        ${q(e)}
+        ${O(e)}
       </div>
       <div class="zone-scenery" aria-hidden="true">
         <svg class="scenery-actuator-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
@@ -278,7 +315,7 @@
         </ul>
         <h3>Education</h3>
         <ul>
-          ${O(e)}
+          ${H(e)}
         </ul>
       </div>
       <div class="zone-scenery" aria-hidden="true">
@@ -360,7 +397,7 @@
           <rect class="mailbox-flag" x="42" y="14" width="4" height="18" rx="1" fill="#E8742A"/>
         </svg>
       </div>
-    `}];function _(){return`
+    `}];function R(){return`
   <svg class="character-svg" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
     <!-- hard hat -->
     <ellipse cx="30" cy="14" rx="16" ry="8" fill="#E8742A"/>
@@ -387,7 +424,7 @@
     <!-- arms -->
     <rect class="arm-left" x="11" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
     <rect class="arm-right" x="39" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
-  </svg>`}async function H(){const e=document.getElementById("app"),t=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches,s=document.documentElement.dataset.theme||"light",n=await D();e.innerHTML=`
+  </svg>`}async function _(){const e=document.getElementById("app"),t=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches,s=document.documentElement.dataset.theme||"light",n=await M();e.innerHTML=`
     <div class="icv${t?" plain-mode":""}" data-theme="${s}">
       <a href="#main-content" class="skip-link">Skip to content</a>
 
@@ -404,7 +441,7 @@
         </div>
         <div class="hud-right">
           <div class="hud-nav-dots">
-            ${v.map((i,r)=>`<button class="hud-dot${r===0?" active":""}" data-zone-index="${r}" title="${i.label}"></button>`).join("")}
+            ${y.map((i,l)=>`<button class="hud-dot${l===0?" active":""}" data-zone-index="${l}" title="${i.label}"></button>`).join("")}
           </div>
           <button class="theme-toggle" aria-label="Toggle dark mode">${s==="dark"?"☀️":"🌙"}</button>
           <button class="mode-toggle" aria-label="Toggle plain mode">${t?"🎮":"📄"}</button>
@@ -412,18 +449,18 @@
       </div>
 
       <div class="character" aria-hidden="true">
-        ${_()}
+        ${R()}
       </div>
 
       <div class="zones-track" id="main-content">
-        ${v.map((i,r)=>`
-          <section class="zone" id="zone-${i.id}" data-zone="${i.id}" data-zone-index="${r}">
+        ${y.map((i,l)=>`
+          <section class="zone" id="zone-${i.id}" data-zone="${i.id}" data-zone-index="${l}">
             ${i.content(n)}
           </section>
         `).join("")}
       </div>
     </div>
-  `,R(e,t)}function R(e,t){const s=e.querySelector(".icv"),n=e.querySelector(".zones-track"),i=e.querySelector(".character"),r=Array.from(e.querySelectorAll(".zone")),h=e.querySelector(".hud-progress-fill"),T=e.querySelector(".hud-zone-label"),x=Array.from(e.querySelectorAll(".hud-dot")),w=e.querySelector(".mode-toggle"),k=e.querySelector(".parallax-sky"),b=e.querySelector(".parallax-wall");let c=t,g=0;w.addEventListener("click",()=>{c=!c,s.classList.toggle("plain-mode",c),sessionStorage.setItem("cv-plain",String(c)),w.textContent=c?"🎮":"📄"});const f=e.querySelector(".theme-toggle");f.addEventListener("click",()=>{const l=s.dataset.theme==="dark";s.dataset.theme=l?"light":"dark",document.documentElement.dataset.theme=s.dataset.theme,localStorage.setItem("cv-theme",s.dataset.theme),f.textContent=l?"🌙":"☀️"}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",l=>{if(!localStorage.getItem("cv-theme")){const a=l.matches?"dark":"light";s.dataset.theme=a,document.documentElement.dataset.theme=a,f.textContent=l.matches?"☀️":"🌙"}}),e.querySelector(".hud-home").addEventListener("click",()=>{c?r[0].scrollIntoView({behavior:"smooth",block:"start"}):r[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),x.forEach(l=>{l.addEventListener("click",()=>{const a=parseInt(l.dataset.zoneIndex,10);c?r[a].scrollIntoView({behavior:"smooth",block:"start"}):r[a].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function p(){if(c){const a=window.scrollY||document.documentElement.scrollTop,d=document.documentElement.scrollHeight-window.innerHeight;h.style.width=(d>0?a/d*100:0)+"%"}else{const a=n.scrollLeft,d=n.scrollWidth-n.clientWidth,C=d>0?a/d:0;h.style.width=C*100+"%";const z=C*(n.clientWidth-80);i.style.transform=`translateX(${z}px)`,Math.abs(a-g)>1&&(i.classList.add("walking"),i.classList.toggle("facing-left",a<g)),g=a,clearTimeout(i._wt),clearTimeout(i._pt),i.classList.remove("pointing"),i._wt=setTimeout(()=>{i.classList.remove("walking"),i._pt=setTimeout(()=>i.classList.add("pointing"),400)},200),k&&(k.style.transform=`translateX(${-a*.1}px)`),b&&(b.style.transform=`translateX(${-a*.3}px)`)}let l=0;if(c){for(let a=r.length-1;a>=0;a--)if(r[a].getBoundingClientRect().top<=window.innerHeight/3){l=a;break}}else for(let a=r.length-1;a>=0;a--)if(r[a].getBoundingClientRect().left<=n.clientWidth/2){l=a;break}T.textContent=v[l].label,x.forEach((a,d)=>a.classList.toggle("active",d===l))}n.addEventListener("scroll",p),window.addEventListener("scroll",p);function E(l){c||(l.key==="ArrowRight"?n.scrollBy({left:400,behavior:"smooth"}):l.key==="ArrowLeft"&&n.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",E);const j=e.querySelectorAll(".meter"),u=new IntersectionObserver(l=>{l.forEach(a=>{a.isIntersecting&&(a.target.classList.add("filled"),u.unobserve(a.target))})},{threshold:.2});j.forEach(l=>u.observe(l));const S=e.querySelectorAll(".station");S.forEach(l=>{l.addEventListener("click",()=>{const a=l.classList.contains("expanded");S.forEach(d=>{d.classList.remove("expanded"),d.setAttribute("aria-expanded","false")}),a||(l.classList.add("expanded"),l.setAttribute("aria-expanded","true"))})});const I=e.querySelectorAll(".status-led"),y=[];I.forEach(l=>{y.push(setInterval(()=>l.classList.toggle("blink"),800+Math.random()*1500))});const A=e.querySelector(".loadcell-value");A&&y.push(setInterval(()=>{A.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));const B=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",E),window.removeEventListener("scroll",p),y.forEach(clearInterval),u.disconnect(),B.disconnect())});B.observe(e,{childList:!0}),requestAnimationFrame(p)}const V=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",url:"https://fingerskier.github.io/gre_prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",url:"https://fingerskier.github.io/speakeasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",url:"https://fingerskier.github.io/numbersense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"simulations",label:"Simulations &amp; Visualizations",description:"Interactive simulations and visual experiments",projects:[{name:"SolarSystem",url:"https://fingerskier.github.io/SolarSystem",repo:"https://github.com/fingerskier/SolarSystem",description:"Interactive solar system simulation"},{name:"Biologize Me",url:"https://fingerskier.github.io/biologize_me",repo:"https://github.com/fingerskier/biologize_me",description:"Biology-inspired visualization experiment"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function W(){const e=document.getElementById("app");e.innerHTML=`
+  `,N(e,t)}function N(e,t){const s=e.querySelector(".icv"),n=e.querySelector(".zones-track"),i=e.querySelector(".character"),l=Array.from(e.querySelectorAll(".zone")),p=e.querySelector(".hud-progress-fill"),T=e.querySelector(".hud-zone-label"),x=Array.from(e.querySelectorAll(".hud-dot")),w=e.querySelector(".mode-toggle"),k=e.querySelector(".parallax-sky"),b=e.querySelector(".parallax-wall");let c=t,g=0;w.addEventListener("click",()=>{c=!c,s.classList.toggle("plain-mode",c),sessionStorage.setItem("cv-plain",String(c)),w.textContent=c?"🎮":"📄"});const f=e.querySelector(".theme-toggle");f.addEventListener("click",()=>{const r=s.dataset.theme==="dark";s.dataset.theme=r?"light":"dark",document.documentElement.dataset.theme=s.dataset.theme,localStorage.setItem("cv-theme",s.dataset.theme),f.textContent=r?"🌙":"☀️"}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",r=>{if(!localStorage.getItem("cv-theme")){const a=r.matches?"dark":"light";s.dataset.theme=a,document.documentElement.dataset.theme=a,f.textContent=r.matches?"☀️":"🌙"}}),e.querySelector(".hud-home").addEventListener("click",()=>{c?l[0].scrollIntoView({behavior:"smooth",block:"start"}):l[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),x.forEach(r=>{r.addEventListener("click",()=>{const a=parseInt(r.dataset.zoneIndex,10);c?l[a].scrollIntoView({behavior:"smooth",block:"start"}):l[a].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function h(){if(c){const a=window.scrollY||document.documentElement.scrollTop,d=document.documentElement.scrollHeight-window.innerHeight;p.style.width=(d>0?a/d*100:0)+"%"}else{const a=n.scrollLeft,d=n.scrollWidth-n.clientWidth,B=d>0?a/d:0;p.style.width=B*100+"%";const P=B*(n.clientWidth-80);i.style.transform=`translateX(${P}px)`,Math.abs(a-g)>1&&(i.classList.add("walking"),i.classList.toggle("facing-left",a<g)),g=a,clearTimeout(i._wt),clearTimeout(i._pt),i.classList.remove("pointing"),i._wt=setTimeout(()=>{i.classList.remove("walking"),i._pt=setTimeout(()=>i.classList.add("pointing"),400)},200),k&&(k.style.transform=`translateX(${-a*.1}px)`),b&&(b.style.transform=`translateX(${-a*.3}px)`)}let r=0;if(c){for(let a=l.length-1;a>=0;a--)if(l[a].getBoundingClientRect().top<=window.innerHeight/3){r=a;break}}else for(let a=l.length-1;a>=0;a--)if(l[a].getBoundingClientRect().left<=n.clientWidth/2){r=a;break}T.textContent=y[r].label,x.forEach((a,d)=>a.classList.toggle("active",d===r))}n.addEventListener("scroll",h),window.addEventListener("scroll",h);function A(r){c||(r.key==="ArrowRight"?n.scrollBy({left:400,behavior:"smooth"}):r.key==="ArrowLeft"&&n.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",A);const I=e.querySelectorAll(".meter"),u=new IntersectionObserver(r=>{r.forEach(a=>{a.isIntersecting&&(a.target.classList.add("filled"),u.unobserve(a.target))})},{threshold:.2});I.forEach(r=>u.observe(r));const E=e.querySelectorAll(".station");E.forEach(r=>{r.addEventListener("click",()=>{const a=r.classList.contains("expanded");E.forEach(d=>{d.classList.remove("expanded"),d.setAttribute("aria-expanded","false")}),a||(r.classList.add("expanded"),r.setAttribute("aria-expanded","true"))})});const D=e.querySelectorAll(".status-led"),v=[];D.forEach(r=>{v.push(setInterval(()=>r.classList.toggle("blink"),800+Math.random()*1500))});const S=e.querySelector(".loadcell-value");S&&v.push(setInterval(()=>{S.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));const C=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",A),window.removeEventListener("scroll",h),v.forEach(clearInterval),u.disconnect(),C.disconnect())});C.observe(e,{childList:!0}),requestAnimationFrame(h)}const V=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",url:"https://fingerskier.github.io/gre_prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",url:"https://fingerskier.github.io/speakeasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",url:"https://fingerskier.github.io/numbersense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"simulations",label:"Simulations &amp; Visualizations",description:"Interactive simulations and visual experiments",projects:[{name:"SolarSystem",url:"https://fingerskier.github.io/SolarSystem",repo:"https://github.com/fingerskier/SolarSystem",description:"Interactive solar system simulation"},{name:"Biologize Me",url:"https://fingerskier.github.io/biologize_me",repo:"https://github.com/fingerskier/biologize_me",description:"Biology-inspired visualization experiment"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function W(){const e=document.getElementById("app");e.innerHTML=`
     <div class="icv projects-page">
       <div class="hud" role="navigation" aria-label="Projects navigation">
         <div class="hud-left">
@@ -461,4 +498,4 @@
         </div>
       </main>
     </div>
-  `}let $=null;async function L(){const e=window.location.hash==="#projects"?"projects":"cv";e!==$&&($=e,e==="projects"?W():await H())}window.addEventListener("hashchange",L);L();
+  `}let $=null;async function L(){const e=window.location.hash==="#projects"?"projects":"cv";e!==$&&($=e,e==="projects"?W():await _())}window.addEventListener("hashchange",L);L();
