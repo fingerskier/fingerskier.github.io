@@ -738,10 +738,87 @@ function initInteractiveCV(root, startPlain) {
     }, 600))
   }
 
+  /* ── Particle effects ── */
+  function createParticle(container, type) {
+    const p = document.createElement('span')
+    p.classList.add('particle', `particle-${type}`)
+    p.setAttribute('aria-hidden', 'true')
+    const x = Math.random() * 100
+    p.style.left = x + '%'
+    p.style.setProperty('--drift', (Math.random() - 0.5) * 40 + 'px')
+    if (type === 'spark') {
+      p.textContent = ['*', '\u2022', '\u2731'][Math.floor(Math.random() * 3)]
+    } else {
+      p.textContent = ['\u266B', '\u266A', '\u2669', '\u266C'][Math.floor(Math.random() * 4)]
+    }
+    container.appendChild(p)
+    p.addEventListener('animationend', () => p.remove())
+  }
+
+  const floorScenery = root.querySelector('#zone-floor .zone-scenery')
+  const stageScenery = root.querySelector('#zone-stage .zone-scenery')
+  if (floorScenery) {
+    intervals.push(setInterval(() => {
+      if (!isPlain && floorScenery.getBoundingClientRect().right > 0 &&
+          floorScenery.getBoundingClientRect().left < window.innerWidth) {
+        createParticle(floorScenery, 'spark')
+      }
+    }, 800))
+  }
+  if (stageScenery) {
+    intervals.push(setInterval(() => {
+      if (!isPlain && stageScenery.getBoundingClientRect().right > 0 &&
+          stageScenery.getBoundingClientRect().left < window.innerWidth) {
+        createParticle(stageScenery, 'note')
+      }
+    }, 1200))
+  }
+
+  /* ── Konami code easter egg ── */
+  const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a']
+  let konamiIdx = 0
+  function onKonami(e) {
+    if (e.key === KONAMI[konamiIdx]) {
+      konamiIdx++
+      if (konamiIdx === KONAMI.length) {
+        konamiIdx = 0
+        triggerEasterEgg()
+      }
+    } else {
+      konamiIdx = e.key === KONAMI[0] ? 1 : 0
+    }
+  }
+  window.addEventListener('keydown', onKonami)
+
+  function triggerEasterEgg() {
+    icv.classList.add('easter-egg')
+    const overlay = document.createElement('div')
+    overlay.className = 'easter-egg-overlay'
+    overlay.setAttribute('aria-hidden', 'true')
+    overlay.innerHTML = '<span class="ee-text">+ 1UP +</span>'
+    // Burst of particles
+    for (let i = 0; i < 30; i++) {
+      const s = document.createElement('span')
+      s.className = 'ee-confetti'
+      s.style.left = Math.random() * 100 + '%'
+      s.style.top = Math.random() * 100 + '%'
+      s.style.setProperty('--drift', ((Math.random() - 0.5) * 200) + 'px')
+      s.style.setProperty('--dist', ((Math.random() - 0.5) * 200) + 'px')
+      s.textContent = ['\u2605', '\u2726', '\u2736', '\u25C6', '\u2731'][Math.floor(Math.random() * 5)]
+      overlay.appendChild(s)
+    }
+    icv.appendChild(overlay)
+    setTimeout(() => {
+      overlay.remove()
+      icv.classList.remove('easter-egg')
+    }, 2500)
+  }
+
   /* ── Cleanup ── */
   const obs = new MutationObserver(() => {
     if (!root.querySelector('.icv')) {
       window.removeEventListener('keydown', onKey)
+      window.removeEventListener('keydown', onKonami)
       window.removeEventListener('scroll', onScroll)
       intervals.forEach(clearInterval)
       mObs.disconnect()
