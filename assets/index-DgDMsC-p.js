@@ -1,6 +1,6 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const l of document.querySelectorAll('link[rel="modulepreload"]'))o(l);new MutationObserver(l=>{for(const n of l)if(n.type==="childList")for(const p of n.addedNodes)p.tagName==="LINK"&&p.rel==="modulepreload"&&o(p)}).observe(document,{childList:!0,subtree:!0});function s(l){const n={};return l.integrity&&(n.integrity=l.integrity),l.referrerPolicy&&(n.referrerPolicy=l.referrerPolicy),l.crossOrigin==="use-credentials"?n.credentials="include":l.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(l){if(l.ep)return;l.ep=!0;const n=s(l);fetch(l.href,n)}})();let y=null;async function H(){return y||(y=await(await fetch("./cv.json")).json(),y)}function d(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function N(e){return Object.entries(e).filter(([t])=>t!=="Email").map(([t,s])=>`<a href="${d(s)}" target="_blank" rel="noopener">${d(t)}</a>`).join(`
-          `)}function _(e){return e.split(/\.\s+/).filter(t=>t.trim()).map(t=>{const s=t.endsWith(".")?t:t+".";return`<li>${d(s)}</li>`}).join(`
-            `)}const W=`
+(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))c(a);new MutationObserver(a=>{for(const n of a)if(n.type==="childList")for(const g of n.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&c(g)}).observe(document,{childList:!0,subtree:!0});function t(a){const n={};return a.integrity&&(n.integrity=a.integrity),a.referrerPolicy&&(n.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?n.credentials="include":a.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function c(a){if(a.ep)return;a.ep=!0;const n=t(a);fetch(a.href,n)}})();let C=null;async function G(){return C||(C=await(await fetch("./cv.json")).json(),C)}function h(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function W(e){return Object.entries(e).filter(([s])=>s!=="Email").map(([s,t])=>`<a href="${h(t)}" target="_blank" rel="noopener">${h(s)}</a>`).join(`
+          `)}function Q(e){return e.split(/\.\s+/).filter(s=>s.trim()).map(s=>{const t=s.endsWith(".")?s:s+".";return`<li>${h(t)}</li>`}).join(`
+            `)}const U=`
           <div class="project-stations">
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
@@ -66,7 +66,7 @@
                 </dl>
               </div>
             </div>
-          </div>`,V=`
+          </div>`,K=`
           <div class="project-stations">
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
@@ -103,22 +103,22 @@
                 </dl>
               </div>
             </div>
-          </div>`;function G(e){return e.experience.map(t=>{const s=t.company==="Turing Automations",o=t.company==="Premier Coil Solutions",l=t.location?` &middot; ${d(t.location)}`:"",n=s?W:o?V:"";return`
+          </div>`;function J(e){return e.experience.map(s=>{const t=s.company==="Turing Automations",c=s.company==="Premier Coil Solutions",a=s.location?` &middot; ${h(s.location)}`:"",n=t?U:c?K:"";return`
         <article class="role">
-          <h3>${d(t.company)} &mdash; ${d(t.title)}</h3>
-          <time>${d(t.dates)}${l}</time>
+          <h3>${h(s.company)} &mdash; ${h(s.title)}</h3>
+          <time>${h(s.dates)}${a}</time>
           <ul>
-            ${_(t.responsibilities)}
+            ${Q(s.responsibilities)}
           </ul>${n}
         </article>`}).join(`
-`)}function Q(e){return e.education.map(t=>`<li><strong>${d(t.degree)}</strong> &mdash; ${d(t.institution)}, ${t.year}</li>`).join(`
-          `)}const A=[{id:"entryway",label:"Entryway",content:e=>`
+`)}function X(e){return e.education.map(s=>`<li><strong>${h(s.degree)}</strong> &mdash; ${h(s.institution)}, ${s.year}</li>`).join(`
+          `)}const T=[{id:"entryway",label:"Entryway",content:e=>`
       <div class="zone-content">
-        <h1>${d(e.name)}</h1>
+        <h1>${h(e.name)}</h1>
         <p class="cv-title">Co-Founder &amp; Principal Engineer &mdash; Turing Automations</p>
         <p class="cv-tagline">Creator of things &middot; Songwriter &middot; Thinkster</p>
         <div class="cv-links">
-          ${N(e.links)}
+          ${W(e.links)}
           <a href="#projects" class="projects-link">Projects</a>
         </div>
       </div>
@@ -193,7 +193,7 @@
         </svg>
         <svg class="scenery-pegboard-svg" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="0" width="120" height="180" rx="2" fill="#c4a882" opacity="0.3"/>
-          ${[0,1,2,3,4,5,6,7].map(t=>[0,1,2,3,4].map(s=>'<circle cx="'+(12+s*24)+'" cy="'+(12+t*22)+'" r="3" fill="rgba(0,0,0,0.15)"/>').join("")).join("")}
+          ${[0,1,2,3,4,5,6,7].map(s=>[0,1,2,3,4].map(t=>'<circle cx="'+(12+t*24)+'" cy="'+(12+s*22)+'" r="3" fill="rgba(0,0,0,0.15)"/>').join("")).join("")}
           <!-- wrench -->
           <rect x="20" y="25" width="6" height="50" rx="3" fill="#888" opacity="0.5" transform="rotate(-15 23 50)"/>
           <!-- screwdriver -->
@@ -206,7 +206,7 @@
     `},{id:"floor",label:"The Floor",content:e=>`
       <div class="zone-content">
         <h2>Experience</h2>
-        ${G(e)}
+        ${J(e)}
       </div>
       <div class="zone-scenery" aria-hidden="true">
         <svg class="scenery-actuator-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
@@ -226,7 +226,7 @@
         <svg class="scenery-conveyor-svg" viewBox="0 0 800 30" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="5" width="800" height="20" rx="3" fill="#444"/>
           <g class="conveyor-segments">
-            ${Array.from({length:20},(t,s)=>'<rect x="'+s*40+'" y="7" width="35" height="16" rx="1" fill="#'+(s%2?"666":"555")+'"/>').join("")}
+            ${Array.from({length:20},(s,t)=>'<rect x="'+t*40+'" y="7" width="35" height="16" rx="1" fill="#'+(t%2?"666":"555")+'"/>').join("")}
           </g>
         </svg>
       </div>
@@ -254,12 +254,12 @@
         <svg class="scenery-rack-svg" viewBox="0 0 80 240" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="0" width="80" height="240" rx="3" fill="#2a2a2a" stroke="#444" stroke-width="2"/>
           <rect x="4" y="4" width="72" height="232" rx="2" fill="#1a1a1a"/>
-          ${Array.from({length:8},(t,s)=>`
-            <rect x="10" y="${12+s*28}" width="60" height="22" rx="2" fill="#333" stroke="#444" stroke-width="1"/>
-            <circle cx="20" cy="${23+s*28}" r="2.5" fill="${["#0f0","#0f0","#ff0","#0f0","#0ff","#0f0","#f80","#0f0"][s]}" class="rack-led"/>
-            <circle cx="30" cy="${23+s*28}" r="2.5" fill="${["#0f0","#ff0","#0f0","#0f0","#0f0","#0ff","#0f0","#ff0"][s]}" class="rack-led"/>
-            <rect x="40" y="${17+s*28}" width="24" height="3" rx="1" fill="#555"/>
-            <rect x="40" y="${23+s*28}" width="24" height="3" rx="1" fill="#555"/>
+          ${Array.from({length:8},(s,t)=>`
+            <rect x="10" y="${12+t*28}" width="60" height="22" rx="2" fill="#333" stroke="#444" stroke-width="1"/>
+            <circle cx="20" cy="${23+t*28}" r="2.5" fill="${["#0f0","#0f0","#ff0","#0f0","#0ff","#0f0","#f80","#0f0"][t]}" class="rack-led"/>
+            <circle cx="30" cy="${23+t*28}" r="2.5" fill="${["#0f0","#ff0","#0f0","#0f0","#0f0","#0ff","#0f0","#ff0"][t]}" class="rack-led"/>
+            <rect x="40" y="${17+t*28}" width="24" height="3" rx="1" fill="#555"/>
+            <rect x="40" y="${23+t*28}" width="24" height="3" rx="1" fill="#555"/>
           `).join("")}
         </svg>
         <svg class="scenery-cables-svg" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
@@ -315,7 +315,7 @@
         </ul>
         <h3>Education</h3>
         <ul>
-          ${Q(e)}
+          ${X(e)}
         </ul>
       </div>
       <div class="zone-scenery" aria-hidden="true">
@@ -364,7 +364,7 @@
       <div class="zone-content">
         <h2>Let&rsquo;s build something.</h2>
         <div class="contact-links">
-          ${["GitHub","LinkedIn","X"].filter(t=>e.links[t]).map(t=>{const s=e.links[t],o=s.replace(/^https?:\/\//,"");return`<a href="${d(s)}" target="_blank" rel="noopener">${d(o)}</a>`}).join(`
+          ${["GitHub","LinkedIn","X"].filter(s=>e.links[s]).map(s=>{const t=e.links[s],c=t.replace(/^https?:\/\//,"");return`<a href="${h(t)}" target="_blank" rel="noopener">${h(c)}</a>`}).join(`
           `)}
         </div>
         <p class="cv-tagline">Father of 5 &mdash; husband of 1.<br>My true passion is to create and help others do what they were made to do.</p>
@@ -397,7 +397,7 @@
           <rect class="mailbox-flag" x="42" y="14" width="4" height="18" rx="1" fill="#E8742A"/>
         </svg>
       </div>
-    `}];function K(){return`
+    `}];function Z(){return`
   <svg class="character-svg" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
     <!-- hard hat -->
     <ellipse cx="30" cy="14" rx="16" ry="8" fill="#E8742A"/>
@@ -424,8 +424,8 @@
     <!-- arms -->
     <rect class="arm-left" x="11" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
     <rect class="arm-right" x="39" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
-  </svg>`}async function U(){const e=document.getElementById("app"),t=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches,s=document.documentElement.dataset.theme||"light",o=await H();e.innerHTML=`
-    <div class="icv${t?" plain-mode":""}" data-theme="${s}">
+  </svg>`}const Y={entryway:{freq:110,type:"sine",gain:.06},workbench:{freq:165,type:"triangle",gain:.05},floor:{freq:82,type:"sawtooth",gain:.03},rack:{freq:130,type:"square",gain:.02},stage:{freq:220,type:"sine",gain:.07},library:{freq:196,type:"sine",gain:.04},exit:{freq:147,type:"triangle",gain:.05}};function ee(){let e=null,s=null,t=null,c=null,a=!1,n=null;function g(){e||(e=new(window.AudioContext||window.webkitAudioContext),s=e.createGain(),s.gain.value=.5,s.connect(e.destination),c=e.createGain(),c.gain.value=0,c.connect(s))}function B(){return g(),a=!a,a?(e.state==="suspended"&&e.resume(),n&&f(n)):(c.gain.setTargetAtTime(0,e.currentTime,.3),t&&(t.stop(e.currentTime+.5),t=null)),a}function f(r){if(n=r,!a||!e)return;const d=Y[r];if(!d)return;const p=e.currentTime;t&&t.stop(p+.4),t=e.createOscillator(),t.type=d.type,t.frequency.setValueAtTime(d.freq,p);const u=e.createOscillator(),m=e.createGain();u.frequency.value=2+Math.random()*2,m.gain.value=d.freq*.008,u.connect(m),m.connect(t.frequency),u.start(p),t.connect(c),c.gain.setTargetAtTime(d.gain,p,.5),t.start(p+.1),t.onended=()=>{u.stop()}}function x(){if(!a||!e)return;const r=e.currentTime,d=e.createOscillator(),p=e.createGain();d.type="triangle",d.frequency.setValueAtTime(800+Math.random()*400,r),d.frequency.exponentialRampToValueAtTime(200,r+.06),p.gain.setValueAtTime(.08,r),p.gain.exponentialRampToValueAtTime(.001,r+.08),d.connect(p),p.connect(s),d.start(r),d.stop(r+.08)}function w(){if(!a||!e)return;const r=e.currentTime,d=e.createOscillator(),p=e.createGain();d.type="sine",d.frequency.setValueAtTime(1200,r),d.frequency.exponentialRampToValueAtTime(600,r+.04),p.gain.setValueAtTime(.1,r),p.gain.exponentialRampToValueAtTime(.001,r+.05),d.connect(p),p.connect(s),d.start(r),d.stop(r+.05)}function k(){if(t)try{t.stop()}catch{}e&&e.close(),e=null,a=!1}return{toggle:B,setZone:f,playStep:x,playClick:w,destroy:k,isEnabled:()=>a}}async function te(){const e=document.getElementById("app"),s=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches,t=document.documentElement.dataset.theme||"light",c=await G();e.innerHTML=`
+    <div class="icv${s?" plain-mode":""}" data-theme="${t}">
       <a href="#main-content" class="skip-link">Skip to content</a>
 
       <div class="parallax-layer parallax-sky" aria-hidden="true"></div>
@@ -441,26 +441,27 @@
         </div>
         <div class="hud-right">
           <div class="hud-nav-dots">
-            ${A.map((l,n)=>`<button class="hud-dot${n===0?" active":""}" data-zone-index="${n}" title="${l.label}"></button>`).join("")}
+            ${T.map((a,n)=>`<button class="hud-dot${n===0?" active":""}" data-zone-index="${n}" title="${a.label}"></button>`).join("")}
           </div>
-          <button class="theme-toggle" aria-label="Toggle dark mode">${s==="dark"?"☀️":"🌙"}</button>
-          <button class="mode-toggle" aria-label="Toggle plain mode">${t?"🎮":"📄"}</button>
+          <button class="sound-toggle" aria-label="Toggle sound" title="Toggle sound">🔇</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode">${t==="dark"?"☀️":"🌙"}</button>
+          <button class="mode-toggle" aria-label="Toggle plain mode">${s?"🎮":"📄"}</button>
         </div>
       </div>
 
       <div class="character" aria-hidden="true">
-        ${K()}
+        ${Z()}
       </div>
 
       <div class="zones-track" id="main-content">
-        ${A.map((l,n)=>`
-          <section class="zone" id="zone-${l.id}" data-zone="${l.id}" data-zone-index="${n}">
-            ${l.content(o)}
+        ${T.map((a,n)=>`
+          <section class="zone" id="zone-${a.id}" data-zone="${a.id}" data-zone-index="${n}">
+            ${a.content(c)}
           </section>
         `).join("")}
       </div>
     </div>
-  `,J(e,t)}function J(e,t){const s=e.querySelector(".icv"),o=e.querySelector(".zones-track"),l=e.querySelector(".character"),n=Array.from(e.querySelectorAll(".zone")),p=e.querySelector(".hud-progress-fill"),j=e.querySelector(".hud-zone-label"),E=Array.from(e.querySelectorAll(".hud-dot")),S=e.querySelector(".mode-toggle"),C=e.querySelector(".parallax-sky"),B=e.querySelector(".parallax-wall");let c=t,x=0;S.addEventListener("click",()=>{c=!c,s.classList.toggle("plain-mode",c),sessionStorage.setItem("cv-plain",String(c)),S.textContent=c?"🎮":"📄"});const w=e.querySelector(".theme-toggle");w.addEventListener("click",()=>{const i=s.dataset.theme==="dark";s.dataset.theme=i?"light":"dark",document.documentElement.dataset.theme=s.dataset.theme,localStorage.setItem("cv-theme",s.dataset.theme),w.textContent=i?"🌙":"☀️"}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",i=>{if(!localStorage.getItem("cv-theme")){const a=i.matches?"dark":"light";s.dataset.theme=a,document.documentElement.dataset.theme=a,w.textContent=i.matches?"☀️":"🌙"}}),e.querySelector(".hud-home").addEventListener("click",()=>{c?n[0].scrollIntoView({behavior:"smooth",block:"start"}):n[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),E.forEach(i=>{i.addEventListener("click",()=>{const a=parseInt(i.dataset.zoneIndex,10);c?n[a].scrollIntoView({behavior:"smooth",block:"start"}):n[a].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function g(){if(c){const a=window.scrollY||document.documentElement.scrollTop,r=document.documentElement.scrollHeight-window.innerHeight;p.style.width=(r>0?a/r*100:0)+"%"}else{const a=o.scrollLeft,r=o.scrollWidth-o.clientWidth,v=r>0?a/r:0;p.style.width=v*100+"%";const O=v*(o.clientWidth-80);l.style.transform=`translateX(${O}px)`,Math.abs(a-x)>1&&(l.classList.add("walking"),l.classList.toggle("facing-left",a<x)),x=a,clearTimeout(l._wt),clearTimeout(l._pt),l.classList.remove("pointing"),l._wt=setTimeout(()=>{l.classList.remove("walking"),l._pt=setTimeout(()=>l.classList.add("pointing"),400)},200),C&&(C.style.transform=`translateX(${-a*.1}px)`),B&&(B.style.transform=`translateX(${-a*.3}px)`)}let i=0;if(c){for(let a=n.length-1;a>=0;a--)if(n[a].getBoundingClientRect().top<=window.innerHeight/3){i=a;break}}else for(let a=n.length-1;a>=0;a--)if(n[a].getBoundingClientRect().left<=o.clientWidth/2){i=a;break}j.textContent=A[i].label,E.forEach((a,r)=>a.classList.toggle("active",r===i))}o.addEventListener("scroll",g),window.addEventListener("scroll",g);function L(i){c||(i.key==="ArrowRight"?o.scrollBy({left:400,behavior:"smooth"}):i.key==="ArrowLeft"&&o.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",L);const F=e.querySelectorAll(".meter"),k=new IntersectionObserver(i=>{i.forEach(a=>{a.isIntersecting&&(a.target.classList.add("filled"),k.unobserve(a.target))})},{threshold:.2});F.forEach(i=>k.observe(i));const $=e.querySelectorAll(".station");$.forEach(i=>{i.addEventListener("click",()=>{const a=i.classList.contains("expanded");$.forEach(r=>{r.classList.remove("expanded"),r.setAttribute("aria-expanded","false")}),a||(i.classList.add("expanded"),i.setAttribute("aria-expanded","true"))})});const q=e.querySelectorAll(".status-led"),h=[];q.forEach(i=>{h.push(setInterval(()=>i.classList.toggle("blink"),800+Math.random()*1500))});const M=e.querySelector(".loadcell-value");M&&h.push(setInterval(()=>{M.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));function T(i,a){const r=document.createElement("span");r.classList.add("particle",`particle-${a}`),r.setAttribute("aria-hidden","true");const v=Math.random()*100;r.style.left=v+"%",r.style.setProperty("--drift",(Math.random()-.5)*40+"px"),a==="spark"?r.textContent=["*","•","✱"][Math.floor(Math.random()*3)]:r.textContent=["♫","♪","♩","♬"][Math.floor(Math.random()*4)],i.appendChild(r),r.addEventListener("animationend",()=>r.remove())}const u=e.querySelector("#zone-floor .zone-scenery"),f=e.querySelector("#zone-stage .zone-scenery");u&&h.push(setInterval(()=>{!c&&u.getBoundingClientRect().right>0&&u.getBoundingClientRect().left<window.innerWidth&&T(u,"spark")},800)),f&&h.push(setInterval(()=>{!c&&f.getBoundingClientRect().right>0&&f.getBoundingClientRect().left<window.innerWidth&&T(f,"note")},1200));const b=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];let m=0;function I(i){i.key===b[m]?(m++,m===b.length&&(m=0,R())):m=i.key===b[0]?1:0}window.addEventListener("keydown",I);function R(){s.classList.add("easter-egg");const i=document.createElement("div");i.className="easter-egg-overlay",i.setAttribute("aria-hidden","true"),i.innerHTML='<span class="ee-text">+ 1UP +</span>';for(let a=0;a<30;a++){const r=document.createElement("span");r.className="ee-confetti",r.style.left=Math.random()*100+"%",r.style.top=Math.random()*100+"%",r.style.setProperty("--drift",(Math.random()-.5)*200+"px"),r.style.setProperty("--dist",(Math.random()-.5)*200+"px"),r.textContent=["★","✦","✶","◆","✱"][Math.floor(Math.random()*5)],i.appendChild(r)}s.appendChild(i),setTimeout(()=>{i.remove(),s.classList.remove("easter-egg")},2500)}const P=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",L),window.removeEventListener("keydown",I),window.removeEventListener("scroll",g),h.forEach(clearInterval),k.disconnect(),P.disconnect())});P.observe(e,{childList:!0}),requestAnimationFrame(g)}const X=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",url:"https://fingerskier.github.io/gre_prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",url:"https://fingerskier.github.io/speakeasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",url:"https://fingerskier.github.io/numbersense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"simulations",label:"Simulations &amp; Visualizations",description:"Interactive simulations and visual experiments",projects:[{name:"SolarSystem",url:"https://fingerskier.github.io/SolarSystem",repo:"https://github.com/fingerskier/SolarSystem",description:"Interactive solar system simulation"},{name:"Biologize Me",url:"https://fingerskier.github.io/biologize_me",repo:"https://github.com/fingerskier/biologize_me",description:"Biology-inspired visualization experiment"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function Y(){const e=document.getElementById("app");e.innerHTML=`
+  `,se(e,s)}function se(e,s){const t=e.querySelector(".icv"),c=e.querySelector(".zones-track"),a=e.querySelector(".character"),n=Array.from(e.querySelectorAll(".zone")),g=e.querySelector(".hud-progress-fill"),B=e.querySelector(".hud-zone-label"),f=Array.from(e.querySelectorAll(".hud-dot")),x=e.querySelector(".mode-toggle"),w=e.querySelector(".parallax-sky"),k=e.querySelector(".parallax-wall");let r=s,d=0;const p=ee(),u=e.querySelector(".sound-toggle");u.addEventListener("click",()=>{const i=p.toggle();u.textContent=i?"🔊":"🔇",u.classList.toggle("active",i),i&&p.playClick()}),x.addEventListener("click",()=>{r=!r,t.classList.toggle("plain-mode",r),sessionStorage.setItem("cv-plain",String(r)),x.textContent=r?"🎮":"📄"});const m=e.querySelector(".theme-toggle");m.addEventListener("click",()=>{const i=t.dataset.theme==="dark";t.dataset.theme=i?"light":"dark",document.documentElement.dataset.theme=t.dataset.theme,localStorage.setItem("cv-theme",t.dataset.theme),m.textContent=i?"🌙":"☀️"}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",i=>{if(!localStorage.getItem("cv-theme")){const l=i.matches?"dark":"light";t.dataset.theme=l,document.documentElement.dataset.theme=l,m.textContent=i.matches?"☀️":"🌙"}}),e.querySelector(".hud-home").addEventListener("click",()=>{r?n[0].scrollIntoView({behavior:"smooth",block:"start"}):n[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),f.forEach(i=>{i.addEventListener("click",()=>{const l=parseInt(i.dataset.zoneIndex,10);r?n[l].scrollIntoView({behavior:"smooth",block:"start"}):n[l].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function b(){if(r){const l=window.scrollY||document.documentElement.scrollTop,o=document.documentElement.scrollHeight-window.innerHeight;g.style.width=(o>0?l/o*100:0)+"%"}else{const l=c.scrollLeft,o=c.scrollWidth-c.clientWidth,S=o>0?l/o:0;g.style.width=S*100+"%";const _=S*(c.clientWidth-80);a.style.transform=`translateX(${_}px)`;const F=Math.abs(l-d);F>1&&(a.classList.add("walking"),a.classList.toggle("facing-left",l<d),F>5&&p.playStep()),d=l,clearTimeout(a._wt),clearTimeout(a._pt),a.classList.remove("pointing"),a._wt=setTimeout(()=>{a.classList.remove("walking"),a._pt=setTimeout(()=>a.classList.add("pointing"),400)},200),w&&(w.style.transform=`translateX(${-l*.1}px)`),k&&(k.style.transform=`translateX(${-l*.3}px)`)}let i=0;if(r){for(let l=n.length-1;l>=0;l--)if(n[l].getBoundingClientRect().top<=window.innerHeight/3){i=l;break}}else for(let l=n.length-1;l>=0;l--)if(n[l].getBoundingClientRect().left<=c.clientWidth/2){i=l;break}B.textContent=T[i].label,f.forEach((l,o)=>l.classList.toggle("active",o===i)),p.setZone(T[i].id)}c.addEventListener("scroll",b),window.addEventListener("scroll",b);function M(i){r||(i.key==="ArrowRight"?c.scrollBy({left:400,behavior:"smooth"}):i.key==="ArrowLeft"&&c.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",M);const V=e.querySelectorAll(".meter"),L=new IntersectionObserver(i=>{i.forEach(l=>{l.isIntersecting&&(l.target.classList.add("filled"),L.unobserve(l.target))})},{threshold:.2});V.forEach(i=>L.observe(i));const q=e.querySelectorAll(".station");function I(i){p.playClick();const l=i.classList.contains("expanded");q.forEach(o=>{o.classList.remove("expanded"),o.setAttribute("aria-expanded","false")}),l||(i.classList.add("expanded"),i.setAttribute("aria-expanded","true"))}q.forEach(i=>{i.addEventListener("click",()=>I(i)),i.addEventListener("keydown",l=>{(l.key==="Enter"||l.key===" ")&&(l.preventDefault(),I(i))})});const H=e.querySelectorAll(".status-led"),y=[];H.forEach(i=>{y.push(setInterval(()=>i.classList.toggle("blink"),800+Math.random()*1500))});const P=e.querySelector(".loadcell-value");P&&y.push(setInterval(()=>{P.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));function D(i,l){const o=document.createElement("span");o.classList.add("particle",`particle-${l}`),o.setAttribute("aria-hidden","true");const S=Math.random()*100;o.style.left=S+"%",o.style.setProperty("--drift",(Math.random()-.5)*40+"px"),l==="spark"?o.textContent=["*","•","✱"][Math.floor(Math.random()*3)]:o.textContent=["♫","♪","♩","♬"][Math.floor(Math.random()*4)],i.appendChild(o),o.addEventListener("animationend",()=>o.remove())}const A=e.querySelector("#zone-floor .zone-scenery"),E=e.querySelector("#zone-stage .zone-scenery");A&&y.push(setInterval(()=>{!r&&A.getBoundingClientRect().right>0&&A.getBoundingClientRect().left<window.innerWidth&&D(A,"spark")},800)),E&&y.push(setInterval(()=>{!r&&E.getBoundingClientRect().right>0&&E.getBoundingClientRect().left<window.innerWidth&&D(E,"note")},1200));const $=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];let v=0;function z(i){i.key===$[v]?(v++,v===$.length&&(v=0,N())):v=i.key===$[0]?1:0}window.addEventListener("keydown",z);function N(){t.classList.add("easter-egg");const i=document.createElement("div");i.className="easter-egg-overlay",i.setAttribute("aria-hidden","true"),i.innerHTML='<span class="ee-text">+ 1UP +</span>';for(let l=0;l<30;l++){const o=document.createElement("span");o.className="ee-confetti",o.style.left=Math.random()*100+"%",o.style.top=Math.random()*100+"%",o.style.setProperty("--drift",(Math.random()-.5)*200+"px"),o.style.setProperty("--dist",(Math.random()-.5)*200+"px"),o.textContent=["★","✦","✶","◆","✱"][Math.floor(Math.random()*5)],i.appendChild(o)}t.appendChild(i),setTimeout(()=>{i.remove(),t.classList.remove("easter-egg")},2500)}const j=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",M),window.removeEventListener("keydown",z),window.removeEventListener("scroll",b),y.forEach(clearInterval),p.destroy(),L.disconnect(),j.disconnect())});j.observe(e,{childList:!0}),requestAnimationFrame(b)}const ie=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",url:"https://fingerskier.github.io/gre_prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",url:"https://fingerskier.github.io/speakeasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",url:"https://fingerskier.github.io/numbersense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"simulations",label:"Simulations &amp; Visualizations",description:"Interactive simulations and visual experiments",projects:[{name:"SolarSystem",url:"https://fingerskier.github.io/SolarSystem",repo:"https://github.com/fingerskier/SolarSystem",description:"Interactive solar system simulation"},{name:"Biologize Me",url:"https://fingerskier.github.io/biologize_me",repo:"https://github.com/fingerskier/biologize_me",description:"Biology-inspired visualization experiment"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function ae(){const e=document.getElementById("app");e.innerHTML=`
     <div class="icv projects-page">
       <div class="hud" role="navigation" aria-label="Projects navigation">
         <div class="hud-left">
@@ -477,18 +478,18 @@
         <p class="projects-subtitle">Public repositories, apps, and experiments.</p>
 
         <div class="projects-grid">
-          ${X.map(t=>`
-            <section class="project-category" id="cat-${t.id}">
-              <h2>${t.label}</h2>
-              <p class="category-desc">${t.description}</p>
+          ${ie.map(s=>`
+            <section class="project-category" id="cat-${s.id}">
+              <h2>${s.label}</h2>
+              <p class="category-desc">${s.description}</p>
               <div class="category-items">
-                ${t.projects.map(s=>`
+                ${s.projects.map(t=>`
                   <div class="project-card">
-                    <h3>${s.name}</h3>
-                    <p>${s.description}</p>
+                    <h3>${t.name}</h3>
+                    <p>${t.description}</p>
                     <div class="project-links">
-                      ${s.url?`<a href="${s.url}" target="_blank" rel="noopener" aria-label="Visit ${s.name} site">Visit</a>`:""}
-                      ${s.repo?`<a href="${s.repo}" target="_blank" rel="noopener" aria-label="View ${s.name} repository">Repo</a>`:""}
+                      ${t.url?`<a href="${t.url}" target="_blank" rel="noopener" aria-label="Visit ${t.name} site">Visit</a>`:""}
+                      ${t.repo?`<a href="${t.repo}" target="_blank" rel="noopener" aria-label="View ${t.name} repository">Repo</a>`:""}
                     </div>
                   </div>
                 `).join("")}
@@ -498,4 +499,4 @@
         </div>
       </main>
     </div>
-  `}let D=null;async function z(){const e=window.location.hash==="#projects"?"projects":"cv";e!==D&&(D=e,e==="projects"?Y():await U())}window.addEventListener("hashchange",z);z();
+  `}let O=null;async function R(){const e=window.location.hash==="#projects"?"projects":"cv";e!==O&&(O=e,e==="projects"?ae():await te())}window.addEventListener("hashchange",R);R();
