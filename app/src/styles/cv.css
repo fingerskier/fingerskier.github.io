@@ -180,6 +180,19 @@
 }
 .theme-toggle:hover { background: rgba(255,255,255,0.2); }
 
+.sound-toggle {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background 0.2s;
+}
+.sound-toggle:hover { background: rgba(255,255,255,0.2); }
+.sound-toggle.active { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.4); }
+
 /* ── Parallax layers ── */
 .parallax-layer {
   position: fixed;

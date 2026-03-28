@@ -521,6 +521,115 @@ function characterSVG() {
   </svg>`
 }
 
+/* ── Sound engine (Web Audio API, all synthesized) ── */
+const ZONE_SOUNDS = {
+  entryway:  { freq: 110, type: 'sine',     gain: 0.06 },
+  workbench: { freq: 165, type: 'triangle', gain: 0.05 },
+  floor:     { freq: 82,  type: 'sawtooth', gain: 0.03 },
+  rack:      { freq: 130, type: 'square',   gain: 0.02 },
+  stage:     { freq: 220, type: 'sine',     gain: 0.07 },
+  library:   { freq: 196, type: 'sine',     gain: 0.04 },
+  exit:      { freq: 147, type: 'triangle', gain: 0.05 },
+}
+
+function createSoundEngine() {
+  let ctx = null
+  let masterGain = null
+  let ambientOsc = null
+  let ambientGain = null
+  let enabled = false
+  let currentZone = null
+
+  function init() {
+    if (ctx) return
+    ctx = new (window.AudioContext || window.webkitAudioContext)()
+    masterGain = ctx.createGain()
+    masterGain.gain.value = 0.5
+    masterGain.connect(ctx.destination)
+    ambientGain = ctx.createGain()
+    ambientGain.gain.value = 0
+    ambientGain.connect(masterGain)
+  }
+
+  function toggle() {
+    init()
+    enabled = !enabled
+    if (enabled) {
+      if (ctx.state === 'suspended') ctx.resume()
+      if (currentZone) setZone(currentZone)
+    } else {
+      ambientGain.gain.setTargetAtTime(0, ctx.currentTime, 0.3)
+      if (ambientOsc) { ambientOsc.stop(ctx.currentTime + 0.5); ambientOsc = null }
+    }
+    return enabled
+  }
+
+  function setZone(zoneId) {
+    currentZone = zoneId
+    if (!enabled || !ctx) return
+    const s = ZONE_SOUNDS[zoneId]
+    if (!s) return
+    const now = ctx.currentTime
+    if (ambientOsc) { ambientOsc.stop(now + 0.4); }
+    ambientOsc = ctx.createOscillator()
+    ambientOsc.type = s.type
+    ambientOsc.frequency.setValueAtTime(s.freq, now)
+    // Add subtle vibrato
+    const lfo = ctx.createOscillator()
+    const lfoGain = ctx.createGain()
+    lfo.frequency.value = 2 + Math.random() * 2
+    lfoGain.gain.value = s.freq * 0.008
+    lfo.connect(lfoGain)
+    lfoGain.connect(ambientOsc.frequency)
+    lfo.start(now)
+    ambientOsc.connect(ambientGain)
+    ambientGain.gain.setTargetAtTime(s.gain, now, 0.5)
+    ambientOsc.start(now + 0.1)
+    // Clean up LFO when oscillator stops
+    ambientOsc.onended = () => { lfo.stop(); }
+  }
+
+  function playStep() {
+    if (!enabled || !ctx) return
+    const now = ctx.currentTime
+    const osc = ctx.createOscillator()
+    const g = ctx.createGain()
+    osc.type = 'triangle'
+    osc.frequency.setValueAtTime(800 + Math.random() * 400, now)
+    osc.frequency.exponentialRampToValueAtTime(200, now + 0.06)
+    g.gain.setValueAtTime(0.08, now)
+    g.gain.exponentialRampToValueAtTime(0.001, now + 0.08)
+    osc.connect(g)
+    g.connect(masterGain)
+    osc.start(now)
+    osc.stop(now + 0.08)
+  }
+
+  function playClick() {
+    if (!enabled || !ctx) return
+    const now = ctx.currentTime
+    const osc = ctx.createOscillator()
+    const g = ctx.createGain()
+    osc.type = 'sine'
+    osc.frequency.setValueAtTime(1200, now)
+    osc.frequency.exponentialRampToValueAtTime(600, now + 0.04)
+    g.gain.setValueAtTime(0.1, now)
+    g.gain.exponentialRampToValueAtTime(0.001, now + 0.05)
+    osc.connect(g)
+    g.connect(masterGain)
+    osc.start(now)
+    osc.stop(now + 0.05)
+  }
+
+  function destroy() {
+    if (ambientOsc) { try { ambientOsc.stop() } catch(e) {} }
+    if (ctx) { ctx.close() }
+    ctx = null; enabled = false
+  }
+
+  return { toggle, setZone, playStep, playClick, destroy, isEnabled: () => enabled }
+}
+
 export async function renderCV() {
   const appEl = document.getElementById('app')
   const plain = sessionStorage.getItem('cv-plain') === 'true' ||
@@ -548,6 +657,7 @@ export async function renderCV() {
           <div class="hud-nav-dots">
             ${ZONES.map((z, i) => `<button class="hud-dot${i === 0 ? ' active' : ''}" data-zone-index="${i}" title="${z.label}"></button>`).join('')}
           </div>
+          <button class="sound-toggle" aria-label="Toggle sound" title="Toggle sound">🔇</button>
           <button class="theme-toggle" aria-label="Toggle dark mode">${theme === 'dark' ? '☀️' : '🌙'}</button>
           <button class="mode-toggle" aria-label="Toggle plain mode">${plain ? '🎮' : '📄'}</button>
         </div>
@@ -583,6 +693,16 @@ function initInteractiveCV(root, startPlain) {
   const parallaxWall = root.querySelector('.parallax-wall')
   let isPlain = startPlain
   let lastScrollLeft = 0
+  const sound = createSoundEngine()
+
+  /* ── Sound toggle ── */
+  const soundToggle = root.querySelector('.sound-toggle')
+  soundToggle.addEventListener('click', () => {
+    const on = sound.toggle()
+    soundToggle.textContent = on ? '🔊' : '🔇'
+    soundToggle.classList.toggle('active', on)
+    if (on) sound.playClick()
+  })
 
   /* ── Mode toggle ── */
   modeToggle.addEventListener('click', () => {
@@ -652,8 +772,8 @@ function initInteractiveCV(root, startPlain) {
       const delta = Math.abs(sl - lastScrollLeft)
       if (delta > 1) {
         character.classList.add('walking')
-        // Face direction
         character.classList.toggle('facing-left', sl < lastScrollLeft)
+        if (delta > 5) sound.playStep()
       }
       lastScrollLeft = sl
       clearTimeout(character._wt)
@@ -682,6 +802,7 @@ function initInteractiveCV(root, startPlain) {
     }
     hudLabel.textContent = ZONES[activeIdx].label
     hudDots.forEach((d, i) => d.classList.toggle('active', i === activeIdx))
+    sound.setZone(ZONES[activeIdx].id)
   }
 
   track.addEventListener('scroll', onScroll)
@@ -711,6 +832,7 @@ function initInteractiveCV(root, startPlain) {
   const stations = root.querySelectorAll('.station')
   stations.forEach(station => {
     station.addEventListener('click', () => {
+      sound.playClick()
       const wasOpen = station.classList.contains('expanded')
       stations.forEach(s => {
         s.classList.remove('expanded')
@@ -821,6 +943,7 @@ function initInteractiveCV(root, startPlain) {
       window.removeEventListener('keydown', onKonami)
       window.removeEventListener('scroll', onScroll)
       intervals.forEach(clearInterval)
+      sound.destroy()
       mObs.disconnect()
       obs.disconnect()
     }
