@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "prebuild": "cp ../cv.json public/cv.json && cp ../asset/avatar.jpg public/avatar.jpg",
+    "verify:cv": "node ../scripts/verify-cv-parity.mjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint \"src/**/*.js\"",
