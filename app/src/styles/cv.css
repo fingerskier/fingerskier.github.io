@@ -32,6 +32,7 @@
   position: relative;
   overflow: hidden;
   min-height: 100vh;
+  min-height: 100dvh;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -101,7 +102,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.5rem 1rem;
+  padding: calc(0.5rem + env(safe-area-inset-top, 0px)) 1rem 0.5rem;
   background: var(--hud-bg);
   backdrop-filter: blur(8px);
   color: var(--light);
@@ -233,9 +234,11 @@
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
+  overscroll-behavior: contain;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   height: 100vh;
+  height: 100dvh;
   padding-top: 44px; /* HUD height */
   position: relative;
   z-index: 10;
@@ -258,13 +261,17 @@
   width: 100vw;
   min-width: 100vw;
   height: calc(100vh - 44px);
+  height: calc(100dvh - 44px);
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   padding: 2rem clamp(2rem, 6vw, 6rem);
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
   position: relative;
   box-sizing: border-box;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .zone-content {
@@ -1172,6 +1179,7 @@
     overflow-x: visible;
     overflow-y: visible;
     height: auto;
+    padding-top: 0;
     scroll-snap-type: none;
   }
   .zone {
@@ -1179,8 +1187,15 @@
     min-width: 0;
     height: auto;
     min-height: 80vh;
+    min-height: 80dvh;
     scroll-snap-align: none;
-    padding: 2rem 1rem;
+    padding: calc(44px + 1.5rem) 1rem 2rem;
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+    overflow-y: visible;
+  }
+  /* Only first zone needs HUD-offset top padding; others stack naturally */
+  .zone + .zone {
+    padding-top: 2rem;
   }
   .character {
     display: none;
@@ -1196,6 +1211,27 @@
   }
   .hud-nav-dots {
     display: none;
+  }
+  .hud {
+    padding-left: calc(1rem + env(safe-area-inset-left, 0px));
+    padding-right: calc(1rem + env(safe-area-inset-right, 0px));
+  }
+}
+
+/* ── Small phones (< 400px): tighten HUD ── */
+@media (max-width: 400px) {
+  .hud {
+    font-size: 0.7rem;
+    gap: 0.5rem;
+  }
+  .hud-zone-label {
+    max-width: 6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .theme-toggle, .sound-toggle, .mode-toggle {
+    padding: 0.25rem 0.4rem;
   }
 }
 

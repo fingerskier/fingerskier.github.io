@@ -12,6 +12,6 @@ Remaining work drawn from `doc/PLAYABLE_CV.md` roadmap (Phases 3–4).
 - [x] **P3 — Phase 4: Sound design** (optional, off by default)
 - [x] **P3 — Verify `cv.json` parity with `CV.md`** after any CV edits (source-of-truth is `CV.md`)
 - [x] **P3 — Accessibility pass**: keyboard navigation, focus states, reduced-motion honored in all animations
-- [ ] **P4 — Mobile polish**: re-test vertical-scroll adaptation across iOS/Android breakpoints
+- [x] **P4 — Mobile polish**: re-test vertical-scroll adaptation across iOS/Android breakpoints
 - [ ] **P4 — Performance audit**: Lighthouse pass, lazy-load parallax/scenery assets
 - [ ] **P4 — Add GH issue templates / enable Issues** so future work is trackable in GH
