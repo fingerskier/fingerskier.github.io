@@ -272,6 +272,9 @@
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  /* Skip paint + layout for off-screen zones (still measurable via intrinsic size) */
+  content-visibility: auto;
+  contain-intrinsic-size: 100vw calc(100vh - 44px);
 }
 
 .zone-content {
@@ -525,6 +528,7 @@
   padding: 0.75rem 1rem;
   position: relative;
   transition: border-color 0.2s, box-shadow 0.2s;
+  contain: layout paint;
 }
 .station:hover {
   border-color: var(--accent);
