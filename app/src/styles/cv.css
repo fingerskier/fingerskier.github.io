@@ -78,6 +78,19 @@
   top: 0;
 }
 
+/* ── Universal focus-visible for interactive HUD + station controls ── */
+.hud-home:focus-visible,
+.hud-dot:focus-visible,
+.theme-toggle:focus-visible,
+.sound-toggle:focus-visible,
+.mode-toggle:focus-visible,
+.station:focus-visible,
+.scenery-tooltip-close:focus-visible,
+.easter-egg-close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 /* ── HUD ── */
 .hud {
   position: fixed;
@@ -1290,7 +1303,7 @@
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
-  .character, .parallax-layer, .zone-scenery {
+  .character, .parallax-layer, .zone-scenery, .deploy-pipeline {
     display: none !important;
   }
   .zones-track {
@@ -1304,10 +1317,11 @@
     min-width: 0;
     height: auto;
   }
-  .meter::after {
-    transition: none;
-  }
-  .hud-progress-fill {
-    transition: none;
+  /* Suppress all decorative animations + transitions site-wide */
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
