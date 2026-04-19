@@ -194,8 +194,11 @@ const ZONES = [
           </div>
         </div>
       </div>
-      <div class="zone-scenery" aria-hidden="true">
-        <svg class="scenery-scope-svg" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+      <div class="zone-scenery">
+        <svg class="scenery-scope-svg scenery-clickable" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg"
+             tabindex="0" role="button" aria-label="Oscilloscope: details"
+             data-info-title="Oscilloscope"
+             data-info-body="Signal debugging across serial protocols (UART, SPI, I²C, RS-485) and hardware bring-up of custom boards.">
           <rect x="0" y="0" width="160" height="120" rx="8" fill="#333" stroke="#555" stroke-width="3"/>
           <rect x="12" y="10" width="136" height="80" rx="4" fill="#0a1a0a"/>
           <line x1="12" y1="50" x2="148" y2="50" stroke="#0a3a0a" stroke-width="0.5"/>
@@ -229,8 +232,11 @@ const ZONES = [
         <h2>Experience</h2>
         ${experienceHtml(data)}
       </div>
-      <div class="zone-scenery" aria-hidden="true">
-        <svg class="scenery-actuator-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+      <div class="zone-scenery">
+        <svg class="scenery-actuator-svg scenery-clickable" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg"
+             tabindex="0" role="button" aria-label="Linear actuator: details"
+             data-info-title="Linear Actuator"
+             data-info-body="Safety-supervised position control with load-cell feedback. Programmed for Spectrum Application force profiles.">
           <rect x="20" y="140" width="60" height="50" rx="4" fill="#555" stroke="#444" stroke-width="2"/>
           <rect x="10" y="130" width="80" height="14" rx="2" fill="#666"/>
           <rect class="actuator-rod" x="38" y="30" width="24" height="100" rx="4" fill="#999" stroke="#777" stroke-width="1"/>
@@ -238,7 +244,10 @@ const ZONES = [
           <circle cx="50" cy="165" r="5" fill="#333"/>
           <circle cx="35" cy="155" r="3" fill="#0f0" class="machine-led"/>
         </svg>
-        <svg class="scenery-loadcell-svg" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+        <svg class="scenery-loadcell-svg scenery-clickable" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"
+             tabindex="0" role="button" aria-label="Load cell readout: details"
+             data-info-title="Load Cell"
+             data-info-body="Real-time force measurement. Drives member assessment scoring and safety cutoffs in the Spectrum platform.">
           <rect x="0" y="0" width="120" height="60" rx="4" fill="#222" stroke="#444" stroke-width="2"/>
           <rect x="8" y="8" width="104" height="36" rx="2" fill="#0a0a0a"/>
           <text class="loadcell-value" x="60" y="34" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="22" fill="#0f0">2847</text>
@@ -278,8 +287,11 @@ const ZONES = [
           <span class="pipeline-step">Ship</span>
         </div>
       </div>
-      <div class="zone-scenery" aria-hidden="true">
-        <svg class="scenery-rack-svg" viewBox="0 0 80 240" xmlns="http://www.w3.org/2000/svg">
+      <div class="zone-scenery">
+        <svg class="scenery-rack-svg scenery-clickable" viewBox="0 0 80 240" xmlns="http://www.w3.org/2000/svg"
+             tabindex="0" role="button" aria-label="Server rack: details"
+             data-info-title="Server Rack"
+             data-info-body="AWS Elastic Beanstalk fleet, Aurora MySQL Serverless, auto-scaling load balancers serving 200+ franchise locations.">
           <rect x="0" y="0" width="80" height="240" rx="3" fill="#2a2a2a" stroke="#444" stroke-width="2"/>
           <rect x="4" y="4" width="72" height="232" rx="2" fill="#1a1a1a"/>
           ${Array.from({length: 8}, (_, i) => `
@@ -356,8 +368,11 @@ const ZONES = [
           ${educationHtml(data)}
         </ul>
       </div>
-      <div class="zone-scenery" aria-hidden="true">
-        <svg class="scenery-bookshelf-svg" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+      <div class="zone-scenery">
+        <svg class="scenery-bookshelf-svg scenery-clickable" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg"
+             tabindex="0" role="button" aria-label="Bookshelf: details"
+             data-info-title="Bookshelf"
+             data-info-body="LEAN proofs, Knuth, Feynman, hymnals, philosophy. Books I actually reach for, not shelf décor.">
           <!-- shelf frame -->
           <rect x="0" y="0" width="140" height="200" rx="2" fill="#8B5E3C" opacity="0.25"/>
           <rect x="5" y="0" width="130" height="3" fill="#6B4226" opacity="0.4"/>
@@ -513,6 +528,12 @@ export async function renderCV() {
 
       <div class="character" aria-hidden="true">
         ${characterSVG()}
+      </div>
+
+      <div class="scenery-tooltip" role="dialog" aria-live="polite" hidden>
+        <button class="scenery-tooltip-close" aria-label="Close">&times;</button>
+        <h4 class="scenery-tooltip-title"></h4>
+        <p class="scenery-tooltip-body"></p>
       </div>
 
       <div class="zones-track" id="main-content">
@@ -679,6 +700,35 @@ function initInteractiveCV(root, startPlain) {
         station.setAttribute('aria-expanded', 'true')
       }
     })
+  })
+
+  /* ── Clickable scenery ── */
+  const tooltip = root.querySelector('.scenery-tooltip')
+  const ttTitle = tooltip.querySelector('.scenery-tooltip-title')
+  const ttBody = tooltip.querySelector('.scenery-tooltip-body')
+  const ttClose = tooltip.querySelector('.scenery-tooltip-close')
+  function showTooltip(el) {
+    const title = el.getAttribute('data-info-title') || ''
+    const body = el.getAttribute('data-info-body') || ''
+    ttTitle.textContent = title
+    ttBody.textContent = body
+    tooltip.hidden = false
+    tooltip.classList.add('visible')
+    ttClose.focus()
+  }
+  function hideTooltip() {
+    tooltip.classList.remove('visible')
+    tooltip.hidden = true
+  }
+  ttClose.addEventListener('click', hideTooltip)
+  root.querySelectorAll('.scenery-clickable').forEach(el => {
+    el.addEventListener('click', () => showTooltip(el))
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showTooltip(el) }
+    })
+  })
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !tooltip.hidden) hideTooltip()
   })
 
   /* ── LED blink ── */

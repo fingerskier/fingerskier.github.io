@@ -810,6 +810,75 @@
   50% { transform: rotate(-15deg); }
 }
 
+/* ── Clickable scenery ── */
+.scenery-clickable {
+  pointer-events: auto;
+  cursor: pointer;
+  transition: opacity 0.2s, filter 0.2s, transform 0.2s;
+}
+.scenery-clickable:hover,
+.scenery-clickable:focus-visible {
+  opacity: 0.9 !important;
+  filter: drop-shadow(0 0 8px var(--accent));
+  outline: none;
+  transform: scale(1.03);
+}
+.scenery-clickable:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.scenery-tooltip {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 300;
+  max-width: min(360px, calc(100vw - 3rem));
+  background: linear-gradient(135deg, var(--spec-plate-from), var(--spec-plate-to));
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.25rem 1rem 1rem;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+  transform: translateY(12px);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.scenery-tooltip.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+.scenery-tooltip-close {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-body);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+.scenery-tooltip-close:hover { color: var(--accent); }
+.scenery-tooltip-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin: 0 0 0.4rem;
+}
+.scenery-tooltip-body {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.icv.plain-mode .scenery-tooltip { display: none !important; }
+@media print { .scenery-tooltip { display: none !important; } }
+
 /* ── Headings ── */
 .zone h2 {
   font-family: "JetBrains Mono", monospace;

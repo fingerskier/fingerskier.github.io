@@ -383,11 +383,11 @@ All CV content lives in `CV.md` and is rendered into the HTML.  When updating th
 3. ~~Camera following~~
 4. ~~Zone transition animations~~
 
-### Phase 3 — Scenery & Polish *(in progress)*
+### Phase 3 — Scenery & Polish ✅
 1. ~~Parallax background layers~~
-2. Zone-specific scenery (machines, instruments, bookshelves)
+2. ~~Zone-specific scenery (machines, instruments, bookshelves)~~
 3. ~~Skill meters/gauges animation~~
-4. Interactive elements (clickable machines, spec plates)
+4. ~~Interactive elements (clickable machines, spec plates)~~
 5. ~~HUD with progress bar and navigation~~
 
 ### Phase 4 — Delight
