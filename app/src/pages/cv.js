@@ -243,6 +243,12 @@ const ZONES = [
           <rect x="34" y="20" width="32" height="16" rx="3" fill="#E8742A"/>
           <circle cx="50" cy="165" r="5" fill="#333"/>
           <circle cx="35" cy="155" r="3" fill="#0f0" class="machine-led"/>
+          <g class="actuator-sparks">
+            <circle class="spark spark-1" cx="50" cy="22" r="1.5" fill="#ffb347"/>
+            <circle class="spark spark-2" cx="46" cy="22" r="1" fill="#ff7a2e"/>
+            <circle class="spark spark-3" cx="54" cy="22" r="1.2" fill="#ffd166"/>
+            <circle class="spark spark-4" cx="48" cy="22" r="0.9" fill="#ff9640"/>
+          </g>
         </svg>
         <svg class="scenery-loadcell-svg scenery-clickable" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"
              tabindex="0" role="button" aria-label="Load cell readout: details"
@@ -347,6 +353,9 @@ const ZONES = [
           <text class="music-note note-1" x="200" y="80" font-size="24" fill="#E8742A" opacity="0.5">&#9835;</text>
           <text class="music-note note-2" x="230" y="60" font-size="18" fill="#4A6FA5" opacity="0.4">&#9834;</text>
           <text class="music-note note-3" x="180" y="40" font-size="20" fill="#1A6B5C" opacity="0.4">&#9833;</text>
+          <text class="music-note note-4" x="140" y="70" font-size="16" fill="#E8742A" opacity="0.4">&#9834;</text>
+          <text class="music-note note-5" x="260" y="90" font-size="22" fill="#1A6B5C" opacity="0.45">&#9839;</text>
+          <text class="music-note note-6" x="120" y="50" font-size="14" fill="#4A6FA5" opacity="0.4">&#9837;</text>
         </svg>
       </div>
     `,

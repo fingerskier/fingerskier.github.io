@@ -586,6 +586,23 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
+
+/* Actuator sparks — timed to actuator-move downstroke */
+.spark {
+  opacity: 0;
+  transform-origin: 50px 22px;
+  filter: drop-shadow(0 0 2px currentColor);
+}
+@keyframes spark-fly {
+  0%   { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  10%  { opacity: 1; }
+  60%  { opacity: 0.7; }
+  100% { opacity: 0; transform: var(--spark-end) scale(1); }
+}
+.spark-1 { --spark-end: translate(-12px, -18px); animation: spark-fly 1.8s ease-out infinite; animation-delay: 0.2s; }
+.spark-2 { --spark-end: translate(10px, -14px);  animation: spark-fly 1.6s ease-out infinite; animation-delay: 0.6s; }
+.spark-3 { --spark-end: translate(-6px, -22px);  animation: spark-fly 2.1s ease-out infinite; animation-delay: 1.0s; }
+.spark-4 { --spark-end: translate(14px, -16px);  animation: spark-fly 1.9s ease-out infinite; animation-delay: 1.4s; }
 .scenery-loadcell-svg {
   position: absolute;
   right: 12%;
@@ -717,13 +734,26 @@
 .music-note {
   animation: note-float 4s ease-in-out infinite;
 }
-.note-1 { animation-delay: 0s; }
-.note-2 { animation-delay: 1.3s; }
-.note-3 { animation-delay: 2.6s; }
+.note-1 { animation-delay: 0s;   animation-duration: 4s;   }
+.note-2 { animation-delay: 1.3s; animation-duration: 4.5s; }
+.note-3 { animation-delay: 2.6s; animation-duration: 3.8s; }
+.note-4 { animation-delay: 0.7s; animation-duration: 5s;   animation-name: note-drift; }
+.note-5 { animation-delay: 2.1s; animation-duration: 4.2s; animation-name: note-drift-right; }
+.note-6 { animation-delay: 3.4s; animation-duration: 4.7s; animation-name: note-drift; }
 @keyframes note-float {
   0% { transform: translateY(0); opacity: 0.5; }
   50% { transform: translateY(-20px); opacity: 0.2; }
   100% { transform: translateY(-40px); opacity: 0; }
+}
+@keyframes note-drift {
+  0%   { transform: translate(0, 0) rotate(0deg);     opacity: 0.45; }
+  50%  { transform: translate(-10px, -24px) rotate(-8deg); opacity: 0.25; }
+  100% { transform: translate(-18px, -50px) rotate(-14deg); opacity: 0; }
+}
+@keyframes note-drift-right {
+  0%   { transform: translate(0, 0) rotate(0deg);     opacity: 0.5; }
+  50%  { transform: translate(12px, -22px) rotate(10deg); opacity: 0.25; }
+  100% { transform: translate(22px, -48px) rotate(18deg); opacity: 0; }
 }
 
 /* ── Library zone ── */
