@@ -531,6 +531,7 @@ export async function renderCV() {
             ${ZONES.map((z, i) => `<button class="hud-dot${i === 0 ? ' active' : ''}" data-zone-index="${i}" title="${z.label}"></button>`).join('')}
           </div>
           <button class="theme-toggle" aria-label="Toggle dark mode">${theme === 'dark' ? '☀️' : '🌙'}</button>
+          <button class="sound-toggle" aria-label="Toggle sound" aria-pressed="false">🔇</button>
           <button class="mode-toggle" aria-label="Toggle plain mode">${plain ? '🎮' : '📄'}</button>
         </div>
       </div>
@@ -587,6 +588,7 @@ function initInteractiveCV(root, startPlain) {
   const parallaxWall = root.querySelector('.parallax-wall')
   let isPlain = startPlain
   let lastScrollLeft = 0
+  let lastActiveIdx = -1
 
   /* ── Mode toggle ── */
   modeToggle.addEventListener('click', () => {
@@ -594,6 +596,43 @@ function initInteractiveCV(root, startPlain) {
     icv.classList.toggle('plain-mode', isPlain)
     sessionStorage.setItem('cv-plain', String(isPlain))
     modeToggle.textContent = isPlain ? '🎮' : '📄'
+  })
+
+  /* ── Sound (off by default; Web Audio only on user gesture) ── */
+  const soundToggle = root.querySelector('.sound-toggle')
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  let soundOn = !reducedMotion && localStorage.getItem('cv-sound') === 'on'
+  let audioCtx = null
+  const ZONE_FREQS = [392.0, 440.0, 523.25, 587.33, 659.25, 739.99, 830.61] // G4..G#5
+  function updateSoundBtn() {
+    soundToggle.textContent = soundOn ? '🔊' : '🔇'
+    soundToggle.setAttribute('aria-pressed', String(soundOn))
+  }
+  updateSoundBtn()
+  function ensureCtx() {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+    return audioCtx
+  }
+  function playBlip(freq) {
+    if (!soundOn) return
+    const ctx = ensureCtx()
+    const now = ctx.currentTime
+    const osc = ctx.createOscillator()
+    const gain = ctx.createGain()
+    osc.type = 'sine'
+    osc.frequency.setValueAtTime(freq, now)
+    gain.gain.setValueAtTime(0, now)
+    gain.gain.linearRampToValueAtTime(0.08, now + 0.015)
+    gain.gain.exponentialRampToValueAtTime(0.0005, now + 0.28)
+    osc.connect(gain).connect(ctx.destination)
+    osc.start(now)
+    osc.stop(now + 0.32)
+  }
+  soundToggle.addEventListener('click', () => {
+    soundOn = !soundOn
+    localStorage.setItem('cv-sound', soundOn ? 'on' : 'off')
+    updateSoundBtn()
+    if (soundOn) playBlip(ZONE_FREQS[0])
   })
 
   /* ── Theme toggle ── */
@@ -684,8 +723,12 @@ function initInteractiveCV(root, startPlain) {
         if (zones[i].getBoundingClientRect().left <= track.clientWidth / 2) { activeIdx = i; break }
       }
     }
-    hudLabel.textContent = ZONES[activeIdx].label
-    hudDots.forEach((d, i) => d.classList.toggle('active', i === activeIdx))
+    if (activeIdx !== lastActiveIdx) {
+      hudLabel.textContent = ZONES[activeIdx].label
+      hudDots.forEach((d, i) => d.classList.toggle('active', i === activeIdx))
+      if (lastActiveIdx !== -1) playBlip(ZONE_FREQS[activeIdx % ZONE_FREQS.length])
+      lastActiveIdx = activeIdx
+    }
   }
 
   track.addEventListener('scroll', onScroll)
