@@ -8,7 +8,7 @@ Remaining work drawn from `doc/PLAYABLE_CV.md` roadmap (Phases 3–4).
 - [x] **P1 — Phase 3: Zone-specific scenery** (machines, instruments, bookshelves per zone)
 - [x] **P1 — Phase 3: Interactive elements** (clickable machines, spec plates)
 - [x] **P2 — Phase 4: Particle effects** (sparks near machines, musical notes on stage)
-- [ ] **P2 — Phase 4: Easter eggs** (Konami code, hidden project details)
+- [x] **P2 — Phase 4: Easter eggs** (Konami code, hidden project details)
 - [ ] **P3 — Phase 4: Sound design** (optional, off by default)
 - [ ] **P3 — Verify `cv.json` parity with `CV.md`** after any CV edits (source-of-truth is `CV.md`)
 - [ ] **P3 — Accessibility pass**: keyboard navigation, focus states, reduced-motion honored in all animations

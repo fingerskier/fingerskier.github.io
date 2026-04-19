@@ -545,6 +545,22 @@ export async function renderCV() {
         <p class="scenery-tooltip-body"></p>
       </div>
 
+      <div class="easter-egg" role="dialog" aria-modal="true" aria-labelledby="ee-title" hidden>
+        <div class="easter-egg-card">
+          <button class="easter-egg-close" aria-label="Close">&times;</button>
+          <div class="easter-egg-konami">&uarr; &uarr; &darr; &darr; &larr; &rarr; &larr; &rarr; B A</div>
+          <h3 id="ee-title">SECRET LEVEL UNLOCKED</h3>
+          <ul class="easter-egg-facts">
+            <li>Father of 5. Husband of 1.</li>
+            <li>Writes songs and proofs with equal seriousness.</li>
+            <li>First program: a BASIC text adventure, age 9.</li>
+            <li>Believes maintainable code is a love language.</li>
+            <li>If you found this, you&rsquo;re exactly the kind of person I like working with.</li>
+          </ul>
+          <p class="easter-egg-hint">Press <kbd>Esc</kbd> to return to the workshop.</p>
+        </div>
+      </div>
+
       <div class="zones-track" id="main-content">
         ${ZONES.map((z, i) => `
           <section class="zone" id="zone-${z.id}" data-zone="${z.id}" data-zone-index="${i}">
@@ -740,6 +756,35 @@ function initInteractiveCV(root, startPlain) {
     if (e.key === 'Escape' && !tooltip.hidden) hideTooltip()
   })
 
+  /* ── Konami easter egg ── */
+  const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a']
+  let konamiBuf = []
+  const egg = root.querySelector('.easter-egg')
+  const eggClose = egg.querySelector('.easter-egg-close')
+  function showEgg() {
+    if (!egg.hidden) return
+    egg.hidden = false
+    requestAnimationFrame(() => egg.classList.add('visible'))
+    eggClose.focus()
+  }
+  function hideEgg() {
+    egg.classList.remove('visible')
+    setTimeout(() => { egg.hidden = true }, 250)
+  }
+  eggClose.addEventListener('click', hideEgg)
+  egg.addEventListener('click', (e) => { if (e.target === egg) hideEgg() })
+  function onKonami(e) {
+    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key
+    konamiBuf.push(key)
+    if (konamiBuf.length > konami.length) konamiBuf.shift()
+    if (konamiBuf.length === konami.length && konamiBuf.every((k, i) => k === konami[i])) {
+      konamiBuf = []
+      showEgg()
+    }
+    if (e.key === 'Escape' && !egg.hidden) hideEgg()
+  }
+  window.addEventListener('keydown', onKonami)
+
   /* ── LED blink ── */
   const leds = root.querySelectorAll('.status-led')
   const intervals = []
@@ -759,6 +804,7 @@ function initInteractiveCV(root, startPlain) {
   const obs = new MutationObserver(() => {
     if (!root.querySelector('.icv')) {
       window.removeEventListener('keydown', onKey)
+      window.removeEventListener('keydown', onKonami)
       window.removeEventListener('scroll', onScroll)
       intervals.forEach(clearInterval)
       mObs.disconnect()
