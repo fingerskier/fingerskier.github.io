@@ -1,0 +1,32 @@
+name: Content correction
+description: A fact, date, typo, or attribution in the CV is wrong.
+title: "[content] "
+labels: ["content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `CV.md` is the source of truth; `cv.json` is derived from it. Edits
+        go in `CV.md` first.
+
+  - type: input
+    id: location
+    attributes:
+      label: Where is the issue?
+      placeholder: "Section: PROFESSIONAL EXPERIENCE → ACS Online"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: What does it currently say?
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct
+    attributes:
+      label: What should it say?
+    validations:
+      required: true

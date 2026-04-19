@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question
+    url: https://github.com/fingerskier/fingerskier.github.io/discussions
+    about: For open-ended questions or ideas, start a discussion instead of filing an issue.

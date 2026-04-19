@@ -1,0 +1,41 @@
+name: Feature request
+description: Suggest a new capability or enhancement.
+title: "[feat] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the user-facing pain or missed opportunity, not the solution.
+      placeholder: On narrow screens, zone labels overflow the HUD.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What would you like to see happen? Mock-ups or sketches welcome.
+      placeholder: Truncate zone labels with ellipsis below 400px.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: Optional — other approaches you thought about and why they're worse.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: phase
+    attributes:
+      label: Roadmap phase
+      description: If you know where this fits in doc/PLAYABLE_CV.md, check one.
+      options:
+        - label: Phase 1-2 (core mechanics)
+        - label: Phase 3 (interactive scenery)
+        - label: Phase 4 (polish / easter eggs)
+        - label: New phase / unlisted

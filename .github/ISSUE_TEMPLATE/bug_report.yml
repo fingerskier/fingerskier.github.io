@@ -1,0 +1,71 @@
+name: Bug report
+description: Something on the site is broken or behaving unexpectedly.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug. The more specific, the faster it can be fixed.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the unexpected behavior.
+      placeholder: Clicking the sound toggle did nothing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      placeholder: Sound should start playing when toggled on.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps that reliably trigger the issue.
+      placeholder: |
+        1. Open the CV page
+        2. Scroll to zone 3
+        3. Click the sound toggle
+        4. Nothing happens
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome (desktop)
+        - Firefox (desktop)
+        - Safari (desktop)
+        - Edge (desktop)
+        - Safari (iOS)
+        - Chrome (Android)
+        - Other (note below)
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device / OS
+      placeholder: iPhone 14 Pro, iOS 17.4
+    validations:
+      required: false
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors (if any)
+      description: Open DevTools → Console and paste any red errors.
+      render: shell
+    validations:
+      required: false

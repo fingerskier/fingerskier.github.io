@@ -14,4 +14,4 @@ Remaining work drawn from `doc/PLAYABLE_CV.md` roadmap (Phases 3–4).
 - [x] **P3 — Accessibility pass**: keyboard navigation, focus states, reduced-motion honored in all animations
 - [x] **P4 — Mobile polish**: re-test vertical-scroll adaptation across iOS/Android breakpoints
 - [x] **P4 — Performance audit**: Lighthouse pass, lazy-load parallax/scenery assets
-- [ ] **P4 — Add GH issue templates / enable Issues** so future work is trackable in GH
+- [x] **P4 — Add GH issue templates / enable Issues** so future work is trackable in GH
