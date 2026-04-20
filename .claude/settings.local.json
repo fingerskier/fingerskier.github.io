@@ -21,7 +21,17 @@
       "Bash(gh issue:*)",
       "Bash(git commit:*)",
       "Bash(wc:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "mcp__reqall-net__list_records",
+      "Bash(npm test:*)",
+      "Bash(npm --version)",
+      "Bash(node -c /Users/fingerskier/dev/fingerskier/fingerskier.github.io/app/src/main.js)",
+      "Bash(echo \"Syntax check result: $?\")",
+      "Bash(node -c /Users/fingerskier/dev/fingerskier/fingerskier.github.io/app/src/pages/cv.js)",
+      "Bash(node -c /Users/fingerskier/dev/fingerskier/fingerskier.github.io/app/src/pages/projects.js)",
+      "mcp__reqall-net__upsert_record",
+      "mcp__reqall-net__get_record",
+      "Bash(npx vite:*)"
     ]
   }
 }

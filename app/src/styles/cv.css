@@ -1149,7 +1149,11 @@
 /* ── Print ── */
 @media print {
   .hud, .character, .parallax-layer, .zone-scenery,
-  .mode-toggle, .skip-link, .deploy-pipeline {
+  .mode-toggle, .skip-link, .deploy-pipeline, .project-stations,
+  .cv-links, .contact-links, .music-links {
+    display: none !important;
+  }
+  .zone[data-zone="exit"] {
     display: none !important;
   }
   .icv {
@@ -1167,12 +1171,37 @@
     min-width: 0;
     height: auto;
     max-width: none;
-    padding: 1rem 0;
+    padding: 0.25rem 0;
+    margin: 0;
     break-inside: avoid;
     page-break-inside: avoid;
   }
-  .zone h2 { font-size: 1.2rem; }
-  .role h3 { font-size: 0.95rem; }
+  .zone-content {
+    padding: 0;
+    margin: 0;
+  }
+  .role {
+    margin: 0.25rem 0;
+    padding: 0.25rem 0;
+  }
+  .zone h2 {
+    font-size: 1.2rem;
+    margin: 0.25rem 0;
+  }
+  .role h3 {
+    font-size: 0.95rem;
+    margin: 0.15rem 0;
+  }
+  ul, ol {
+    margin: 0.15rem 0;
+    padding-left: 1.2rem;
+  }
+  li {
+    margin: 0.1rem 0;
+  }
+  p {
+    margin: 0.15rem 0;
+  }
   a { color: inherit; }
 }
 
@@ -1342,6 +1371,79 @@
   color: var(--light);
 }
 
+/* ── Particle effects ── */
+.particle {
+  position: absolute;
+  bottom: 20%;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 10;
+  animation: particle-rise 1.8s ease-out forwards;
+}
+.particle-spark {
+  color: var(--accent);
+  font-size: 10px;
+  text-shadow: 0 0 4px var(--accent);
+}
+.particle-note {
+  color: var(--blue);
+  font-size: 18px;
+  opacity: 0.7;
+}
+@keyframes particle-rise {
+  0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+  100% { transform: translateY(-60px) translateX(var(--drift, 0px)); opacity: 0; }
+}
+
+/* ── Easter egg (Konami code) ── */
+.easter-egg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: ee-flash 2.5s ease-out forwards;
+}
+.ee-text {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(2rem, 8vw, 5rem);
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+  animation: ee-zoom 0.6s ease-out forwards;
+}
+@keyframes ee-zoom {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes ee-flash {
+  0% { background: rgba(232, 116, 42, 0.15); }
+  20% { background: transparent; }
+  100% { opacity: 0; }
+}
+.ee-confetti {
+  position: absolute;
+  font-size: 18px;
+  animation: ee-burst 1.5s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+@keyframes ee-burst {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translate(var(--drift, 0px), var(--dist, -60px)) rotate(360deg) scale(0.5); opacity: 0; }
+}
+
+.icv.easter-egg .character-svg {
+  animation: ee-bounce 0.5s ease-in-out 3;
+}
+@keyframes ee-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   .character, .parallax-layer, .zone-scenery, .deploy-pipeline {
@@ -1364,5 +1466,8 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  .particle, .easter-egg-overlay {
+    display: none !important;
   }
 }
