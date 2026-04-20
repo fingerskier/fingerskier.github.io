@@ -959,6 +959,7 @@
   opacity: 0;
   transition: opacity 0.25s ease;
 }
+.easter-egg[hidden] { display: none; }
 .easter-egg.visible { opacity: 1; }
 .easter-egg-card {
   position: relative;
