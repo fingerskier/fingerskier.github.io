@@ -1,6 +1,6 @@
-(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))c(a);new MutationObserver(a=>{for(const n of a)if(n.type==="childList")for(const g of n.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&c(g)}).observe(document,{childList:!0,subtree:!0});function t(a){const n={};return a.integrity&&(n.integrity=a.integrity),a.referrerPolicy&&(n.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?n.credentials="include":a.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function c(a){if(a.ep)return;a.ep=!0;const n=t(a);fetch(a.href,n)}})();let C=null;async function G(){return C||(C=await(await fetch("./cv.json")).json(),C)}function h(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function W(e){return Object.entries(e).filter(([s])=>s!=="Email").map(([s,t])=>`<a href="${h(t)}" target="_blank" rel="noopener">${h(s)}</a>`).join(`
-          `)}function Q(e){return e.split(/\.\s+/).filter(s=>s.trim()).map(s=>{const t=s.endsWith(".")?s:s+".";return`<li>${h(t)}</li>`}).join(`
-            `)}const U=`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const l of document.querySelectorAll('link[rel="modulepreload"]'))o(l);new MutationObserver(l=>{for(const n of l)if(n.type==="childList")for(const f of n.addedNodes)f.tagName==="LINK"&&f.rel==="modulepreload"&&o(f)}).observe(document,{childList:!0,subtree:!0});function a(l){const n={};return l.integrity&&(n.integrity=l.integrity),l.referrerPolicy&&(n.referrerPolicy=l.referrerPolicy),l.crossOrigin==="use-credentials"?n.credentials="include":l.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(l){if(l.ep)return;l.ep=!0;const n=a(l);fetch(l.href,n)}})();let k=null;async function le(){return k||(k=await(await fetch("./cv.json")).json(),k)}function p(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function re(e){return Object.entries(e).filter(([i])=>i!=="Email").map(([i,a])=>`<a href="${p(a)}" target="_blank" rel="noopener">${p(i)}</a>`).join(`
+          `)}function ne(e){return e.split(/\.\s+/).filter(i=>i.trim()).map(i=>{const a=i.endsWith(".")?i:i+".";return`<li>${p(a)}</li>`}).join(`
+            `)}const oe=`
           <div class="project-stations">
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
@@ -66,7 +66,7 @@
                 </dl>
               </div>
             </div>
-          </div>`,K=`
+          </div>`,ce=`
           <div class="project-stations">
             <div class="station" data-status="active" tabindex="0" role="button" aria-expanded="false">
               <span class="status-led green"></span>
@@ -103,22 +103,22 @@
                 </dl>
               </div>
             </div>
-          </div>`;function J(e){return e.experience.map(s=>{const t=s.company==="Turing Automations",c=s.company==="Premier Coil Solutions",a=s.location?` &middot; ${h(s.location)}`:"",n=t?U:c?K:"";return`
+          </div>`;function de(e){return e.experience.map(i=>{const a=i.company==="Turing Automations",o=i.company==="Premier Coil Solutions",l=i.location?` &middot; ${p(i.location)}`:"",n=a?oe:o?ce:"";return`
         <article class="role">
-          <h3>${h(s.company)} &mdash; ${h(s.title)}</h3>
-          <time>${h(s.dates)}${a}</time>
+          <h3>${p(i.company)} &mdash; ${p(i.title)}</h3>
+          <time>${p(i.dates)}${l}</time>
           <ul>
-            ${Q(s.responsibilities)}
+            ${ne(i.responsibilities)}
           </ul>${n}
         </article>`}).join(`
-`)}function X(e){return e.education.map(s=>`<li><strong>${h(s.degree)}</strong> &mdash; ${h(s.institution)}, ${s.year}</li>`).join(`
-          `)}const T=[{id:"entryway",label:"Entryway",content:e=>`
+`)}function pe(e){return e.education.map(i=>`<li><strong>${p(i.degree)}</strong> &mdash; ${p(i.institution)}, ${i.year}</li>`).join(`
+          `)}const M=[{id:"entryway",label:"Entryway",content:e=>`
       <div class="zone-content">
-        <h1>${h(e.name)}</h1>
+        <h1>${p(e.name)}</h1>
         <p class="cv-title">Co-Founder &amp; Principal Engineer &mdash; Turing Automations</p>
         <p class="cv-tagline">Creator of things &middot; Songwriter &middot; Thinkster</p>
         <div class="cv-links">
-          ${W(e.links)}
+          ${re(e.links)}
           <a href="#projects" class="projects-link">Projects</a>
         </div>
       </div>
@@ -180,8 +180,11 @@
           </div>
         </div>
       </div>
-      <div class="zone-scenery" aria-hidden="true">
-        <svg class="scenery-scope-svg" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+      <div class="zone-scenery">
+        <svg class="scenery-scope-svg scenery-clickable" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg"
+             tabindex="0" role="button" aria-label="Oscilloscope: details"
+             data-info-title="Oscilloscope"
+             data-info-body="Signal debugging across serial protocols (UART, SPI, I²C, RS-485) and hardware bring-up of custom boards.">
           <rect x="0" y="0" width="160" height="120" rx="8" fill="#333" stroke="#555" stroke-width="3"/>
           <rect x="12" y="10" width="136" height="80" rx="4" fill="#0a1a0a"/>
           <line x1="12" y1="50" x2="148" y2="50" stroke="#0a3a0a" stroke-width="0.5"/>
@@ -193,7 +196,7 @@
         </svg>
         <svg class="scenery-pegboard-svg" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="0" width="120" height="180" rx="2" fill="#c4a882" opacity="0.3"/>
-          ${[0,1,2,3,4,5,6,7].map(s=>[0,1,2,3,4].map(t=>'<circle cx="'+(12+t*24)+'" cy="'+(12+s*22)+'" r="3" fill="rgba(0,0,0,0.15)"/>').join("")).join("")}
+          ${[0,1,2,3,4,5,6,7].map(i=>[0,1,2,3,4].map(a=>'<circle cx="'+(12+a*24)+'" cy="'+(12+i*22)+'" r="3" fill="rgba(0,0,0,0.15)"/>').join("")).join("")}
           <!-- wrench -->
           <rect x="20" y="25" width="6" height="50" rx="3" fill="#888" opacity="0.5" transform="rotate(-15 23 50)"/>
           <!-- screwdriver -->
@@ -206,18 +209,30 @@
     `},{id:"floor",label:"The Floor",content:e=>`
       <div class="zone-content">
         <h2>Experience</h2>
-        ${J(e)}
+        ${de(e)}
       </div>
-      <div class="zone-scenery" aria-hidden="true">
-        <svg class="scenery-actuator-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+      <div class="zone-scenery">
+        <svg class="scenery-actuator-svg scenery-clickable" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg"
+             tabindex="0" role="button" aria-label="Linear actuator: details"
+             data-info-title="Linear Actuator"
+             data-info-body="Safety-supervised position control with load-cell feedback. Programmed for Spectrum Application force profiles.">
           <rect x="20" y="140" width="60" height="50" rx="4" fill="#555" stroke="#444" stroke-width="2"/>
           <rect x="10" y="130" width="80" height="14" rx="2" fill="#666"/>
           <rect class="actuator-rod" x="38" y="30" width="24" height="100" rx="4" fill="#999" stroke="#777" stroke-width="1"/>
           <rect x="34" y="20" width="32" height="16" rx="3" fill="#E8742A"/>
           <circle cx="50" cy="165" r="5" fill="#333"/>
           <circle cx="35" cy="155" r="3" fill="#0f0" class="machine-led"/>
+          <g class="actuator-sparks">
+            <circle class="spark spark-1" cx="50" cy="22" r="1.5" fill="#ffb347"/>
+            <circle class="spark spark-2" cx="46" cy="22" r="1" fill="#ff7a2e"/>
+            <circle class="spark spark-3" cx="54" cy="22" r="1.2" fill="#ffd166"/>
+            <circle class="spark spark-4" cx="48" cy="22" r="0.9" fill="#ff9640"/>
+          </g>
         </svg>
-        <svg class="scenery-loadcell-svg" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+        <svg class="scenery-loadcell-svg scenery-clickable" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"
+             tabindex="0" role="button" aria-label="Load cell readout: details"
+             data-info-title="Load Cell"
+             data-info-body="Real-time force measurement. Drives member assessment scoring and safety cutoffs in the Spectrum platform.">
           <rect x="0" y="0" width="120" height="60" rx="4" fill="#222" stroke="#444" stroke-width="2"/>
           <rect x="8" y="8" width="104" height="36" rx="2" fill="#0a0a0a"/>
           <text class="loadcell-value" x="60" y="34" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="22" fill="#0f0">2847</text>
@@ -226,7 +241,7 @@
         <svg class="scenery-conveyor-svg" viewBox="0 0 800 30" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="5" width="800" height="20" rx="3" fill="#444"/>
           <g class="conveyor-segments">
-            ${Array.from({length:20},(s,t)=>'<rect x="'+t*40+'" y="7" width="35" height="16" rx="1" fill="#'+(t%2?"666":"555")+'"/>').join("")}
+            ${Array.from({length:20},(i,a)=>'<rect x="'+a*40+'" y="7" width="35" height="16" rx="1" fill="#'+(a%2?"666":"555")+'"/>').join("")}
           </g>
         </svg>
       </div>
@@ -250,16 +265,19 @@
           <span class="pipeline-step">Ship</span>
         </div>
       </div>
-      <div class="zone-scenery" aria-hidden="true">
-        <svg class="scenery-rack-svg" viewBox="0 0 80 240" xmlns="http://www.w3.org/2000/svg">
+      <div class="zone-scenery">
+        <svg class="scenery-rack-svg scenery-clickable" viewBox="0 0 80 240" xmlns="http://www.w3.org/2000/svg"
+             tabindex="0" role="button" aria-label="Server rack: details"
+             data-info-title="Server Rack"
+             data-info-body="AWS Elastic Beanstalk fleet, Aurora MySQL Serverless, auto-scaling load balancers serving 200+ franchise locations.">
           <rect x="0" y="0" width="80" height="240" rx="3" fill="#2a2a2a" stroke="#444" stroke-width="2"/>
           <rect x="4" y="4" width="72" height="232" rx="2" fill="#1a1a1a"/>
-          ${Array.from({length:8},(s,t)=>`
-            <rect x="10" y="${12+t*28}" width="60" height="22" rx="2" fill="#333" stroke="#444" stroke-width="1"/>
-            <circle cx="20" cy="${23+t*28}" r="2.5" fill="${["#0f0","#0f0","#ff0","#0f0","#0ff","#0f0","#f80","#0f0"][t]}" class="rack-led"/>
-            <circle cx="30" cy="${23+t*28}" r="2.5" fill="${["#0f0","#ff0","#0f0","#0f0","#0f0","#0ff","#0f0","#ff0"][t]}" class="rack-led"/>
-            <rect x="40" y="${17+t*28}" width="24" height="3" rx="1" fill="#555"/>
-            <rect x="40" y="${23+t*28}" width="24" height="3" rx="1" fill="#555"/>
+          ${Array.from({length:8},(i,a)=>`
+            <rect x="10" y="${12+a*28}" width="60" height="22" rx="2" fill="#333" stroke="#444" stroke-width="1"/>
+            <circle cx="20" cy="${23+a*28}" r="2.5" fill="${["#0f0","#0f0","#ff0","#0f0","#0ff","#0f0","#f80","#0f0"][a]}" class="rack-led"/>
+            <circle cx="30" cy="${23+a*28}" r="2.5" fill="${["#0f0","#ff0","#0f0","#0f0","#0f0","#0ff","#0f0","#ff0"][a]}" class="rack-led"/>
+            <rect x="40" y="${17+a*28}" width="24" height="3" rx="1" fill="#555"/>
+            <rect x="40" y="${23+a*28}" width="24" height="3" rx="1" fill="#555"/>
           `).join("")}
         </svg>
         <svg class="scenery-cables-svg" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
@@ -302,6 +320,9 @@
           <text class="music-note note-1" x="200" y="80" font-size="24" fill="#E8742A" opacity="0.5">&#9835;</text>
           <text class="music-note note-2" x="230" y="60" font-size="18" fill="#4A6FA5" opacity="0.4">&#9834;</text>
           <text class="music-note note-3" x="180" y="40" font-size="20" fill="#1A6B5C" opacity="0.4">&#9833;</text>
+          <text class="music-note note-4" x="140" y="70" font-size="16" fill="#E8742A" opacity="0.4">&#9834;</text>
+          <text class="music-note note-5" x="260" y="90" font-size="22" fill="#1A6B5C" opacity="0.45">&#9839;</text>
+          <text class="music-note note-6" x="120" y="50" font-size="14" fill="#4A6FA5" opacity="0.4">&#9837;</text>
         </svg>
       </div>
     `},{id:"library",label:"The Library",content:e=>`
@@ -315,11 +336,14 @@
         </ul>
         <h3>Education</h3>
         <ul>
-          ${X(e)}
+          ${pe(e)}
         </ul>
       </div>
-      <div class="zone-scenery" aria-hidden="true">
-        <svg class="scenery-bookshelf-svg" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+      <div class="zone-scenery">
+        <svg class="scenery-bookshelf-svg scenery-clickable" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg"
+             tabindex="0" role="button" aria-label="Bookshelf: details"
+             data-info-title="Bookshelf"
+             data-info-body="LEAN proofs, Knuth, Feynman, hymnals, philosophy. Books I actually reach for, not shelf décor.">
           <!-- shelf frame -->
           <rect x="0" y="0" width="140" height="200" rx="2" fill="#8B5E3C" opacity="0.25"/>
           <rect x="5" y="0" width="130" height="3" fill="#6B4226" opacity="0.4"/>
@@ -364,7 +388,7 @@
       <div class="zone-content">
         <h2>Let&rsquo;s build something.</h2>
         <div class="contact-links">
-          ${["GitHub","LinkedIn","X"].filter(s=>e.links[s]).map(s=>{const t=e.links[s],c=t.replace(/^https?:\/\//,"");return`<a href="${h(t)}" target="_blank" rel="noopener">${h(c)}</a>`}).join(`
+          ${["GitHub","LinkedIn","X"].filter(i=>e.links[i]).map(i=>{const a=e.links[i],o=a.replace(/^https?:\/\//,"");return`<a href="${p(a)}" target="_blank" rel="noopener">${p(o)}</a>`}).join(`
           `)}
         </div>
         <p class="cv-tagline">Father of 5 &mdash; husband of 1.<br>My true passion is to create and help others do what they were made to do.</p>
@@ -397,7 +421,7 @@
           <rect class="mailbox-flag" x="42" y="14" width="4" height="18" rx="1" fill="#E8742A"/>
         </svg>
       </div>
-    `}];function Z(){return`
+    `}];function he(){return`
   <svg class="character-svg" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
     <!-- hard hat -->
     <ellipse cx="30" cy="14" rx="16" ry="8" fill="#E8742A"/>
@@ -424,8 +448,8 @@
     <!-- arms -->
     <rect class="arm-left" x="11" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
     <rect class="arm-right" x="39" y="36" width="10" height="5" rx="2.5" fill="#F5CBA7"/>
-  </svg>`}const Y={entryway:{freq:110,type:"sine",gain:.06},workbench:{freq:165,type:"triangle",gain:.05},floor:{freq:82,type:"sawtooth",gain:.03},rack:{freq:130,type:"square",gain:.02},stage:{freq:220,type:"sine",gain:.07},library:{freq:196,type:"sine",gain:.04},exit:{freq:147,type:"triangle",gain:.05}};function ee(){let e=null,s=null,t=null,c=null,a=!1,n=null;function g(){e||(e=new(window.AudioContext||window.webkitAudioContext),s=e.createGain(),s.gain.value=.5,s.connect(e.destination),c=e.createGain(),c.gain.value=0,c.connect(s))}function B(){return g(),a=!a,a?(e.state==="suspended"&&e.resume(),n&&f(n)):(c.gain.setTargetAtTime(0,e.currentTime,.3),t&&(t.stop(e.currentTime+.5),t=null)),a}function f(r){if(n=r,!a||!e)return;const d=Y[r];if(!d)return;const p=e.currentTime;t&&t.stop(p+.4),t=e.createOscillator(),t.type=d.type,t.frequency.setValueAtTime(d.freq,p);const u=e.createOscillator(),m=e.createGain();u.frequency.value=2+Math.random()*2,m.gain.value=d.freq*.008,u.connect(m),m.connect(t.frequency),u.start(p),t.connect(c),c.gain.setTargetAtTime(d.gain,p,.5),t.start(p+.1),t.onended=()=>{u.stop()}}function x(){if(!a||!e)return;const r=e.currentTime,d=e.createOscillator(),p=e.createGain();d.type="triangle",d.frequency.setValueAtTime(800+Math.random()*400,r),d.frequency.exponentialRampToValueAtTime(200,r+.06),p.gain.setValueAtTime(.08,r),p.gain.exponentialRampToValueAtTime(.001,r+.08),d.connect(p),p.connect(s),d.start(r),d.stop(r+.08)}function w(){if(!a||!e)return;const r=e.currentTime,d=e.createOscillator(),p=e.createGain();d.type="sine",d.frequency.setValueAtTime(1200,r),d.frequency.exponentialRampToValueAtTime(600,r+.04),p.gain.setValueAtTime(.1,r),p.gain.exponentialRampToValueAtTime(.001,r+.05),d.connect(p),p.connect(s),d.start(r),d.stop(r+.05)}function k(){if(t)try{t.stop()}catch{}e&&e.close(),e=null,a=!1}return{toggle:B,setZone:f,playStep:x,playClick:w,destroy:k,isEnabled:()=>a}}async function te(){const e=document.getElementById("app"),s=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches,t=document.documentElement.dataset.theme||"light",c=await G();e.innerHTML=`
-    <div class="icv${s?" plain-mode":""}" data-theme="${t}">
+  </svg>`}async function ue(){const e=document.getElementById("app"),i=sessionStorage.getItem("cv-plain")==="true"||window.matchMedia("(prefers-reduced-motion: reduce)").matches,a=document.documentElement.dataset.theme||"light",o=await le();e.innerHTML=`
+    <div class="icv${i?" plain-mode":""}" data-theme="${a}">
       <a href="#main-content" class="skip-link">Skip to content</a>
 
       <div class="parallax-layer parallax-sky" aria-hidden="true"></div>
@@ -441,27 +465,49 @@
         </div>
         <div class="hud-right">
           <div class="hud-nav-dots">
-            ${T.map((a,n)=>`<button class="hud-dot${n===0?" active":""}" data-zone-index="${n}" title="${a.label}"></button>`).join("")}
+            ${M.map((l,n)=>`<button class="hud-dot${n===0?" active":""}" data-zone-index="${n}" title="${l.label}"></button>`).join("")}
           </div>
-          <button class="sound-toggle" aria-label="Toggle sound" title="Toggle sound">🔇</button>
-          <button class="theme-toggle" aria-label="Toggle dark mode">${t==="dark"?"☀️":"🌙"}</button>
-          <button class="mode-toggle" aria-label="Toggle plain mode">${s?"🎮":"📄"}</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode">${a==="dark"?"☀️":"🌙"}</button>
+          <button class="sound-toggle" aria-label="Toggle sound" aria-pressed="false">🔇</button>
+          <button class="mode-toggle" aria-label="Toggle plain mode">${i?"🎮":"📄"}</button>
         </div>
       </div>
 
       <div class="character" aria-hidden="true">
-        ${Z()}
+        ${he()}
+      </div>
+
+      <div class="scenery-tooltip" role="dialog" aria-live="polite" hidden>
+        <button class="scenery-tooltip-close" aria-label="Close">&times;</button>
+        <h4 class="scenery-tooltip-title"></h4>
+        <p class="scenery-tooltip-body"></p>
+      </div>
+
+      <div class="easter-egg" role="dialog" aria-modal="true" aria-labelledby="ee-title" hidden>
+        <div class="easter-egg-card">
+          <button class="easter-egg-close" aria-label="Close">&times;</button>
+          <div class="easter-egg-konami">&uarr; &uarr; &darr; &darr; &larr; &rarr; &larr; &rarr; B A</div>
+          <h3 id="ee-title">SECRET LEVEL UNLOCKED</h3>
+          <ul class="easter-egg-facts">
+            <li>Father of 5. Husband of 1.</li>
+            <li>Writes songs and proofs with equal seriousness.</li>
+            <li>First program: a BASIC text adventure, age 9.</li>
+            <li>Believes maintainable code is a love language.</li>
+            <li>If you found this, you&rsquo;re exactly the kind of person I like working with.</li>
+          </ul>
+          <p class="easter-egg-hint">Press <kbd>Esc</kbd> to return to the workshop.</p>
+        </div>
       </div>
 
       <div class="zones-track" id="main-content">
-        ${T.map((a,n)=>`
-          <section class="zone" id="zone-${a.id}" data-zone="${a.id}" data-zone-index="${n}">
-            ${a.content(c)}
+        ${M.map((l,n)=>`
+          <section class="zone" id="zone-${l.id}" data-zone="${l.id}" data-zone-index="${n}">
+            ${l.content(o)}
           </section>
         `).join("")}
       </div>
     </div>
-  `,se(e,s)}function se(e,s){const t=e.querySelector(".icv"),c=e.querySelector(".zones-track"),a=e.querySelector(".character"),n=Array.from(e.querySelectorAll(".zone")),g=e.querySelector(".hud-progress-fill"),B=e.querySelector(".hud-zone-label"),f=Array.from(e.querySelectorAll(".hud-dot")),x=e.querySelector(".mode-toggle"),w=e.querySelector(".parallax-sky"),k=e.querySelector(".parallax-wall");let r=s,d=0;const p=ee(),u=e.querySelector(".sound-toggle");u.addEventListener("click",()=>{const i=p.toggle();u.textContent=i?"🔊":"🔇",u.classList.toggle("active",i),i&&p.playClick()}),x.addEventListener("click",()=>{r=!r,t.classList.toggle("plain-mode",r),sessionStorage.setItem("cv-plain",String(r)),x.textContent=r?"🎮":"📄"});const m=e.querySelector(".theme-toggle");m.addEventListener("click",()=>{const i=t.dataset.theme==="dark";t.dataset.theme=i?"light":"dark",document.documentElement.dataset.theme=t.dataset.theme,localStorage.setItem("cv-theme",t.dataset.theme),m.textContent=i?"🌙":"☀️"}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",i=>{if(!localStorage.getItem("cv-theme")){const l=i.matches?"dark":"light";t.dataset.theme=l,document.documentElement.dataset.theme=l,m.textContent=i.matches?"☀️":"🌙"}}),e.querySelector(".hud-home").addEventListener("click",()=>{r?n[0].scrollIntoView({behavior:"smooth",block:"start"}):n[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),f.forEach(i=>{i.addEventListener("click",()=>{const l=parseInt(i.dataset.zoneIndex,10);r?n[l].scrollIntoView({behavior:"smooth",block:"start"}):n[l].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function b(){if(r){const l=window.scrollY||document.documentElement.scrollTop,o=document.documentElement.scrollHeight-window.innerHeight;g.style.width=(o>0?l/o*100:0)+"%"}else{const l=c.scrollLeft,o=c.scrollWidth-c.clientWidth,S=o>0?l/o:0;g.style.width=S*100+"%";const _=S*(c.clientWidth-80);a.style.transform=`translateX(${_}px)`;const F=Math.abs(l-d);F>1&&(a.classList.add("walking"),a.classList.toggle("facing-left",l<d),F>5&&p.playStep()),d=l,clearTimeout(a._wt),clearTimeout(a._pt),a.classList.remove("pointing"),a._wt=setTimeout(()=>{a.classList.remove("walking"),a._pt=setTimeout(()=>a.classList.add("pointing"),400)},200),w&&(w.style.transform=`translateX(${-l*.1}px)`),k&&(k.style.transform=`translateX(${-l*.3}px)`)}let i=0;if(r){for(let l=n.length-1;l>=0;l--)if(n[l].getBoundingClientRect().top<=window.innerHeight/3){i=l;break}}else for(let l=n.length-1;l>=0;l--)if(n[l].getBoundingClientRect().left<=c.clientWidth/2){i=l;break}B.textContent=T[i].label,f.forEach((l,o)=>l.classList.toggle("active",o===i)),p.setZone(T[i].id)}c.addEventListener("scroll",b),window.addEventListener("scroll",b);function M(i){r||(i.key==="ArrowRight"?c.scrollBy({left:400,behavior:"smooth"}):i.key==="ArrowLeft"&&c.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",M);const V=e.querySelectorAll(".meter"),L=new IntersectionObserver(i=>{i.forEach(l=>{l.isIntersecting&&(l.target.classList.add("filled"),L.unobserve(l.target))})},{threshold:.2});V.forEach(i=>L.observe(i));const q=e.querySelectorAll(".station");function I(i){p.playClick();const l=i.classList.contains("expanded");q.forEach(o=>{o.classList.remove("expanded"),o.setAttribute("aria-expanded","false")}),l||(i.classList.add("expanded"),i.setAttribute("aria-expanded","true"))}q.forEach(i=>{i.addEventListener("click",()=>I(i)),i.addEventListener("keydown",l=>{(l.key==="Enter"||l.key===" ")&&(l.preventDefault(),I(i))})});const H=e.querySelectorAll(".status-led"),y=[];H.forEach(i=>{y.push(setInterval(()=>i.classList.toggle("blink"),800+Math.random()*1500))});const P=e.querySelector(".loadcell-value");P&&y.push(setInterval(()=>{P.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));function D(i,l){const o=document.createElement("span");o.classList.add("particle",`particle-${l}`),o.setAttribute("aria-hidden","true");const S=Math.random()*100;o.style.left=S+"%",o.style.setProperty("--drift",(Math.random()-.5)*40+"px"),l==="spark"?o.textContent=["*","•","✱"][Math.floor(Math.random()*3)]:o.textContent=["♫","♪","♩","♬"][Math.floor(Math.random()*4)],i.appendChild(o),o.addEventListener("animationend",()=>o.remove())}const A=e.querySelector("#zone-floor .zone-scenery"),E=e.querySelector("#zone-stage .zone-scenery");A&&y.push(setInterval(()=>{!r&&A.getBoundingClientRect().right>0&&A.getBoundingClientRect().left<window.innerWidth&&D(A,"spark")},800)),E&&y.push(setInterval(()=>{!r&&E.getBoundingClientRect().right>0&&E.getBoundingClientRect().left<window.innerWidth&&D(E,"note")},1200));const $=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];let v=0;function z(i){i.key===$[v]?(v++,v===$.length&&(v=0,N())):v=i.key===$[0]?1:0}window.addEventListener("keydown",z);function N(){t.classList.add("easter-egg");const i=document.createElement("div");i.className="easter-egg-overlay",i.setAttribute("aria-hidden","true"),i.innerHTML='<span class="ee-text">+ 1UP +</span>';for(let l=0;l<30;l++){const o=document.createElement("span");o.className="ee-confetti",o.style.left=Math.random()*100+"%",o.style.top=Math.random()*100+"%",o.style.setProperty("--drift",(Math.random()-.5)*200+"px"),o.style.setProperty("--dist",(Math.random()-.5)*200+"px"),o.textContent=["★","✦","✶","◆","✱"][Math.floor(Math.random()*5)],i.appendChild(o)}t.appendChild(i),setTimeout(()=>{i.remove(),t.classList.remove("easter-egg")},2500)}const j=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",M),window.removeEventListener("keydown",z),window.removeEventListener("scroll",b),y.forEach(clearInterval),p.destroy(),L.disconnect(),j.disconnect())});j.observe(e,{childList:!0}),requestAnimationFrame(b)}const ie=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",url:"https://fingerskier.github.io/gre_prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",url:"https://fingerskier.github.io/speakeasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",url:"https://fingerskier.github.io/numbersense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"simulations",label:"Simulations &amp; Visualizations",description:"Interactive simulations and visual experiments",projects:[{name:"SolarSystem",url:"https://fingerskier.github.io/SolarSystem",repo:"https://github.com/fingerskier/SolarSystem",description:"Interactive solar system simulation"},{name:"Biologize Me",url:"https://fingerskier.github.io/biologize_me",repo:"https://github.com/fingerskier/biologize_me",description:"Biology-inspired visualization experiment"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function ae(){const e=document.getElementById("app");e.innerHTML=`
+  `,ge(e,i)}function ge(e,i){const a=e.querySelector(".icv"),o=e.querySelector(".zones-track"),l=e.querySelector(".character"),n=Array.from(e.querySelectorAll(".zone")),f=e.querySelector(".hud-progress-fill"),Y=e.querySelector(".hud-zone-label"),D=Array.from(e.querySelectorAll(".hud-dot")),P=e.querySelector(".mode-toggle"),z=e.querySelector(".parallax-sky"),q=e.querySelector(".parallax-wall");let c=i,A=0,S=-1;P.addEventListener("click",()=>{c=!c,a.classList.toggle("plain-mode",c),sessionStorage.setItem("cv-plain",String(c)),P.textContent=c?"🎮":"📄"});const E=e.querySelector(".sound-toggle");let g=!window.matchMedia("(prefers-reduced-motion: reduce)").matches&&localStorage.getItem("cv-sound")==="on",C=null;const L=[392,440,523.25,587.33,659.25,739.99,830.61];function F(){E.textContent=g?"🔊":"🔇",E.setAttribute("aria-pressed",String(g))}F();function Z(){return C||(C=new(window.AudioContext||window.webkitAudioContext)),C}function j(t){if(!g)return;const s=Z(),r=s.currentTime,d=s.createOscillator(),y=s.createGain();d.type="sine",d.frequency.setValueAtTime(t,r),y.gain.setValueAtTime(0,r),y.gain.linearRampToValueAtTime(.08,r+.015),y.gain.exponentialRampToValueAtTime(5e-4,r+.28),d.connect(y).connect(s.destination),d.start(r),d.stop(r+.32)}E.addEventListener("click",()=>{g=!g,localStorage.setItem("cv-sound",g?"on":"off"),F(),g&&j(L[0])});const B=e.querySelector(".theme-toggle");B.addEventListener("click",()=>{const t=a.dataset.theme==="dark";a.dataset.theme=t?"light":"dark",document.documentElement.dataset.theme=a.dataset.theme,localStorage.setItem("cv-theme",a.dataset.theme),B.textContent=t?"🌙":"☀️"}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",t=>{if(!localStorage.getItem("cv-theme")){const s=t.matches?"dark":"light";a.dataset.theme=s,document.documentElement.dataset.theme=s,B.textContent=t.matches?"☀️":"🌙"}}),e.querySelector(".hud-home").addEventListener("click",()=>{c?n[0].scrollIntoView({behavior:"smooth",block:"start"}):n[0].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})}),D.forEach(t=>{t.addEventListener("click",()=>{const s=parseInt(t.dataset.zoneIndex,10);c?n[s].scrollIntoView({behavior:"smooth",block:"start"}):n[s].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"})})});function x(){if(c){const s=window.scrollY||document.documentElement.scrollTop,r=document.documentElement.scrollHeight-window.innerHeight;f.style.width=(r>0?s/r*100:0)+"%"}else{const s=o.scrollLeft,r=o.scrollWidth-o.clientWidth,d=r>0?s/r:0;f.style.width=d*100+"%";const y=d*(o.clientWidth-80);l.style.transform=`translateX(${y}px)`,Math.abs(s-A)>1&&(l.classList.add("walking"),l.classList.toggle("facing-left",s<A)),A=s,clearTimeout(l._wt),clearTimeout(l._pt),l.classList.remove("pointing"),l._wt=setTimeout(()=>{l.classList.remove("walking"),l._pt=setTimeout(()=>l.classList.add("pointing"),400)},200),z&&(z.style.transform=`translateX(${-s*.1}px)`),q&&(q.style.transform=`translateX(${-s*.3}px)`)}let t=0;if(c){for(let s=n.length-1;s>=0;s--)if(n[s].getBoundingClientRect().top<=window.innerHeight/3){t=s;break}}else for(let s=n.length-1;s>=0;s--)if(n[s].getBoundingClientRect().left<=o.clientWidth/2){t=s;break}t!==S&&(Y.textContent=M[t].label,D.forEach((s,r)=>s.classList.toggle("active",r===t)),S!==-1&&j(L[t%L.length]),S=t)}o.addEventListener("scroll",x),window.addEventListener("scroll",x);function R(t){c||(t.key==="ArrowRight"?o.scrollBy({left:400,behavior:"smooth"}):t.key==="ArrowLeft"&&o.scrollBy({left:-400,behavior:"smooth"}))}window.addEventListener("keydown",R);const ee=e.querySelectorAll(".meter"),T=new IntersectionObserver(t=>{t.forEach(s=>{s.isIntersecting&&(s.target.classList.add("filled"),T.unobserve(s.target))})},{threshold:.2});ee.forEach(t=>T.observe(t));const O=e.querySelectorAll(".station");function H(t){const s=t.classList.contains("expanded");O.forEach(r=>{r.classList.remove("expanded"),r.setAttribute("aria-expanded","false")}),s||(t.classList.add("expanded"),t.setAttribute("aria-expanded","true"))}O.forEach(t=>{t.addEventListener("click",()=>H(t)),t.addEventListener("keydown",s=>{(s.key==="Enter"||s.key===" ")&&(s.preventDefault(),H(t))})});const u=e.querySelector(".scenery-tooltip"),te=u.querySelector(".scenery-tooltip-title"),se=u.querySelector(".scenery-tooltip-body"),V=u.querySelector(".scenery-tooltip-close");function W(t){const s=t.getAttribute("data-info-title")||"",r=t.getAttribute("data-info-body")||"";te.textContent=s,se.textContent=r,u.hidden=!1,u.classList.add("visible"),V.focus()}function _(){u.classList.remove("visible"),u.hidden=!0}V.addEventListener("click",_),e.querySelectorAll(".scenery-clickable").forEach(t=>{t.addEventListener("click",()=>W(t)),t.addEventListener("keydown",s=>{(s.key==="Enter"||s.key===" ")&&(s.preventDefault(),W(t))})}),window.addEventListener("keydown",t=>{t.key==="Escape"&&!u.hidden&&_()});const $=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];let m=[];const h=e.querySelector(".easter-egg"),N=h.querySelector(".easter-egg-close");function ie(){h.hidden&&(h.hidden=!1,requestAnimationFrame(()=>h.classList.add("visible")),N.focus())}function I(){h.classList.remove("visible"),setTimeout(()=>{h.hidden=!0},250)}N.addEventListener("click",I),h.addEventListener("click",t=>{t.target===h&&I()});function G(t){const s=t.key.length===1?t.key.toLowerCase():t.key;m.push(s),m.length>$.length&&m.shift(),m.length===$.length&&m.every((r,d)=>r===$[d])&&(m=[],ie()),t.key==="Escape"&&!h.hidden&&I()}window.addEventListener("keydown",G);const ae=e.querySelectorAll(".status-led"),v=[];ae.forEach(t=>{v.push(setInterval(()=>t.classList.toggle("blink"),800+Math.random()*1500))});const Q=e.querySelector(".loadcell-value");Q&&v.push(setInterval(()=>{Q.textContent=(2800+Math.floor(Math.random()*100)).toString()},600));function K(t,s){const r=document.createElement("span");r.classList.add("particle",`particle-${s}`),r.setAttribute("aria-hidden","true");const d=Math.random()*100;r.style.left=d+"%",r.style.setProperty("--drift",(Math.random()-.5)*40+"px"),s==="spark"?r.textContent=["*","•","✱"][Math.floor(Math.random()*3)]:r.textContent=["♫","♪","♩","♬"][Math.floor(Math.random()*4)],t.appendChild(r),r.addEventListener("animationend",()=>r.remove())}const w=e.querySelector("#zone-floor .zone-scenery"),b=e.querySelector("#zone-stage .zone-scenery");w&&v.push(setInterval(()=>{!c&&w.getBoundingClientRect().right>0&&w.getBoundingClientRect().left<window.innerWidth&&K(w,"spark")},800)),b&&v.push(setInterval(()=>{!c&&b.getBoundingClientRect().right>0&&b.getBoundingClientRect().left<window.innerWidth&&K(b,"note")},1200));const U=new MutationObserver(()=>{e.querySelector(".icv")||(window.removeEventListener("keydown",R),window.removeEventListener("keydown",G),window.removeEventListener("scroll",x),v.forEach(clearInterval),T.disconnect(),U.disconnect())});U.observe(e,{childList:!0}),requestAnimationFrame(x)}const fe=[{id:"brain-train",label:"Brain-Train",description:"Cognitive training &amp; educational tools",projects:[{name:"GRE Prep",url:"https://fingerskier.github.io/gre_prep",repo:"https://github.com/fingerskier/gre_prep",description:"GRE preparation tool"},{name:"SpeakEasy",url:"https://fingerskier.github.io/speakeasy",repo:"https://github.com/fingerskier/speakeasy",description:"Speech &amp; communication practice"},{name:"NumberSense",url:"https://fingerskier.github.io/numbersense",repo:"https://github.com/fingerskier/numbersense",description:"Numerical intuition trainer"},{name:"PsyDev",url:"https://psydev.vercel.app",description:"Psychology &amp; development app"}]},{id:"simulations",label:"Simulations &amp; Visualizations",description:"Interactive simulations and visual experiments",projects:[{name:"SolarSystem",url:"https://fingerskier.github.io/SolarSystem",repo:"https://github.com/fingerskier/SolarSystem",description:"Interactive solar system simulation"},{name:"Biologize Me",url:"https://fingerskier.github.io/biologize_me",repo:"https://github.com/fingerskier/biologize_me",description:"Biology-inspired visualization experiment"}]},{id:"tools",label:"Tools &amp; Utilities",description:"Standalone applications &amp; services",projects:[{name:"Poemia MCP",url:"https://poemia-mcp.vercel.app",description:"Poetry generation MCP server"},{name:"Reqall",url:"https://reqall.net",description:"Memory &amp; recall assistant"},{name:"Intelligence For Me",url:"https://intelligencefor.me",description:"Personal intelligence dashboard"}]}];function me(){const e=document.getElementById("app");e.innerHTML=`
     <div class="icv projects-page">
       <div class="hud" role="navigation" aria-label="Projects navigation">
         <div class="hud-left">
@@ -478,18 +524,18 @@
         <p class="projects-subtitle">Public repositories, apps, and experiments.</p>
 
         <div class="projects-grid">
-          ${ie.map(s=>`
-            <section class="project-category" id="cat-${s.id}">
-              <h2>${s.label}</h2>
-              <p class="category-desc">${s.description}</p>
+          ${fe.map(i=>`
+            <section class="project-category" id="cat-${i.id}">
+              <h2>${i.label}</h2>
+              <p class="category-desc">${i.description}</p>
               <div class="category-items">
-                ${s.projects.map(t=>`
+                ${i.projects.map(a=>`
                   <div class="project-card">
-                    <h3>${t.name}</h3>
-                    <p>${t.description}</p>
+                    <h3>${a.name}</h3>
+                    <p>${a.description}</p>
                     <div class="project-links">
-                      ${t.url?`<a href="${t.url}" target="_blank" rel="noopener" aria-label="Visit ${t.name} site">Visit</a>`:""}
-                      ${t.repo?`<a href="${t.repo}" target="_blank" rel="noopener" aria-label="View ${t.name} repository">Repo</a>`:""}
+                      ${a.url?`<a href="${a.url}" target="_blank" rel="noopener" aria-label="Visit ${a.name} site">Visit</a>`:""}
+                      ${a.repo?`<a href="${a.repo}" target="_blank" rel="noopener" aria-label="View ${a.name} repository">Repo</a>`:""}
                     </div>
                   </div>
                 `).join("")}
@@ -499,4 +545,4 @@
         </div>
       </main>
     </div>
-  `}let O=null;async function R(){const e=window.location.hash==="#projects"?"projects":"cv";e!==O&&(O=e,e==="projects"?ae():await te())}window.addEventListener("hashchange",R);R();
+  `}let J=null;async function X(){const e=window.location.hash==="#projects"?"projects":"cv";e!==J&&(J=e,e==="projects"?me():await ue())}window.addEventListener("hashchange",X);X();
